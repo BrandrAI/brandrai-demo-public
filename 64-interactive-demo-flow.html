@@ -363,51 +363,52 @@ function checkItem(id) {
   lucide.createIcons();
 }
 
+const SPEED = 0.45; // 0.45 = ~55% faster than before
 async function runStep1() {
   $('uploadIdle').classList.add('hidden');
   $('uploadActive').classList.remove('hidden');
   $('uploadActive').classList.add('fade-in');
-  await tick(400); checkItem('s1-check1');
-  await tick(600); checkItem('s1-check2');
-  await tick(700); checkItem('s1-check3');
-  await tick(500); checkItem('s1-check4');
+  await tick(180*SPEED/0.45); checkItem('s1-check1');
+  await tick(260); checkItem('s1-check2');
+  await tick(300); checkItem('s1-check3');
+  await tick(220); checkItem('s1-check4');
 }
 
 async function runStep2() {
   $('studioStatus').textContent = 'Generating...';
-  await tick(500); checkItem('s2-check1');
+  await tick(220); checkItem('s2-check1');
   $('activeStyle').textContent = 'NATURAL';
-  await tick(900);
+  await tick(380);
   $('heroPlaceholder').classList.add('hidden');
   $('heroDone').classList.remove('hidden');
   $('heroDone').classList.add('flex','fade-in');
   checkItem('s2-check2');
-  await tick(700);
+  await tick(300);
   $('seoTitle').textContent = 'GreenLeaf OG Kush Pre-Roll — 22.4% THC';
   $('seoDesc').textContent = 'Lab-verified Ohio craft cannabis. Batch B4471. Scan QR to verify.';
   $('seoTitle').classList.add('fade-in');
   checkItem('s2-check3');
-  await tick(700); checkItem('s2-check4');
+  await tick(300); checkItem('s2-check4');
   $('studioStatus').textContent = 'Done';
 }
 
 async function runStep3() {
-  await tick(400);
+  await tick(180);
   $('ch-woo-status').textContent = 'Syncing...';
   $('ch-woo-status').className = 'text-xs text-amber-600';
-  await tick(800);
+  await tick(340);
   $('ch-woo-status').innerHTML = '&check; Synced';
   $('ch-woo-status').className = 'text-xs text-emerald-600 font-semibold';
   checkItem('s3-check1');
-  await tick(500);
+  await tick(220);
   $('ch-verify-status').textContent = 'Publishing...';
   $('ch-verify-status').className = 'text-xs text-amber-600';
-  await tick(700);
+  await tick(300);
   $('ch-verify-status').innerHTML = '&check; Live';
   $('ch-verify-status').className = 'text-xs text-emerald-600 font-semibold';
   checkItem('s3-check2');
-  await tick(500); checkItem('s3-check3');
-  await tick(700);
+  await tick(220); checkItem('s3-check3');
+  await tick(300);
   $('qrLabel').textContent = 'Scanned by customer';
   $('qrMeta').textContent = 'Columbus, OH &middot; Just now';
   $('qrVerified').classList.remove('hidden');
@@ -494,7 +495,7 @@ $('playBtn').addEventListener('click', async () => {
       await runners[state.step - 1]();
     }
     if (state.step < 3) {
-      await tick(800);
+      await tick(350);
       if (!state.auto) break;
       state.step++;
       setStepVisual();
