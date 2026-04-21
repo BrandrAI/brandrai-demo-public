@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verified by BrandrAI — Moonlight OG Kush</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; }
+  .hash-font { font-family: 'JetBrains Mono', monospace; }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+  .pulse-ring { animation: pulse-ring 2s infinite; }
+</style>
+</head>
+<body class="bg-slate-100 min-h-screen">
+<!-- Demo banner -->
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-emerald-400">DEMO</span>
+  <span class="mx-2 text-slate-500">·</span>
+  Interactive preview · Metrc + BioTrack compatible · Consumer-facing verification
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="02-landing-page-option-a.html" class="text-emerald-400 hover:underline">Home</a>
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="17-merchant-dashboard.html" class="text-emerald-400 hover:underline">Dashboard</a>
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="18-coa-upload-flow.html" class="text-emerald-400 hover:underline">Upload Flow</a>
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="03-coa-verify-page-with-blockchain-tease.html" class="text-emerald-400 hover:underline">Verify Page</a>
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="12-pricing-page.html" class="text-emerald-400 hover:underline">Pricing</a>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  <a href="35a-changelog-INTERNAL.html" class="text-emerald-400 hover:underline">Changelog</a>
+</div>
+
+
+<!-- Minimal header -->
+<header class="bg-white border-b border-slate-200">
+  <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+      <span class="font-bold text-slate-900">BrandrAI Verify</span>
+    </div>
+    <a href="02-landing-page-option-a.html" class="text-sm text-emerald-600 hover:text-emerald-700 font-medium flex items-center gap-1">
+      Powered by BrandrAI
+      <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+    </a>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-6 py-8">
+
+  <!-- BIG VERIFIED BADGE -->
+  <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-6">
+    <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 p-8 text-white relative overflow-hidden">
+      <div class="absolute top-4 right-4">
+        <div class="relative">
+          <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur pulse-ring">
+            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+          </div>
+        </div>
+      </div>
+      <div class="text-xs uppercase tracking-widest text-emerald-100 mb-2 font-semibold flex items-center gap-2">
+        <span>Verified</span>
+        <span class="px-2 py-0.5 bg-white/20 backdrop-blur text-white text-[10px] font-bold rounded-full border border-white/30">METRC-ANCHORED &middot; LIVE PULL</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">Moonlight OG Kush</h1>
+      <p class="text-emerald-100 text-lg">Batch #MLK-2026-0412 &middot; Green Peak Cannabis Co.</p>
+      <p class="text-emerald-100/80 text-xs mt-1">Metrc Package ID: 1A4060300002E6E000001234 &middot; State: Ohio</p>
+
+      <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+        <div>
+          <div class="text-2xl font-bold">24.8%</div>
+          <div class="text-xs text-emerald-100">THC</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold">0.3%</div>
+          <div class="text-xs text-emerald-100">CBD</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold">PASS</div>
+          <div class="text-xs text-emerald-100">Pesticides</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verification metadata -->
+    <div class="p-6 space-y-4">
+      <div class="flex items-start gap-3 pb-4 border-b border-slate-100">
+        <i data-lucide="calendar-check" class="w-5 h-5 text-slate-400 mt-0.5 shrink-0"></i>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-wider text-slate-500 mb-0.5">Verified</div>
+          <div class="font-semibold text-slate-900">May 1, 2026 at 3:42 PM MDT</div>
+          <div class="text-sm text-slate-500">Verification ID: VRF-40438-00127</div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3 pb-4 border-b border-slate-100">
+        <i data-lucide="flask-conical" class="w-5 h-5 text-slate-400 mt-0.5 shrink-0"></i>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-wider text-slate-500 mb-0.5">Lab</div>
+          <div class="font-semibold text-slate-900">North Coast Analytical Laboratories</div>
+          <div class="text-sm text-slate-500">Ohio License OH-LAB-2024-0042 &middot; Tested April 28, 2026</div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <i data-lucide="fingerprint" class="w-5 h-5 text-slate-400 mt-0.5 shrink-0"></i>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-wider text-slate-500 mb-0.5">Document Hash (SHA-256)</div>
+          <div class="font-mono text-xs text-slate-700 bg-slate-50 rounded-lg p-3 break-all border border-slate-200">
+            7a8f9b2c4e5d6a1b3c8f2e9d4b7a5c6e8f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c
+          </div>
+          <div class="text-xs text-slate-500 mt-2 flex items-center gap-1">
+            <i data-lucide="lock" class="w-3 h-3"></i>
+            Any change to this document will invalidate the verification.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ON-CHAIN ANCHORING TEASE -->
+  <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl shadow-lg overflow-hidden mb-6 text-white">
+    <div class="p-6 md:p-8">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center shrink-0 border border-blue-400/30">
+          <i data-lucide="link-2" class="w-6 h-6 text-blue-400"></i>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="text-xl font-bold">On-Chain Anchoring</h3>
+            <span class="px-2 py-0.5 bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold rounded-full">COMING Q3 2026</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed mb-4">
+            Starting this summer, every BrandrAI verification will be anchored to a public blockchain,
+            making it mathematically impossible to fake or dispute. A tamper-proof, permanent record
+            of authenticity &mdash; publicly verifiable by anyone, forever.
+          </p>
+          <div class="flex items-center gap-2 text-sm text-blue-300 font-medium">
+            <span>Get notified when it launches</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COA PDF VIEWER PLACEHOLDER -->
+  <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-6">
+    <div class="p-6 border-b border-slate-100">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-slate-900 flex items-center gap-2">
+          <i data-lucide="file-text" class="w-5 h-5 text-slate-400"></i>
+          Original Lab Report
+        </h3>
+        <button class="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-slate-800">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          Download PDF
+        </button>
+      </div>
+    </div>
+    <div class="aspect-[8.5/11] bg-slate-50 flex items-center justify-center border-y border-slate-100">
+      <div class="text-center text-slate-400">
+        <i data-lucide="file-search" class="w-16 h-16 mx-auto mb-3 opacity-50"></i>
+        <p class="text-sm">COA PDF preview</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAND INFO -->
+  <div class="bg-white rounded-3xl shadow-lg overflow-hidden mb-6">
+    <div class="p-6">
+      <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+        <i data-lucide="building-2" class="w-5 h-5 text-slate-400"></i>
+        About the Brand
+      </h3>
+      <div class="flex items-start gap-4">
+        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center shrink-0">
+          <span class="text-2xl font-bold text-emerald-700">GP</span>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <h4 class="font-bold text-slate-900 text-lg">Green Peak Cannabis Co.</h4>
+            <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full flex items-center gap-1">
+              <i data-lucide="badge-check" class="w-3 h-3"></i>
+              Verified Brand
+            </span>
+          </div>
+          <p class="text-sm text-slate-600 mb-3">
+            Premium cannabis cultivator based in New Mexico. Award-winning genetics, verified clean.
+          </p>
+          <div class="flex gap-2">
+            <a href="#" class="text-xs text-emerald-600 font-medium">View all products &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="bg-white rounded-3xl shadow-lg p-6 text-center">
+    <p class="text-sm text-slate-600 mb-3">Want to verify your own products?</p>
+    <a href="02-landing-page-option-a.html" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800">
+      Try BrandrAI free
+      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-8 text-center text-xs text-slate-500">
+    <p>Verified by BrandrAI &middot; The brand platform for regulated commerce</p>
+    <p class="mt-1">
+      <a href="#" class="hover:text-slate-700">How verification works</a>
+      &middot;
+      <a href="#" class="hover:text-slate-700">Report an issue</a>
+    </p>
+  </footer>
+
+</main>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

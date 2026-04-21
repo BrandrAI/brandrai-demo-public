@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandrAI for Banks &amp; Processors — Verified merchant directory</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>body { font-family: 'Inter', -apple-system, sans-serif; }</style>
+</head>
+<body class="bg-white">
+<!-- Demo banner -->
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-emerald-400">DEMO</span>
+  <span class="mx-2 text-slate-500">·</span>
+  Interactive preview · Metrc + BioTrack compatible · Consumer-facing verification
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="02-landing-page-option-a.html" class="text-emerald-400 hover:underline">Home</a>
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="17-merchant-dashboard.html" class="text-emerald-400 hover:underline">Dashboard</a>
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="18-coa-upload-flow.html" class="text-emerald-400 hover:underline">Upload Flow</a>
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="03-coa-verify-page-with-blockchain-tease.html" class="text-emerald-400 hover:underline">Verify Page</a>
+  <span class="mx-2 text-slate-500">·</span>
+  <a href="12-pricing-page.html" class="text-emerald-400 hover:underline">Pricing</a>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  <a href="35a-changelog-INTERNAL.html" class="text-emerald-400 hover:underline">Changelog</a>
+</div>
+
+
+<!-- NAV -->
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+      <span class="font-bold text-slate-900">BrandrAI</span>
+      <span class="ml-1 text-xs text-slate-400">|</span>
+      <span class="ml-1 text-sm text-slate-600">for Banks &amp; Processors</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="02-landing-page-option-a.html" class="text-sm text-slate-600 hover:text-slate-900">Documentation</a>
+      <a href="#" class="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800">Book a pilot</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 text-white py-24 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/20 border border-amber-400/30 rounded-full text-amber-300 text-xs font-semibold mb-6">
+        <i data-lucide="building-2" class="w-3.5 h-3.5"></i>
+        BANK INTEGRATION TIER
+      </div>
+
+      <h1 class="text-5xl font-bold leading-tight mb-6">
+        Verify every merchant<br>
+        <span class="text-amber-400">before you onboard them.</span>
+      </h1>
+
+      <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+        BrandrAI gives sponsor banks, payment processors, and fintechs a verified merchant directory + API for cannabis, CBD, supplements, kratom, and adjacent high-risk verticals. Cut fraud. Speed underwriting. Own the compliance story.
+      </p>
+
+      <div class="flex gap-3">
+        <a href="#" class="px-6 py-3 bg-amber-500 text-slate-900 rounded-lg font-semibold hover:bg-amber-400">Book a pilot</a>
+        <a href="#" class="px-6 py-3 border border-slate-600 text-white rounded-lg font-semibold hover:bg-slate-800">Read the docs</a>
+      </div>
+
+      <div class="mt-8 text-sm text-slate-400">
+        Used by <span class="text-white font-semibold">5+ sponsor banks</span> &middot; Contact <span class="text-white font-semibold">banks@brandrai.com</span>
+      </div>
+    </div>
+
+    <!-- API Preview -->
+    <div class="bg-slate-950 rounded-2xl border border-slate-700 p-6 shadow-2xl">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+        <span class="text-xs text-slate-500 ml-3">GET /api/v1/merchants/verify</span>
+      </div>
+      <pre class="text-xs text-slate-300 overflow-x-auto leading-relaxed"><span class="text-slate-500">// Lookup a merchant by business name or EIN</span>
+<span class="text-blue-400">GET</span> <span class="text-green-400">/api/v1/merchants/verify</span>
+<span class="text-purple-400">?business_name</span>=<span class="text-amber-300">"Green Peak Cannabis Co"</span>
+<span class="text-purple-400">&ein</span>=<span class="text-amber-300">"12-3456789"</span>
+
+<span class="text-slate-500">// Response</span>
+<span class="text-slate-400">{</span>
+  <span class="text-cyan-400">"verified"</span>: <span class="text-orange-400">true</span>,
+  <span class="text-cyan-400">"verification_id"</span>: <span class="text-amber-300">"VRF-GPCC-00421"</span>,
+  <span class="text-cyan-400">"verified_since"</span>: <span class="text-amber-300">"2026-03-15"</span>,
+  <span class="text-cyan-400">"active_licenses"</span>: [<span class="text-amber-300">"NM-CAN-2024-0042"</span>],
+  <span class="text-cyan-400">"coa_count"</span>: <span class="text-orange-400">47</span>,
+  <span class="text-cyan-400">"last_coa_verified"</span>: <span class="text-amber-300">"2026-04-18"</span>,
+  <span class="text-cyan-400">"risk_score"</span>: <span class="text-orange-400">0.12</span>,
+  <span class="text-cyan-400">"flags"</span>: []
+<span class="text-slate-400">}</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="py-20 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-sm uppercase tracking-wider text-amber-700 mb-3 font-semibold">The problem</div>
+    <h2 class="text-4xl font-bold text-slate-900 mb-10">Sponsor banks can't verify high-risk merchants at scale.</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="clock-alert" class="w-6 h-6 text-red-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2">Manual underwriting is slow.</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Cannabis, CBD, supplement merchant applications take 3-7 days to review. Meanwhile, competitors onboard faster.</p>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="alert-triangle" class="w-6 h-6 text-orange-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2">Fraud slips through.</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Fake COAs. Counterfeit products. One bad merchant = chargebacks, fines, and association risk that affects your whole book.</p>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="file-x" class="w-6 h-6 text-amber-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2">Compliance data is siloed.</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Lab results, brand registrations, license numbers &mdash; all in different systems. Nobody has a unified view.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SOLUTION -->
+<section class="py-20 px-6 bg-slate-50">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-sm uppercase tracking-wider text-amber-700 mb-3 font-semibold">The solution</div>
+    <h2 class="text-4xl font-bold text-slate-900 mb-4">A verified merchant directory with an API.</h2>
+    <p class="text-lg text-slate-600 mb-12 max-w-3xl">BrandrAI maintains tamper-proof verifications for every COA, every brand, every batch. Banks integrate our API and instantly know if a merchant is who they claim to be.</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="search-check" class="w-6 h-6 text-amber-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 text-lg">Real-time merchant lookup</h3>
+        <p class="text-slate-600 leading-relaxed">Query by business name, EIN, or license number. Get verification status, license validity, COA history, and risk score in a single API call.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="bell" class="w-6 h-6 text-amber-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 text-lg">Webhook monitoring</h3>
+        <p class="text-slate-600 leading-relaxed">Subscribe to changes on specific merchants. Get notified when their license lapses, COA is flagged, or verification status changes.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="file-check-2" class="w-6 h-6 text-amber-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 text-lg">COA / lab test verification</h3>
+        <p class="text-slate-600 leading-relaxed">Submit a merchant-provided COA PDF and get tamper-detection + cryptographic hash verification in 30 seconds. Integrates directly into your application flow.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="chart-line" class="w-6 h-6 text-amber-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 text-lg">Admin dashboard</h3>
+        <p class="text-slate-600 leading-relaxed">Your team sees a unified view of all merchants using BrandrAI. Filter by risk score, verification status, vertical. Export audit-ready reports.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="badge-check" class="w-6 h-6 text-amber-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 text-lg">"Verified by BrandrAI" badge</h3>
+        <p class="text-slate-600 leading-relaxed">Display BrandrAI verification status in your merchant-facing dashboards. Merchants see their trust level. Banks get the compliance story.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-slate-200">
+        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="lock" class="w-6 h-6 text-amber-700"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 text-lg">Enterprise security</h3>
+        <p class="text-slate-600 leading-relaxed">SOC2 Type 2 in progress. SSO / SAML available. Data encryption at rest and in transit. No PCI scope passed to your systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="py-20 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold text-slate-900 mb-12">Built for the teams closest to the merchants.</h2>
+
+    <div class="space-y-4">
+      <div class="flex gap-6 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center shrink-0">
+          <i data-lucide="landmark" class="w-7 h-7 text-amber-700"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">Sponsor banks</h3>
+          <p class="text-slate-700 leading-relaxed">Integrate BrandrAI into your merchant onboarding workflow. Auto-verify COA, brand identity, and license status. Cut underwriting time 50-70% on high-risk applications.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center shrink-0">
+          <i data-lucide="credit-card" class="w-7 h-7 text-amber-700"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">Payment processors</h3>
+          <p class="text-slate-700 leading-relaxed">Use our merchant directory in real-time fraud scoring. Reject or flag transactions from merchants without active BrandrAI verification. Add the "Verified by BrandrAI" badge to your merchant-facing product.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center shrink-0">
+          <i data-lucide="building" class="w-7 h-7 text-amber-700"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">Neobanks &amp; fintechs</h3>
+          <p class="text-slate-700 leading-relaxed">Expand into high-risk verticals (cannabis, supplements, kratom) without building your own compliance stack. BrandrAI handles the brand/product verification layer; you focus on the payment experience.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center shrink-0">
+          <i data-lucide="shield" class="w-7 h-7 text-amber-700"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">Alternative lenders</h3>
+          <p class="text-slate-700 leading-relaxed">Merchant cash advance and factoring companies use BrandrAI verification as a trust signal in underwriting decisions. Better data = better risk pricing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="py-20 px-6 bg-gradient-to-br from-slate-900 to-amber-900 text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-4">Custom pricing for enterprise infrastructure.</h2>
+    <p class="text-xl text-amber-100 mb-8 max-w-2xl mx-auto">Starting at $3K/month for API access. Volume-based tiers for high-throughput integrations. Includes SSO, SLA, and dedicated account manager.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="#" class="px-8 py-4 bg-amber-500 text-slate-900 rounded-lg font-bold text-lg hover:bg-amber-400">Book a pilot</a>
+      <a href="mailto:banks@brandrai.com" class="px-8 py-4 bg-slate-800 border border-slate-700 text-white rounded-lg font-bold text-lg hover:bg-slate-700">banks@brandrai.com</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-slate-950 text-slate-500 py-8 px-6 text-center text-sm border-t border-slate-800">
+  <p>&copy; 2026 BrandrAI &middot; Trust infrastructure for regulated commerce</p>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

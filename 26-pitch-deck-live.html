@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandrAI — Investor Pitch Deck</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; overflow: hidden; background: #020617; }
+  .slide {
+    width: 100vw; height: 100vh; display: none;
+    padding: 5vh 6vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+  }
+  .slide.active { display: flex; flex-direction: column; }
+  .nav-btn {
+    position: fixed; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+    color: white; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 100; transition: background 0.15s;
+  }
+  .nav-btn:hover { background: rgba(255,255,255,0.2); }
+  .nav-prev { left: 24px; }
+  .nav-next { right: 24px; }
+  .slide-counter {
+    position: fixed; bottom: 20px; right: 24px; z-index: 100;
+    color: rgba(255,255,255,0.5); font-size: 12px; font-weight: 500;
+    background: rgba(0,0,0,0.4); padding: 6px 12px; border-radius: 999px;
+  }
+  .slide-label {
+    position: absolute; top: 3vh; left: 6vw;
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 600;
+  }
+  .gradient-bg { background: linear-gradient(135deg, #020617 0%, #0f172a 45%, #064e3b 100%); }
+  .gradient-text {
+    background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .amber-gradient-text {
+    background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  @media print {
+    .slide { display: block !important; page-break-after: always; width: 11in; height: 8.5in; }
+    .nav-btn, .slide-counter { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<button class="nav-btn nav-prev" onclick="prev()">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<button class="nav-btn nav-next" onclick="next()">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+</button>
+<div class="slide-counter" id="counter">1 / 13</div>
+
+<!-- SLIDE 1 — COVER -->
+<section class="slide active gradient-bg text-white" style="justify-content: center; align-items: center;">
+  <div class="flex items-center gap-4 mb-6">
+    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-3xl">B</div>
+  </div>
+  <h1 class="text-8xl font-bold mb-4">BrandrAI</h1>
+  <p class="text-3xl gradient-text font-medium mb-2">The Brand Platform for Regulated Commerce</p>
+  <p class="text-lg text-slate-400 mb-16 max-w-2xl text-center">
+    Helping regulated brands look professional, prove their products are real, and stay visible everywhere buyers are looking.
+  </p>
+  <div class="flex items-center gap-8 text-sm text-slate-500">
+    <span>Max Juhasz, Founder</span>
+    <span class="text-slate-700">·</span>
+    <span>April 2026</span>
+    <span class="text-slate-700">·</span>
+    <span>Confidential</span>
+  </div>
+</section>
+
+<!-- SLIDE 2 — THE PROBLEM -->
+<section class="slide bg-white">
+  <div class="slide-label text-emerald-600">02 · The Problem</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold text-slate-900 mb-12 leading-tight">
+      Regulated brands have three problems<br>
+      <span class="gradient-text">everyone else ignores.</span>
+    </h2>
+    <div class="grid grid-cols-3 gap-6">
+      <div class="p-6 border border-slate-200 rounded-2xl">
+        <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="shield-alert" class="w-7 h-7 text-red-600"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Counterfeits everywhere</h3>
+        <p class="text-slate-600 leading-relaxed text-sm">25% of supplements fail identity testing. 60% of kratom isn't what it claims. Counterfeit cannabis is a $4B+ problem.</p>
+      </div>
+      <div class="p-6 border border-slate-200 rounded-2xl">
+        <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="ban" class="w-7 h-7 text-orange-600"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Platforms ban them</h3>
+        <p class="text-slate-600 leading-relaxed text-sm">Meta, Google, TikTok, Stripe, PayPal block entire industries. Legitimate brands get kicked off without recourse.</p>
+      </div>
+      <div class="p-6 border border-slate-200 rounded-2xl">
+        <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+          <i data-lucide="scroll-text" class="w-7 h-7 text-blue-600"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Compliance eats them</h3>
+        <p class="text-slate-600 leading-relaxed text-sm">Every state, lab, retailer wants different paperwork. Teams drown in compliance instead of building the brand.</p>
+      </div>
+    </div>
+    <p class="mt-10 text-sm text-slate-500 italic">Sources: NIH, Edelman Trust Barometer 2025, Consumer Lab independent studies</p>
+  </div>
+</section>
+
+<!-- SLIDE 3 — THE MARKET -->
+<section class="slide bg-white">
+  <div class="slide-label text-emerald-600">03 · The Market</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold text-slate-900 mb-3">We serve the industries</h2>
+    <h2 class="text-5xl font-bold gradient-text mb-12">mainstream tools won't.</h2>
+    <div class="grid grid-cols-2 gap-12">
+      <div>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between border-b border-slate-100 py-3">
+            <span class="text-slate-700 font-medium">Cannabis / CBD</span>
+            <span class="font-bold text-slate-900">$30B</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 py-3">
+            <span class="text-slate-700 font-medium">Supplements</span>
+            <span class="font-bold text-slate-900">$60B</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 py-3">
+            <span class="text-slate-700 font-medium">Kratom / Mushroom / Peptide</span>
+            <span class="font-bold text-slate-900">$4B</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 py-3">
+            <span class="text-slate-700 font-medium">Cosmetics / Clean Beauty</span>
+            <span class="font-bold text-slate-900">$90B</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 py-3">
+            <span class="text-slate-700 font-medium">Luxury / Collectibles</span>
+            <span class="font-bold text-slate-900">$350B</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 py-3">
+            <span class="text-slate-700 font-medium">Specialty Food &amp; Bev</span>
+            <span class="font-bold text-slate-900">$50B addressable</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-3xl p-10 border border-emerald-100">
+        <div class="text-xs uppercase tracking-wider text-emerald-700 font-bold mb-3">Total Addressable</div>
+        <div class="text-6xl font-bold text-slate-900 mb-2">$822M</div>
+        <div class="text-lg text-slate-600 mb-8">immediately addressable / year</div>
+        <div class="text-xs uppercase tracking-wider text-emerald-700 font-bold mb-3">With life sciences extension</div>
+        <div class="text-4xl font-bold text-slate-900">$1.8B <span class="text-lg text-slate-500">/year</span></div>
+        <div class="mt-6 pt-6 border-t border-emerald-200 text-sm text-slate-600">
+          <span class="font-semibold">~146,000</span> addressable US+global companies<br>
+          <span class="font-semibold">~31,000</span> realistic SAM
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4 — THE SOLUTION -->
+<section class="slide bg-slate-50">
+  <div class="slide-label text-emerald-600">04 · The Solution</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold text-slate-900 mb-3">One platform.</h2>
+    <h2 class="text-5xl font-bold gradient-text mb-10">Five verification primitives.</h2>
+    <div class="grid grid-cols-5 gap-4">
+      <!-- Primitive 1 -->
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[10px] font-bold rounded-full uppercase tracking-wider mb-3">Live</span>
+        <i data-lucide="image" class="w-7 h-7 text-emerald-600 mb-3"></i>
+        <h3 class="font-bold text-slate-900 mb-1 text-sm">Brand Assets</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">DAM, PIM, share links with branded CTAs</p>
+      </div>
+      <!-- Primitive 2 -->
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[10px] font-bold rounded-full uppercase tracking-wider mb-3">Live</span>
+        <i data-lucide="shield-check" class="w-7 h-7 text-emerald-600 mb-3"></i>
+        <h3 class="font-bold text-slate-900 mb-1 text-sm">COA Verification</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">AI-powered lab test verification + cryptographic proof</p>
+      </div>
+      <!-- Primitive 3 -->
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <span class="inline-block px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-bold rounded-full uppercase tracking-wider mb-3">Q3 2026</span>
+        <i data-lucide="link-2" class="w-7 h-7 text-blue-600 mb-3"></i>
+        <h3 class="font-bold text-slate-900 mb-1 text-sm">On-Chain Anchoring</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">Tamper-proof via public blockchain</p>
+      </div>
+      <!-- Primitive 4 -->
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <span class="inline-block px-2 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded-full uppercase tracking-wider mb-3">Q4 2026</span>
+        <i data-lucide="rss" class="w-7 h-7 text-purple-600 mb-3"></i>
+        <h3 class="font-bold text-slate-900 mb-1 text-sm">Decentralized Social</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">Farcaster + Bluesky + Minds syndication</p>
+      </div>
+      <!-- Primitive 5 -->
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <span class="inline-block px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded-full uppercase tracking-wider mb-3">Active</span>
+        <i data-lucide="credit-card" class="w-7 h-7 text-amber-600 mb-3"></i>
+        <h3 class="font-bold text-slate-900 mb-1 text-sm">Payment Partners</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">Curated menu of 5+ compliant processors</p>
+      </div>
+    </div>
+    <div class="mt-10 grid grid-cols-2 gap-6">
+      <div class="p-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl">
+        <div class="text-xs uppercase tracking-wider text-emerald-400 font-bold mb-2">Partner Program</div>
+        <h3 class="font-bold mb-2 text-lg">Consulting firms resell BrandrAI</h3>
+        <p class="text-sm text-slate-300">25-30% rev share. '68 Partners (Sheri's firm) is our first launch partner.</p>
+      </div>
+      <div class="p-6 bg-gradient-to-br from-slate-900 to-amber-900 text-white rounded-2xl">
+        <div class="text-xs uppercase tracking-wider text-amber-400 font-bold mb-2">Bank Integration Tier</div>
+        <h3 class="font-bold mb-2 text-lg">Verified merchant directory for banks</h3>
+        <p class="text-sm text-slate-300">$3K-$10K/mo per bank. Devon Palmer's 5+ bank network.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5 — DEMO -->
+<section class="slide bg-white">
+  <div class="slide-label text-emerald-600">05 · See It Work</div>
+  <div class="flex-1 flex items-center max-w-6xl mx-auto w-full gap-12">
+    <div class="flex-1">
+      <h2 class="text-5xl font-bold text-slate-900 mb-6">30 seconds.<br>Verified forever.</h2>
+      <div class="space-y-5 mt-8">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center shrink-0">1</div>
+          <div>
+            <h3 class="font-bold text-slate-900">Upload your COA</h3>
+            <p class="text-sm text-slate-600">Drop in the lab report PDF</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center shrink-0">2</div>
+          <div>
+            <h3 class="font-bold text-slate-900">AI verifies in 30 seconds</h3>
+            <p class="text-sm text-slate-600">Tamper detection, extracted data, cryptographic proof</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center shrink-0">3</div>
+          <div>
+            <h3 class="font-bold text-slate-900">Share with anyone</h3>
+            <p class="text-sm text-slate-600">Branded verify page, QR for packaging, API for partners</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 p-4 bg-slate-50 rounded-xl border border-slate-200">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-2">Scan to see live example</p>
+        <p class="text-sm text-slate-700 font-mono">brandrai.com/verify/demo</p>
+      </div>
+    </div>
+    <div class="w-[360px] shrink-0">
+      <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl p-6 text-white shadow-2xl">
+        <div class="flex items-center gap-2 mb-2">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+          <span class="text-xs uppercase tracking-wider font-bold">Verified</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-1">Moonlight OG Kush</h3>
+        <p class="text-emerald-100 text-sm mb-4">Green Peak Cannabis Co.</p>
+        <div class="grid grid-cols-3 gap-3 text-center mb-4">
+          <div><div class="text-2xl font-bold">24.8%</div><div class="text-xs text-emerald-100">THC</div></div>
+          <div><div class="text-2xl font-bold">0.3%</div><div class="text-xs text-emerald-100">CBD</div></div>
+          <div><div class="text-2xl font-bold">PASS</div><div class="text-xs text-emerald-100">Safety</div></div>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-lg p-2 text-xs font-mono text-emerald-50 break-all">7a8f9b2c4e5d6a1b3c...</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6 — WHY NOW -->
+<section class="slide bg-white">
+  <div class="slide-label text-emerald-600">06 · Why Now</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold text-slate-900 mb-12">Three tailwinds align.</h2>
+    <div class="grid grid-cols-3 gap-8">
+      <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8">
+        <div class="text-6xl font-bold gradient-text mb-4">01</div>
+        <h3 class="text-xl font-bold mb-3">Regulation accelerating</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">Cannabis Schedule III reform. FDA enforcement on supplements. Heavy metals / PFAS tightening. Regulatory pressure creates demand for verification infrastructure.</p>
+      </div>
+      <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8">
+        <div class="text-6xl font-bold gradient-text mb-4">02</div>
+        <h3 class="text-xl font-bold mb-3">Consumer trust collapsing</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">68% of consumers don't trust CPG brand claims (Edelman 2025). Verification went from nice-to-have to competitive edge.</p>
+      </div>
+      <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8">
+        <div class="text-6xl font-bold gradient-text mb-4">03</div>
+        <h3 class="text-xl font-bold mb-3">Infrastructure finally cheap</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">L2 anchoring: $0.05/proof. AI verification: $0.10/COA. 10x cheaper than a year ago. The economics just flipped.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7 — TRACTION -->
+<section class="slide bg-white">
+  <div class="slide-label text-emerald-600">07 · Traction</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold text-slate-900 mb-12">We're shipping.</h2>
+    <div class="grid grid-cols-4 gap-4 mb-10">
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 text-center">
+        <div class="text-5xl font-bold gradient-text mb-2">[X]</div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Active Brands</div>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 text-center">
+        <div class="text-5xl font-bold gradient-text mb-2">$[X]</div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Monthly Recurring</div>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 text-center">
+        <div class="text-5xl font-bold gradient-text mb-2">[X]%</div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Monthly Growth</div>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 text-center">
+        <div class="text-5xl font-bold gradient-text mb-2">2,000+</div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Pipeline Brands</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-8">
+      <div>
+        <h3 class="font-bold text-slate-900 mb-4 text-lg">Shipped last 30 days</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> COA Verification Tier 1 (AI Analyst) — live</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Cryptographic hash + tamper-proof signatures — live</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Branded share links with custom CTAs (PR #23) — live</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Document file preview with Google Docs Viewer (PR #21)</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Credit system + Stripe billing — live</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> AI image editing + generation (provider-agnostic)</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Video processing on Azure Container Apps + Go microservice</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Typesense semantic search — live</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> WooCommerce, Shopify, Square sync adapters</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Workspace-aware storage limits + free plan tier</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-slate-900 mb-4 text-lg">Next 90 days</h3>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Metrc-anchored verify pages launch (May 1, Ohio event)</li>
+          <li class="flex gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> 5+ Ohio Metrc launch partners with live API integration (May)</li>
+          <li class="flex gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Advisor agreements papered (Sheri + Devon)</li>
+          <li class="flex gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> BioTrack integration (NM expansion)</li>
+          <li class="flex gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Image SEO / EXIF editor (local SEO differentiation)</li>
+          <li class="flex gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Supplement + kratom vertical pages live</li>
+          <li class="flex gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> LeisurePay partnership agreement</li>
+          <li class="flex gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i> Delaware C-Corp formation + 83(b) elections filed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 8 — TEAM -->
+<section class="slide bg-slate-50">
+  <div class="slide-label text-emerald-600">08 · Team</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-4xl font-bold text-slate-900 mb-8">Built by operators. <span class="gradient-text">Advised by industry veterans.</span></h2>
+    <div class="grid grid-cols-4 gap-4">
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-200 to-emerald-400 flex items-center justify-center text-emerald-900 font-bold text-xl mb-3">MJ</div>
+        <h3 class="font-bold text-slate-900 text-base mb-1">Max Juhasz</h3>
+        <p class="text-emerald-700 text-xs font-semibold mb-2">Founder &amp; CEO</p>
+        <p class="text-[11px] text-slate-600 leading-snug">10+ years in cannabis digital marketing. Founder of DopeSEO, co-founder of Bud Plug &amp; WeedMart.io (CMA Honorable Mention 2023). Author of <em>Cannabis SEO</em>. Host of Dope Marketing Podcast.</p>
+      </div>
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center text-blue-900 font-bold text-xl mb-3">MC</div>
+        <h3 class="font-bold text-slate-900 text-base mb-1">Mike Certoma</h3>
+        <p class="text-blue-700 text-xs font-semibold mb-2">COO &amp; Head of Operations</p>
+        <p class="text-[11px] text-slate-600 leading-snug">Runs day-to-day operations and the web development team. Long-time operational partner on BrandrAI's platform and customer delivery infrastructure.</p>
+      </div>
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-200 to-indigo-400 flex items-center justify-center text-indigo-900 font-bold text-xl mb-3">MM</div>
+        <h3 class="font-bold text-slate-900 text-base mb-1">Matt McDermott</h3>
+        <p class="text-indigo-700 text-xs font-semibold mb-2">Head of Platform Integrations</p>
+        <p class="text-[11px] text-slate-600 leading-snug">Leads decentralized platform integrations, SEO strategy, and emerging tech infrastructure. Deep connections across decentralized social, Web3, and discovery ecosystems.</p>
+      </div>
+      <div class="p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-200 to-cyan-400 flex items-center justify-center text-cyan-900 font-bold text-xl mb-3">DN</div>
+        <h3 class="font-bold text-slate-900 text-base mb-1">Dang Tien Ngoc</h3>
+        <p class="text-cyan-700 text-xs font-semibold mb-2">Lead Engineer</p>
+        <p class="text-[11px] text-slate-600 leading-snug">Full-stack engineer. Built BrandrAI's entire platform — Laravel, React, Azure infrastructure, COA verification pipeline.</p>
+      </div>
+    </div>
+    <p class="mt-6 text-center text-sm text-slate-500 italic">Plus two advisors driving verticals and revenue — see next slide.</p>
+  </div>
+</section>
+
+<!-- SLIDE 9 — ADVISORS -->
+<section class="slide bg-white">
+  <div class="slide-label text-emerald-600">09 · Advisory Board</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold text-slate-900 mb-3">The people making it real.</h2>
+    <p class="text-lg text-slate-600 mb-10">Regulatory credibility + payment infrastructure = a trust stack no competitor can replicate.</p>
+    <div class="grid grid-cols-2 gap-6">
+      <div class="p-7 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl border border-purple-200">
+        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-purple-300 to-purple-500 flex items-center justify-center text-white font-bold text-2xl mb-5">ST</div>
+        <h3 class="font-bold text-slate-900 text-xl mb-1">Sheri L. Tarr, JD</h3>
+        <p class="text-purple-700 text-sm font-semibold mb-1">Regulatory &amp; Life Sciences</p>
+        <p class="text-xs text-slate-500 mb-4">Founder, '68 Partners</p>
+        <p class="text-sm text-slate-700 leading-relaxed mb-4">Former Pfizer + Baxter executive. Nearly a decade in cannabis regulatory and licensing. Leads BrandrAI's cross-vertical strategy and Partner Program.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-0.5 bg-white text-purple-700 text-xs font-semibold rounded-full border border-purple-200">FDA Compliance</span>
+          <span class="px-2 py-0.5 bg-white text-purple-700 text-xs font-semibold rounded-full border border-purple-200">Life Sciences</span>
+          <span class="px-2 py-0.5 bg-white text-purple-700 text-xs font-semibold rounded-full border border-purple-200">Cannabis Licensing</span>
+        </div>
+      </div>
+      <div class="p-7 bg-gradient-to-br from-amber-50 to-amber-100 rounded-3xl border border-amber-200">
+        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center text-white font-bold text-2xl mb-5">DP</div>
+        <h3 class="font-bold text-slate-900 text-xl mb-1">Devon Palmer</h3>
+        <p class="text-amber-700 text-sm font-semibold mb-1">Payments &amp; Partnerships</p>
+        <p class="text-xs text-slate-500 mb-4">Founder, Payment Funnels</p>
+        <p class="text-sm text-slate-700 leading-relaxed mb-4">5+ sponsor bank relationships across high-risk and low-risk verticals. Prior Shift Processing, Walmart, Plymouth Capital. Leads Bank Integration tier.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-0.5 bg-white text-amber-700 text-xs font-semibold rounded-full border border-amber-200">Payment Processing</span>
+          <span class="px-2 py-0.5 bg-white text-amber-700 text-xs font-semibold rounded-full border border-amber-200">Sponsor Banks</span>
+          <span class="px-2 py-0.5 bg-white text-amber-700 text-xs font-semibold rounded-full border border-amber-200">Bank Integration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 10 — BUSINESS MODEL -->
+<section class="slide bg-slate-50">
+  <div class="slide-label text-emerald-600">10 · Business Model</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold text-slate-900 mb-3">Seven revenue streams.</h2>
+    <p class="text-lg text-slate-600 mb-10"><span class="gradient-text font-bold">94% gross margins.</span> Compounding customer LTV.</p>
+    <div class="grid grid-cols-2 gap-10">
+      <div>
+        <h3 class="font-bold text-slate-900 mb-4 text-lg">Year 3 revenue mix</h3>
+        <div class="space-y-3 text-sm">
+          <div>
+            <div class="flex justify-between mb-1"><span class="text-slate-700 font-medium">SaaS subscriptions</span><span class="font-bold text-slate-900">45%</span></div>
+            <div class="w-full bg-slate-200 h-2 rounded-full"><div class="bg-emerald-500 h-2 rounded-full" style="width:45%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span class="text-slate-700 font-medium">Payment partnership rev share</span><span class="font-bold text-slate-900">15%</span></div>
+            <div class="w-full bg-slate-200 h-2 rounded-full"><div class="bg-amber-500 h-2 rounded-full" style="width:15%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span class="text-slate-700 font-medium">Partner Program (Sheri)</span><span class="font-bold text-slate-900">12%</span></div>
+            <div class="w-full bg-slate-200 h-2 rounded-full"><div class="bg-purple-500 h-2 rounded-full" style="width:12%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span class="text-slate-700 font-medium">Enterprise / Lab / Retailer</span><span class="font-bold text-slate-900">12%</span></div>
+            <div class="w-full bg-slate-200 h-2 rounded-full"><div class="bg-slate-700 h-2 rounded-full" style="width:12%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span class="text-slate-700 font-medium">Verification overage</span><span class="font-bold text-slate-900">10%</span></div>
+            <div class="w-full bg-slate-200 h-2 rounded-full"><div class="bg-cyan-500 h-2 rounded-full" style="width:10%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span class="text-slate-700 font-medium">Bank Integration tier (Devon)</span><span class="font-bold text-slate-900">8%</span></div>
+            <div class="w-full bg-slate-200 h-2 rounded-full"><div class="bg-orange-500 h-2 rounded-full" style="width:8%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1"><span class="text-slate-700 font-medium">Add-ons (hosting, AI, services)</span><span class="font-bold text-slate-900">8%</span></div>
+            <div class="w-full bg-slate-200 h-2 rounded-full"><div class="bg-pink-500 h-2 rounded-full" style="width:8%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-bold text-slate-900 mb-4 text-lg">Pricing tiers</h3>
+        <div class="space-y-1.5 text-xs">
+          <div class="flex justify-between p-2.5 bg-white rounded-xl border border-slate-200">
+            <span class="font-semibold text-slate-900">Free</span><span class="text-slate-600">$0 / mo</span>
+          </div>
+          <div class="flex justify-between p-2.5 bg-white rounded-xl border border-slate-200">
+            <span class="font-semibold text-slate-900">Starter</span><span class="text-slate-600">$49 / mo</span>
+          </div>
+          <div class="flex justify-between p-2.5 bg-emerald-50 rounded-xl border-2 border-emerald-500">
+            <span class="font-semibold text-slate-900">Growth <span class="text-[10px] bg-emerald-200 text-emerald-800 px-1.5 py-0.5 rounded-full ml-1">POPULAR</span></span>
+            <span class="text-slate-700 font-bold">$199 / mo</span>
+          </div>
+          <div class="flex justify-between p-2.5 bg-white rounded-xl border border-slate-200">
+            <span class="font-semibold text-slate-900">Business</span><span class="text-slate-600">$549 / mo</span>
+          </div>
+          <div class="flex justify-between p-2.5 bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-xl">
+            <span class="font-semibold">Enterprise</span><span class="font-bold">$1,499+ / mo</span>
+          </div>
+          <div class="flex justify-between p-2.5 bg-gradient-to-br from-amber-900 to-amber-700 text-white rounded-xl">
+            <span class="font-semibold">Bank Integration</span><span class="font-bold">$3K-$10K / mo</span>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-500 mt-3 italic">+ DFY services ($500-$3,500/mo) · hosting · AI credits · site builds ($2.5K-$10K+)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 11 — PROJECTIONS -->
+<section class="slide bg-white">
+  <div class="slide-label text-emerald-600">11 · Projections</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold text-slate-900 mb-3">Path to <span class="gradient-text">$6.5M ARR</span> by Year 3.</h2>
+    <p class="text-lg text-slate-600 mb-10">Conservative base case. Aggressive upside: ~$12M.</p>
+    <div class="grid grid-cols-3 gap-4 mb-8">
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-2">Year 1</div>
+        <div class="text-5xl font-bold gradient-text mb-2">$315K</div>
+        <div class="text-sm text-slate-600">Exit ARR</div>
+        <div class="text-xs text-slate-500 mt-3">138 customers · 94% margin</div>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-2">Year 2</div>
+        <div class="text-5xl font-bold gradient-text mb-2">$2.7M</div>
+        <div class="text-sm text-slate-600">Exit ARR</div>
+        <div class="text-xs text-slate-500 mt-3">756 customers · 112% NRR</div>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-2">Year 3</div>
+        <div class="text-5xl font-bold gradient-text mb-2">$6.5M</div>
+        <div class="text-sm text-slate-600">Exit ARR</div>
+        <div class="text-xs text-slate-500 mt-3">2,400 customers · 125% NRR</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-4 gap-4 text-center">
+      <div class="p-4 bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-xl border border-emerald-100">
+        <div class="text-2xl font-bold text-slate-900">56:1</div>
+        <div class="text-xs text-slate-600 mt-1">Year 1 LTV:CAC</div>
+      </div>
+      <div class="p-4 bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-xl border border-emerald-100">
+        <div class="text-2xl font-bold text-slate-900">$45</div>
+        <div class="text-xs text-slate-600 mt-1">Blended CAC Year 1</div>
+      </div>
+      <div class="p-4 bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-xl border border-emerald-100">
+        <div class="text-2xl font-bold text-slate-900">23%</div>
+        <div class="text-xs text-slate-600 mt-1">Zero-CAC channels</div>
+      </div>
+      <div class="p-4 bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-xl border border-emerald-100">
+        <div class="text-2xl font-bold text-slate-900">94%</div>
+        <div class="text-xs text-slate-600 mt-1">Gross Margin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 12 — MOAT -->
+<section class="slide gradient-bg text-white">
+  <div class="slide-label text-emerald-400">12 · Moat</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-5xl font-bold mb-3">Why we win.</h2>
+    <p class="text-xl text-slate-400 mb-10">Five compounding advantages.</p>
+    <div class="grid grid-cols-5 gap-4">
+      <div class="p-5 bg-white/5 backdrop-blur border border-white/10 rounded-2xl">
+        <div class="text-3xl font-bold gradient-text mb-2">01</div>
+        <h3 class="font-bold mb-2 text-sm">Integrated stack</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Five verification primitives in one platform. No competitor combines them.</p>
+      </div>
+      <div class="p-5 bg-white/5 backdrop-blur border border-white/10 rounded-2xl">
+        <div class="text-3xl font-bold gradient-text mb-2">02</div>
+        <h3 class="font-bold mb-2 text-sm">Advisor network</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Sheri + Devon unlock verticals and enterprise channels competitors can't reach.</p>
+      </div>
+      <div class="p-5 bg-white/5 backdrop-blur border border-white/10 rounded-2xl">
+        <div class="text-3xl font-bold gradient-text mb-2">03</div>
+        <h3 class="font-bold mb-2 text-sm">Cryptographic first-mover</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">No regulated-industry platform talks about tamper-proof verification. 12-18 mo lead.</p>
+      </div>
+      <div class="p-5 bg-white/5 backdrop-blur border border-white/10 rounded-2xl">
+        <div class="text-3xl font-bold gradient-text mb-2">04</div>
+        <h3 class="font-bold mb-2 text-sm">Cross-vertical playbook</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Cannabis → supplements → kratom → luxury. Engineering work, not product reinvention.</p>
+      </div>
+      <div class="p-5 bg-white/5 backdrop-blur border border-white/10 rounded-2xl">
+        <div class="text-3xl font-bold gradient-text mb-2">05</div>
+        <h3 class="font-bold mb-2 text-sm">Network effects</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Every verified brand makes the platform smarter. Every partner makes it stickier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 13 — THE ASK -->
+<section class="slide bg-white">
+  <div class="slide-label text-emerald-600">13 · The Ask</div>
+  <div class="flex-1 flex flex-col justify-center max-w-6xl mx-auto w-full">
+    <h2 class="text-6xl font-bold text-slate-900 mb-4">Raising <span class="gradient-text">$2M</span></h2>
+    <p class="text-xl text-slate-600 mb-10">at $12M pre-money · 14.3% dilution</p>
+    <div class="grid grid-cols-2 gap-10">
+      <div>
+        <h3 class="font-bold text-slate-900 mb-4 text-lg">Use of funds</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center">40%</div>
+            <div>
+              <div class="font-semibold text-slate-900">Engineering</div>
+              <div class="text-xs text-slate-600">COA Tier 2, Shopify app, on-chain, Bank Integration</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center">25%</div>
+            <div>
+              <div class="font-semibold text-slate-900">Sales &amp; marketing</div>
+              <div class="text-xs text-slate-600">Partnerships, vertical expansion, paid acquisition</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center">20%</div>
+            <div>
+              <div class="font-semibold text-slate-900">Team</div>
+              <div class="text-xs text-slate-600">Designer, partnerships lead, fractional CFO</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center">15%</div>
+            <div>
+              <div class="font-semibold text-slate-900">Reserve + compliance</div>
+              <div class="text-xs text-slate-600">SOC2 prep, regulatory counsel, legal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-bold text-slate-900 mb-4 text-lg">12-month milestones</h3>
+        <ul class="space-y-3 text-sm">
+          <li class="flex gap-3"><i data-lucide="target" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i><span><b class="text-slate-900">$1M ARR</b> run rate</span></li>
+          <li class="flex gap-3"><i data-lucide="target" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i><span><b class="text-slate-900">500+</b> active brands across 3+ verticals</span></li>
+          <li class="flex gap-3"><i data-lucide="target" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i><span><b class="text-slate-900">3-5</b> payment partners signed</span></li>
+          <li class="flex gap-3"><i data-lucide="target" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i><span><b class="text-slate-900">1-2</b> banks on Bank Integration tier</span></li>
+          <li class="flex gap-3"><i data-lucide="target" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i><span><b class="text-slate-900">Partner Program</b> with '68 Partners + 2-5 firms</span></li>
+          <li class="flex gap-3"><i data-lucide="target" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i><span><b class="text-slate-900">Shopify app</b> launched + active</span></li>
+          <li class="flex gap-3"><i data-lucide="target" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i><span><b class="text-slate-900">On-chain anchoring</b> live in production</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 text-center">
+      <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">Path to Series A</p>
+      <p class="text-sm text-slate-700">18-24 months · $3M+ ARR · 6+ verticals active · Target $30-50M pre at Series A (10-15x ARR multiple)</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 14 (FINAL) — CONTACT -->
+<section class="slide gradient-bg text-white" style="justify-content: center; align-items: center;">
+  <div class="flex items-center gap-4 mb-8">
+    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-3xl">B</div>
+  </div>
+  <h2 class="text-6xl font-bold mb-4 text-center">Let's build the trust layer<br><span class="gradient-text">for regulated commerce.</span></h2>
+  <div class="mt-12 grid grid-cols-3 gap-10 text-center">
+    <div>
+      <div class="text-xs uppercase tracking-wider text-slate-400 mb-2 font-semibold">Email</div>
+      <div class="text-lg text-white font-medium">max@brandrai.com</div>
+    </div>
+    <div>
+      <div class="text-xs uppercase tracking-wider text-slate-400 mb-2 font-semibold">Phone</div>
+      <div class="text-lg text-white font-medium">[FILL IN]</div>
+    </div>
+    <div>
+      <div class="text-xs uppercase tracking-wider text-slate-400 mb-2 font-semibold">Website</div>
+      <div class="text-lg text-white font-medium">brandrai.com</div>
+    </div>
+  </div>
+  <p class="mt-20 text-xs text-slate-500">Max Juhasz · Founder &amp; CEO · April 2026</p>
+</section>
+
+<script>
+  lucide.createIcons();
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  let current = 0;
+  function update() {
+    slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    counter.textContent = `${current + 1} / ${slides.length}`;
+    lucide.createIcons();
+  }
+  function next() { if (current < slides.length - 1) { current++; update(); } }
+  function prev() { if (current > 0) { current--; update(); } }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+    if (e.key === 'Home') { current = 0; update(); }
+    if (e.key === 'End') { current = slides.length - 1; update(); }
+  });
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.nav-btn')) return;
+    next();
+  });
+  update();
+</script>
+
+</body>
+</html>
