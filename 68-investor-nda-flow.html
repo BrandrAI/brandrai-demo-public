@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NDA &amp; Roadmap Access — BrandrAI</title>
+<meta name="description" content="Investor, partner, and integrator access to the BrandrAI roadmap. Sign the NDA to view.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>body { font-family: 'Inter', -apple-system, sans-serif; } .gradient-text { background: linear-gradient(135deg,#10b981 0%,#06b6d4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } .fade-in { animation: fadeIn 0.4s ease; } @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } } .sig-canvas { touch-action: none; cursor: crosshair; }</style>
+</head>
+<body class="bg-slate-50">
+
+<!-- Demo banner -->
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-amber-400">DEMO PREVIEW</span>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  Live NDA signing flow &mdash; Dropbox Sign / HelloSign integration placeholder
+</div>
+
+<!-- NAV -->
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="62a-homepage-neutral.html" class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+      <span class="font-bold text-slate-900">BrandrAI</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+      <a href="62a-homepage-neutral.html" class="hover:text-slate-900">Product</a>
+      <a href="12-pricing-page.html" class="hover:text-slate-900">Pricing</a>
+      <a href="#" class="text-slate-900 font-semibold">Partners &amp; Investors</a>
+    </div>
+    <a href="mailto:max@brandrai.com" class="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="py-14 px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">Investor, partner &amp; integrator access</div>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">The <span class="gradient-text">roadmap</span> lives behind an NDA.</h1>
+    <p class="text-lg text-slate-300 max-w-2xl mx-auto">Forward-looking product plans, revenue projections, partner pipeline, and integrations are shared with qualified investors, partners, and integrators under a standard mutual NDA. Sign below and you&apos;ll have access within seconds.</p>
+  </div>
+</section>
+
+<!-- WHO GETS ACCESS -->
+<section class="py-12 px-6 bg-white border-b border-slate-100">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-sm uppercase tracking-wider text-slate-500 font-semibold mb-5">Who this is for</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="flex items-center gap-2 mb-2"><i data-lucide="trending-up" class="w-5 h-5 text-emerald-600"></i><h3 class="font-bold text-slate-900">Investors</h3></div>
+        <p class="text-sm text-slate-600">Pre-seed, seed, and Series A funds evaluating BrandrAI. Full roadmap, projections, and cap table under NDA.</p>
+      </div>
+      <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="flex items-center gap-2 mb-2"><i data-lucide="handshake" class="w-5 h-5 text-emerald-600"></i><h3 class="font-bold text-slate-900">Partners</h3></div>
+        <p class="text-sm text-slate-600">POS platforms, ecommerce, banks, payment processors, labs, and trademark attorneys exploring integration.</p>
+      </div>
+      <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="flex items-center gap-2 mb-2"><i data-lucide="plug" class="w-5 h-5 text-emerald-600"></i><h3 class="font-bold text-slate-900">Integrators</h3></div>
+        <p class="text-sm text-slate-600">Agencies, MSOs, and tech partners planning to build on the BrandrAI API or MCP server.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NDA FORM -->
+<main class="max-w-4xl mx-auto px-6 py-12">
+
+  <div id="step1" class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center">1</div>
+      <h2 class="text-2xl font-bold text-slate-900">Your information</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-5">
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Full name *</label>
+        <input id="fullName" type="text" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none" placeholder="Jane Smith">
+      </div>
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Email *</label>
+        <input id="email" type="email" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none" placeholder="jane@firm.com">
+      </div>
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Company / firm *</label>
+        <input id="company" type="text" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none" placeholder="Acme Ventures">
+      </div>
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Title *</label>
+        <input id="title" type="text" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none" placeholder="Partner / Founder / Director">
+      </div>
+    </div>
+
+    <label class="block text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Why you&apos;re requesting access *</label>
+    <select id="reason" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none mb-6">
+      <option value="">Select one...</option>
+      <option value="investor">Investment diligence</option>
+      <option value="partner">Partnership / integration exploration</option>
+      <option value="integrator">Building on the BrandrAI API</option>
+      <option value="advisor">Advisor / reference check</option>
+      <option value="other">Other</option>
+    </select>
+
+    <button id="toStep2" class="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold flex items-center justify-center gap-2">
+      Continue to NDA
+      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+    </button>
+  </div>
+
+  <!-- STEP 2: NDA -->
+  <div id="step2" class="hidden bg-white rounded-3xl border border-slate-200 p-8 shadow-sm fade-in">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center">2</div>
+      <h2 class="text-2xl font-bold text-slate-900">Review &amp; sign the NDA</h2>
+    </div>
+
+    <!-- NDA TEXT -->
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-5 max-h-80 overflow-y-auto text-sm text-slate-700 leading-relaxed">
+      <h3 class="font-bold text-slate-900 mb-3">MUTUAL NON-DISCLOSURE AGREEMENT</h3>
+      <p class="mb-3">This Mutual Non-Disclosure Agreement (&ldquo;Agreement&rdquo;) is entered into as of the date of electronic signature below (&ldquo;Effective Date&rdquo;) by and between <span class="font-semibold">BrandrAI, Inc.</span>, a Delaware corporation (&ldquo;BrandrAI&rdquo;), and the individual and organization identified in Step 1 (&ldquo;Recipient&rdquo;). Each party may be referred to as a &ldquo;Party&rdquo; and collectively as the &ldquo;Parties.&rdquo;</p>
+      <p class="mb-2"><strong>1. Definition of Confidential Information.</strong> &ldquo;Confidential Information&rdquo; means any non-public information disclosed by either Party to the other, whether orally, in writing, or via the BrandrAI investor/partner portal, including but not limited to: product roadmap, revenue projections, customer lists, technical architecture, cap table, fundraising status, partnership terms, source code, and business strategy.</p>
+      <p class="mb-2"><strong>2. Obligations.</strong> The receiving Party shall (a) hold all Confidential Information in strict confidence, (b) not disclose Confidential Information to any third party without the disclosing Party&apos;s prior written consent, and (c) use Confidential Information solely for the purpose of evaluating a potential investment, partnership, or integration relationship.</p>
+      <p class="mb-2"><strong>3. Exclusions.</strong> Confidential Information does not include information that (a) is or becomes publicly known through no fault of the receiving Party, (b) was known to the receiving Party prior to disclosure, (c) is independently developed without use of Confidential Information, or (d) is required to be disclosed by law (with prior notice to the disclosing Party where practicable).</p>
+      <p class="mb-2"><strong>4. Term.</strong> This Agreement commences on the Effective Date and remains in effect for three (3) years. The obligations of confidentiality survive termination for an additional two (2) years.</p>
+      <p class="mb-2"><strong>5. No License or Obligation.</strong> No license to any intellectual property is granted. Nothing in this Agreement obligates either Party to enter into any further agreement or transaction.</p>
+      <p class="mb-2"><strong>6. Return or Destruction.</strong> Upon request, the receiving Party shall promptly return or destroy all Confidential Information, including copies and derivatives.</p>
+      <p class="mb-2"><strong>7. Governing Law.</strong> This Agreement is governed by the laws of the State of Delaware, without regard to conflict of laws principles. Any dispute shall be resolved in the state or federal courts located in Delaware.</p>
+      <p class="mb-2"><strong>8. Electronic Signature.</strong> The Parties agree that electronic signature of this Agreement, including via typed name and/or drawn signature below, constitutes a legally binding agreement under the U.S. Electronic Signatures in Global and National Commerce Act (E-SIGN) and the Uniform Electronic Transactions Act (UETA).</p>
+      <p class="mb-2"><strong>9. Entire Agreement.</strong> This Agreement is the entire agreement between the Parties with respect to its subject matter and supersedes all prior agreements.</p>
+      <p class="text-xs text-slate-500 mt-4 italic">A countersigned PDF will be emailed to the address provided immediately upon completion. BrandrAI uses Dropbox Sign (or equivalent e-signature service) as the binding signing system in production.</p>
+    </div>
+
+    <!-- Signature block -->
+    <div class="grid md:grid-cols-2 gap-4 mb-5">
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Type your full legal name as signature *</label>
+        <input id="sigName" type="text" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none font-serif italic text-xl" placeholder="Jane Smith">
+      </div>
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Date</label>
+        <input id="sigDate" type="text" readonly class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg bg-slate-50 text-slate-700">
+      </div>
+    </div>
+
+    <label class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200 mb-5 cursor-pointer">
+      <input type="checkbox" id="agreeBox" class="mt-1 w-4 h-4">
+      <span class="text-sm text-slate-700">I have read and agree to the Mutual Non-Disclosure Agreement above. I represent that I have authority to bind the organization listed in Step 1. I understand that this electronic signature is legally binding.</span>
+    </label>
+
+    <div class="flex flex-col sm:flex-row gap-3">
+      <button id="backToStep1" class="sm:w-auto px-5 py-3 border-2 border-slate-300 text-slate-700 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-slate-50">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        Back
+      </button>
+      <button id="submitNda" class="flex-1 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-semibold flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+        <i data-lucide="pen-tool" class="w-4 h-4"></i>
+        Sign NDA &amp; unlock roadmap
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 3: CONFIRMATION -->
+  <div id="step3" class="hidden bg-white rounded-3xl border-2 border-emerald-500 p-8 shadow-xl fade-in">
+    <div class="text-center mb-8">
+      <div class="w-20 h-20 rounded-full bg-emerald-500 flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="check" class="w-10 h-10 text-white"></i>
+      </div>
+      <h2 class="text-3xl font-bold text-slate-900 mb-2">NDA signed.</h2>
+      <p class="text-slate-600 max-w-md mx-auto">A countersigned PDF is on its way to <span id="confirmEmail" class="font-semibold text-slate-900"></span>. You now have access to the BrandrAI roadmap.</p>
+    </div>
+
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6">
+      <div class="grid grid-cols-2 gap-3 text-sm">
+        <div><span class="text-slate-500">Signed by:</span> <span id="confirmName" class="font-semibold text-slate-900"></span></div>
+        <div><span class="text-slate-500">Company:</span> <span id="confirmCompany" class="font-semibold text-slate-900"></span></div>
+        <div><span class="text-slate-500">Date:</span> <span id="confirmDate" class="font-semibold text-slate-900"></span></div>
+        <div><span class="text-slate-500">Agreement:</span> <span class="font-semibold text-slate-900">Mutual NDA v1 &middot; 3-year term</span></div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Your roadmap access</div>
+      <div class="grid md:grid-cols-3 gap-3 mb-6">
+        <a href="26-pitch-deck-live.html" class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl hover:shadow-lg transition-shadow">
+          <i data-lucide="presentation" class="w-6 h-6 text-emerald-400 mb-2"></i>
+          <div class="font-bold text-sm">Pitch deck</div>
+          <div class="text-xs text-slate-400">16 slides &middot; current raise</div>
+        </a>
+        <a href="65-feature-tour.html" class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl hover:shadow-lg transition-shadow">
+          <i data-lucide="layers" class="w-6 h-6 text-emerald-400 mb-2"></i>
+          <div class="font-bold text-sm">Full feature tour</div>
+          <div class="text-xs text-slate-400">~50 primitives across 8 sections</div>
+        </a>
+        <a href="55-FOUR_CIRCLES_VISUAL.html" class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl hover:shadow-lg transition-shadow">
+          <i data-lucide="globe" class="w-6 h-6 text-emerald-400 mb-2"></i>
+          <div class="font-bold text-sm">Four Circles thesis</div>
+          <div class="text-xs text-slate-400">Expansion roadmap &amp; TAM</div>
+        </a>
+      </div>
+      <p class="text-xs text-slate-500">Questions? Email <a href="mailto:max@brandrai.com" class="text-emerald-600 underline">max@brandrai.com</a> &middot; response within 24 hours.</p>
+    </div>
+  </div>
+
+  <!-- PRODUCTION NOTE -->
+  <div class="mt-8 p-5 bg-amber-50 border border-amber-200 rounded-xl">
+    <div class="flex items-start gap-3">
+      <i data-lucide="info" class="w-5 h-5 text-amber-700 shrink-0 mt-0.5"></i>
+      <div class="text-sm text-amber-900">
+        <strong>Preview implementation note:</strong> This is the visual + UX flow for investor/partner NDA signing. In production, the signature step will be handled by <strong>Dropbox Sign</strong> (formerly HelloSign) or DocuSign embedded iframe. Each signed NDA generates a legally-binding PDF stored with BrandrAI and emailed to both parties. Cost: ~$0.25-$3.00 per signature depending on provider. Implementation estimated 2-3 days.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="bg-slate-900 text-slate-400 py-10 px-6 text-center text-sm">
+  <p>&copy; 2026 BrandrAI, Inc. &middot; NDA governed by Delaware law &middot; Questions: max@brandrai.com</p>
+</footer>
+
+<script>
+lucide.createIcons();
+function $(id) { return document.getElementById(id); }
+
+// Set today's date in signature
+const today = new Date();
+const dateStr = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+$('sigDate').value = dateStr;
+
+// Step 1 -> 2 validation
+$('toStep2').addEventListener('click', () => {
+  const name = $('fullName').value.trim();
+  const email = $('email').value.trim();
+  const company = $('company').value.trim();
+  const title = $('title').value.trim();
+  const reason = $('reason').value;
+  if (!name || !email || !company || !title || !reason) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+  if (!email.includes('@')) {
+    alert('Please enter a valid email.');
+    return;
+  }
+  $('step1').classList.add('hidden');
+  $('step2').classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+$('backToStep1').addEventListener('click', () => {
+  $('step2').classList.add('hidden');
+  $('step1').classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Enable submit when sig + checkbox ready
+function checkSubmit() {
+  const sig = $('sigName').value.trim();
+  const agreed = $('agreeBox').checked;
+  $('submitNda').disabled = !(sig.length > 2 && agreed);
+}
+$('sigName').addEventListener('input', checkSubmit);
+$('agreeBox').addEventListener('change', checkSubmit);
+
+// Submit
+$('submitNda').addEventListener('click', () => {
+  $('confirmName').textContent = $('fullName').value;
+  $('confirmEmail').textContent = $('email').value;
+  $('confirmCompany').textContent = $('company').value;
+  $('confirmDate').textContent = dateStr;
+  $('step2').classList.add('hidden');
+  $('step3').classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
