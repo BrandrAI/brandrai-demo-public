@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandrAI Proof — Strategic Memo (Internal / Advisor)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; }
+  .gradient-text { background: linear-gradient(135deg,#10b981 0%,#06b6d4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .gradient-text-indigo { background: linear-gradient(135deg,#6366f1 0%,#a855f7 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  h2 { scroll-margin-top: 80px; }
+  @media print {
+    nav, .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    body { font-size: 11pt; }
+  }
+</style>
+</head>
+<body class="bg-slate-50">
+
+<!-- Confidential banner -->
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-amber-400">CONFIDENTIAL &middot; INTERNAL + ADVISOR</span>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  Strategic Memo: BrandrAI Proof &middot; 2026-04-22 &middot; Max Juhasz, Founder/CEO
+  <span class="mx-2 text-slate-500">&middot;</span>
+  Do not distribute without NDA
+</div>
+
+<!-- NAV -->
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50 no-print">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+      <div>
+        <div class="font-bold text-slate-900">BrandrAI Proof</div>
+        <div class="text-xs text-slate-500">Strategic Memo &middot; Internal + Advisor</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button onclick="window.print()" class="px-3 py-2 border border-slate-300 rounded-lg text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-1.5"><i data-lucide="printer" class="w-4 h-4"></i>Print / PDF</button>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 py-12 bg-white shadow-sm my-8 rounded-2xl">
+
+  <!-- HEADER -->
+  <div class="mb-10 pb-8 border-b border-slate-200">
+    <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Strategic Memo</div>
+    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight">BrandrAI Proof: <span class="gradient-text-indigo">the authenticity primitive</span> under the whole company.</h1>
+    <p class="text-lg text-slate-600 max-w-3xl">Revealing the engine. Expanding the category. Unlocking the Four Circles platform thesis.</p>
+    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+      <div><span class="text-slate-500">Prepared by:</span> <span class="font-semibold text-slate-900">Max Juhasz</span></div>
+      <div><span class="text-slate-500">Date:</span> <span class="font-semibold text-slate-900">2026-04-22</span></div>
+      <div><span class="text-slate-500">Status:</span> <span class="font-semibold text-amber-700">Draft v1</span></div>
+      <div><span class="text-slate-500">Audience:</span> <span class="font-semibold text-slate-900">Investors, advisors</span></div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="mb-10 p-5 bg-slate-50 rounded-xl border border-slate-200">
+    <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Contents</div>
+    <ol class="space-y-1.5 text-sm text-slate-700 list-decimal list-inside">
+      <li><a href="#tldr" class="hover:text-emerald-700 underline-offset-4 hover:underline">TL;DR</a></li>
+      <li><a href="#insight" class="hover:text-emerald-700 underline-offset-4 hover:underline">The insight</a></li>
+      <li><a href="#product" class="hover:text-emerald-700 underline-offset-4 hover:underline">The product &mdash; BrandrAI Proof</a></li>
+      <li><a href="#tam" class="hover:text-emerald-700 underline-offset-4 hover:underline">Market size &middot; vertical-by-vertical</a></li>
+      <li><a href="#moat" class="hover:text-emerald-700 underline-offset-4 hover:underline">Why we win</a></li>
+      <li><a href="#thesis" class="hover:text-emerald-700 underline-offset-4 hover:underline">How it strengthens the Four Circles thesis</a></li>
+      <li><a href="#risks" class="hover:text-emerald-700 underline-offset-4 hover:underline">Risks &amp; honest unknowns</a></li>
+      <li><a href="#roadmap" class="hover:text-emerald-700 underline-offset-4 hover:underline">Roadmap &amp; asks</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 TLDR -->
+  <section id="tldr" class="mb-10">
+    <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">1 &middot; TL;DR</div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">The same engine that verifies cannabis COAs verifies everything.</h2>
+    <div class="bg-gradient-to-br from-emerald-50 to-cyan-50 border-l-4 border-emerald-500 p-5 rounded-r-xl">
+      <ul class="space-y-2 text-slate-800 leading-relaxed">
+        <li><strong>Insight:</strong> the COA verification pipeline we built for cannabis is a general-purpose cryptographic timestamping + AI-authenticity service. Swap the input format and it works for patents, academic research, creative work, contracts, and digital evidence.</li>
+        <li><strong>Product:</strong> &ldquo;BrandrAI Proof&rdquo; &mdash; standalone authenticity-as-a-service. Single stamp from $5; creator tier $49/mo; pro $199/mo; enterprise custom.</li>
+        <li><strong>Expansion:</strong> today&apos;s SOM of cannabis is $500M+. BrandrAI Proof&apos;s SOM across creative, academic, legal, and compliance is conservatively $20B+. Same engineering team, same tech, minimal new code.</li>
+        <li><strong>Moat:</strong> nobody else combines cryptographic timestamp + AI metadata extraction + court-ready PDF certificate + public verify page. OpenTimestamps stamps; Copyright Office files; we do both and add AI context.</li>
+        <li><strong>Thesis:</strong> reframes BrandrAI from &ldquo;cannabis brand OS&rdquo; to &ldquo;the OS for anything that has to be provably real.&rdquo; Cleaner investor story, bigger TAM, same team.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2 INSIGHT -->
+  <section id="insight" class="mb-10">
+    <div class="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">2 &middot; The insight</div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">We already built the hardest part &mdash; for a narrower market.</h2>
+    <p class="text-slate-700 leading-relaxed mb-4">The COA verification engine we shipped in April 2026 does five things in sequence:</p>
+    <ol class="list-decimal list-inside space-y-2 text-slate-700 leading-relaxed mb-5 ml-4">
+      <li>Accepts a document (PDF, image, data file) at an exact moment in time</li>
+      <li>Computes a cryptographic SHA-256 hash bound to a trusted UTC timestamp</li>
+      <li>Runs multi-modal AI analysis to extract structured metadata (authors, dates, entities, numbers)</li>
+      <li>Scores the document for authenticity signals vs. known-good examples</li>
+      <li>Produces a public, tamper-evident verify page with a QR code and signed certificate</li>
+    </ol>
+    <p class="text-slate-700 leading-relaxed mb-4">Strip off &ldquo;cannabis COA&rdquo; from the above list. What remains is a <span class="font-semibold text-slate-900">general-purpose authenticity infrastructure</span> that solves the same problem across every knowledge-work vertical:</p>
+    <ul class="space-y-1.5 text-slate-700 leading-relaxed ml-4 list-disc list-inside">
+      <li>Academia: prior-art timestamps for dissertations, datasets, peer-review submissions</li>
+      <li>Patent / IP: invention-date proof for engineering notebooks, trade-secret disclosure trails</li>
+      <li>Creative: authorship timestamps for screenwriters, novelists, musicians, photographers, digital artists</li>
+      <li>Industrial: policy-in-effect proofs, engineering spec versioning, contract tamper detection</li>
+      <li>Legal: chain-of-custody for digital evidence, deposition exhibits, affidavits</li>
+    </ul>
+    <p class="text-slate-700 leading-relaxed mt-4">The underlying &ldquo;is this real? when? verified by whom?&rdquo; problem is identical across every one of these. We solved it once for cannabis because that&apos;s where willingness-to-pay was highest and regulatory pressure was most acute. <strong>We did not realize, until recently, that we had solved it for everyone else at the same time.</strong></p>
+  </section>
+
+  <!-- 3 PRODUCT -->
+  <section id="product" class="mb-10 page-break">
+    <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">3 &middot; The product</div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">BrandrAI Proof &mdash; authenticity as a service.</h2>
+    <p class="text-slate-700 leading-relaxed mb-5">A standalone SaaS product built on the existing BrandrAI verification engine, repositioned for every user who needs to prove a document, file, or creative work existed at a given moment.</p>
+
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">What user does</div>
+        <ol class="space-y-1.5 text-sm text-slate-700 list-decimal list-inside">
+          <li>Drag document into upload box (or API)</li>
+          <li>Optional: add context (title, creator, purpose)</li>
+          <li>Pay $5 one-off or subscribe</li>
+          <li>Receive: PDF certificate + public verify URL + QR code</li>
+        </ol>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">What user gets</div>
+        <ul class="space-y-1.5 text-sm text-slate-700 list-disc list-inside">
+          <li>Legally defensible timestamp (court-accepted cryptographic proof)</li>
+          <li>Tamper-evident document binding (any edit breaks the hash)</li>
+          <li>Permanent public verify page at <code class="text-xs bg-slate-100 px-1 py-0.5 rounded">brandrai.com/proof/&lt;uuid&gt;</code></li>
+          <li>AI-extracted metadata summary (authors, dates, key claims)</li>
+          <li>Court-ready PDF certificate with signed attestation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+      <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Pricing tiers</div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+        <div><span class="text-slate-500">Single:</span> <span class="font-semibold text-slate-900">$5/doc</span></div>
+        <div><span class="text-slate-500">Creator ($49/mo):</span> <span class="font-semibold text-slate-900">50 stamps</span></div>
+        <div><span class="text-slate-500">Pro ($199/mo):</span> <span class="font-semibold text-slate-900">Unlimited + chain</span></div>
+        <div><span class="text-slate-500">Enterprise:</span> <span class="font-semibold text-slate-900">Custom + SLA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 TAM -->
+  <section id="tam" class="mb-10">
+    <div class="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">4 &middot; Market size</div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">From $500M cannabis to $20B+ authenticity.</h2>
+    <p class="text-slate-700 leading-relaxed mb-5">Vertical-by-vertical, here is the rough SOM if BrandrAI Proof captures even single-digit percentage of each addressable user base.</p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm bg-white border border-slate-200 rounded-xl">
+        <thead class="bg-slate-50">
+          <tr>
+            <th class="text-left py-3 px-4 text-xs uppercase tracking-wider text-slate-500 font-semibold">Vertical</th>
+            <th class="text-left py-3 px-4 text-xs uppercase tracking-wider text-slate-500 font-semibold">Addressable users</th>
+            <th class="text-left py-3 px-4 text-xs uppercase tracking-wider text-slate-500 font-semibold">Current paid alternative</th>
+            <th class="text-right py-3 px-4 text-xs uppercase tracking-wider text-slate-500 font-semibold">SOM estimate</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-700">
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Regulated commerce (cannabis, supplements, CBD)</td>
+            <td class="py-3 px-4">~20K US brands</td>
+            <td class="py-3 px-4 text-xs text-slate-500">Manual compliance ops</td>
+            <td class="py-3 px-4 text-right font-bold">$500M+</td>
+          </tr>
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Screenwriters + WGA</td>
+            <td class="py-3 px-4">~70K registrations/yr</td>
+            <td class="py-3 px-4 text-xs text-slate-500">WGA @ $20/script</td>
+            <td class="py-3 px-4 text-right font-bold">$50M</td>
+          </tr>
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Novelists + independent writers</td>
+            <td class="py-3 px-4">~2M active writers</td>
+            <td class="py-3 px-4 text-xs text-slate-500">Copyright Office $45-65</td>
+            <td class="py-3 px-4 text-right font-bold">$400M</td>
+          </tr>
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Patent pre-filing documentation</td>
+            <td class="py-3 px-4">~500K US patent apps/yr</td>
+            <td class="py-3 px-4 text-xs text-slate-500">Attorney billable time ($200-500/hr)</td>
+            <td class="py-3 px-4 text-right font-bold">$1B+</td>
+          </tr>
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Academic research + datasets</td>
+            <td class="py-3 px-4">~4M researchers globally</td>
+            <td class="py-3 px-4 text-xs text-slate-500">None (nothing purpose-built)</td>
+            <td class="py-3 px-4 text-right font-bold">$600M</td>
+          </tr>
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Photography + visual art</td>
+            <td class="py-3 px-4">~15M paid creators</td>
+            <td class="py-3 px-4 text-xs text-slate-500">Copyright Office, NFT platforms</td>
+            <td class="py-3 px-4 text-right font-bold">$2B</td>
+          </tr>
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Enterprise contract authenticity</td>
+            <td class="py-3 px-4">~1M US companies w/ 10+ employees</td>
+            <td class="py-3 px-4 text-xs text-slate-500">DocuSign CLM ($600-5K/mo)</td>
+            <td class="py-3 px-4 text-right font-bold">$8B+</td>
+          </tr>
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Legal evidence chain-of-custody</td>
+            <td class="py-3 px-4">~440K US law firms</td>
+            <td class="py-3 px-4 text-xs text-slate-500">Notarize.com, legal tech stacks</td>
+            <td class="py-3 px-4 text-right font-bold">$3B</td>
+          </tr>
+          <tr class="border-t border-slate-100">
+            <td class="py-3 px-4 font-semibold">Compliance / audit trails (SOC 2, GDPR, HIPAA)</td>
+            <td class="py-3 px-4">~100K US companies</td>
+            <td class="py-3 px-4 text-xs text-slate-500">Vanta, Drata ($5K+/yr per co)</td>
+            <td class="py-3 px-4 text-right font-bold">$5B+</td>
+          </tr>
+          <tr class="border-t-2 border-slate-300 bg-emerald-50">
+            <td class="py-4 px-4 font-bold text-slate-900">Combined SOM (10-yr capture target)</td>
+            <td class="py-4 px-4"></td>
+            <td class="py-4 px-4"></td>
+            <td class="py-4 px-4 text-right font-bold text-emerald-700 text-lg">~$20B+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-slate-500 mt-4 italic">Estimates are directional and conservative. Each vertical assumes single-digit percent capture and current paid-alternative ARPUs. Sources: industry reports, USPTO, WGA, US Copyright Office, Gartner CLM reports, BLS. Full sourced breakdown available on request.</p>
+  </section>
+
+  <!-- 5 MOAT -->
+  <section id="moat" class="mb-10 page-break">
+    <div class="text-xs uppercase tracking-wider text-cyan-700 font-semibold mb-2">5 &middot; Why we win</div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">Everyone else picked a lane. We ran the whole road.</h2>
+    <p class="text-slate-700 leading-relaxed mb-5">Authenticity is a crowded space if you look at it a slice at a time. But nobody has stitched the full stack together the way we have. Each competitor below owns exactly one primitive; we own the bundle.</p>
+
+    <div class="space-y-4">
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start justify-between mb-2">
+          <h3 class="font-bold text-slate-900">vs. OpenTimestamps / Bitcoin anchoring</h3>
+          <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">Technically capable</span>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed"><strong>They do:</strong> free, immutable timestamp via Bitcoin. Developer-only UX. No certificate, no verify page, no metadata, no legal packaging. <strong>We do:</strong> all of that plus the timestamp. The engineer uses OTS; the screenwriter, researcher, and lawyer use Proof. Bigger audience.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start justify-between mb-2">
+          <h3 class="font-bold text-slate-900">vs. US Copyright Office / WGA registration</h3>
+          <span class="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold">Legally accepted, slow</span>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed"><strong>They do:</strong> slow (3-month average for Copyright Office), niche (WGA is scripts only), expensive ($20-65 per registration). Full legal certification. <strong>We do:</strong> faster (30 sec), cheaper ($5), broader (any format). We&apos;re not a <em>replacement</em> for formal registration &mdash; we&apos;re the cheap, instant, continuous layer underneath. Writers do Proof timestamps weekly, Copyright Office once.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start justify-between mb-2">
+          <h3 class="font-bold text-slate-900">vs. DocuSign / Adobe Sign CLM</h3>
+          <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-semibold">Owns signing</span>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed"><strong>They do:</strong> signing, routing, envelope lifecycle, compliance. $600-5K/mo per business. <strong>We do:</strong> cryptographic hash + tamper evidence + AI analysis. Complementary, not competing &mdash; DocuSign integrates Proof for an upgraded tamper-proof tier. Partnership play more than replacement.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start justify-between mb-2">
+          <h3 class="font-bold text-slate-900">vs. Vanta / Drata / Secureframe</h3>
+          <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-semibold">Owns SOC 2 workflow</span>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed"><strong>They do:</strong> compliance frameworks, evidence collection workflow, auditor coordination. <strong>We do:</strong> the underlying cryptographic evidence layer. Every control document they track could have a Proof timestamp auto-applied. API partnership territory.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start justify-between mb-2">
+          <h3 class="font-bold text-slate-900">vs. Stampery / WordProof / Surety (historical)</h3>
+          <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full font-semibold">Tried, mostly dead</span>
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">Crypto-first timestamping startups from the 2015-2019 era. Most dead or pivoted. Failed because they led with &ldquo;blockchain&rdquo; not &ldquo;solve your problem.&rdquo; No AI, no user-friendly certificates, developer-only UX. We learn from them: lead with the use case, not the tech. Crypto is the plumbing, not the product.</p>
+      </div>
+    </div>
+
+    <p class="text-slate-700 leading-relaxed mt-6"><strong>The bundled advantage:</strong> every one of these competitors is a single-primitive solution. We combine cryptographic timestamp + AI metadata extraction + court-ready certificate + public QR verify page + brand integration. No one else does all five. Users don&apos;t want five vendors; they want one that solves &ldquo;prove this is real, in a way I can actually use.&rdquo;</p>
+  </section>
+
+  <!-- 6 THESIS -->
+  <section id="thesis" class="mb-10">
+    <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">6 &middot; The Four Circles thesis, strengthened</div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">From &ldquo;brand OS for regulated markets&rdquo; to &ldquo;the OS for anything provably real.&rdquo;</h2>
+    <p class="text-slate-700 leading-relaxed mb-5">The investor question that gets harder as we scale: <em>&ldquo;How do you justify cannabis as a wedge when cannabis is also your ceiling?&rdquo;</em> BrandrAI Proof answers that question before it&apos;s asked.</p>
+
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="bg-rose-50 border border-rose-200 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-rose-600 font-semibold mb-2">Before this memo</div>
+        <div class="text-sm text-slate-700 leading-relaxed">
+          <p class="mb-2"><strong>Pitch:</strong> brand operating system for regulated commerce. Cannabis wedge, then CPG, then agentic commerce.</p>
+          <p class="mb-2"><strong>Gap:</strong> each expansion feels like a <em>different</em> product for a <em>different</em> customer. Acquirers and investors struggle to see the throughline.</p>
+          <p><strong>Failure mode:</strong> get stuck at $10M ARR doing cannabis well, with no clean story for why you deserve the Series B.</p>
+        </div>
+      </div>
+      <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">After this memo</div>
+        <div class="text-sm text-slate-700 leading-relaxed">
+          <p class="mb-2"><strong>Pitch:</strong> cryptographic authenticity primitive. Cannabis is where the infrastructure got <em>built</em>, not the ceiling of what it does.</p>
+          <p class="mb-2"><strong>Unification:</strong> COA verification, trademark filings, brand assets, contracts, research, creative work &mdash; all run on the same Proof engine. One product, many surfaces.</p>
+          <p><strong>Path:</strong> $10M cannabis &rarr; $100M cross-vertical authenticity &rarr; partnership layer underneath DocuSign / Vanta / Copyright Office.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl p-6">
+      <div class="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-2">The new one-liner</div>
+      <p class="text-xl font-bold mb-3">BrandrAI is the operating system for anything that has to be provably real.</p>
+      <p class="text-sm text-slate-300">Products (COA &middot; verify). Brands (trademark). Creative work (timestamp &middot; authorship). Compliance (audit trail). Research (prior art). All powered by the same underlying Proof engine. Each vertical is a go-to-market surface; the engine is the moat.</p>
+    </div>
+  </section>
+
+  <!-- 7 RISKS -->
+  <section id="risks" class="mb-10 page-break">
+    <div class="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">7 &middot; Risks &amp; honest unknowns</div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">What could break this.</h2>
+
+    <div class="space-y-4">
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center shrink-0 text-rose-700 font-bold text-sm">1</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Dilution of the cannabis story before cannabis pays.</h3>
+            <p class="text-sm text-slate-700 leading-relaxed"><strong>Risk:</strong> talking too much about Proof pre-Series A makes investors wonder if we&apos;re focused. <strong>Mitigation:</strong> keep Proof internal + waitlist-only until post-May 1 launch, post-Ohio traction. Memo goes to advisors now; product page launches with traction. Don&apos;t lead with Proof until cannabis ARR is &gt;$1M run rate.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center shrink-0 text-rose-700 font-bold text-sm">2</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">&ldquo;Horizontal is harder than vertical.&rdquo;</h3>
+            <p class="text-sm text-slate-700 leading-relaxed"><strong>Risk:</strong> classic SaaS wisdom says pick a vertical, dominate it, then expand. Proof is horizontal. <strong>Mitigation:</strong> we&apos;re NOT going horizontal on day one. Cannabis is still the go-to-market vertical. Proof is the technical bundle that unlocks adjacent verticals <em>one at a time</em> &mdash; each one a separate GTM motion using the same engine. This is the Shopify playbook: built for clothing merchants first, then everyone.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center shrink-0 text-rose-700 font-bold text-sm">3</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Legal defensibility of the timestamp.</h3>
+            <p class="text-sm text-slate-700 leading-relaxed"><strong>Risk:</strong> we&apos;re claiming Proof timestamps are court-accepted. In practice that depends on jurisdiction, case specifics, and whether opposing counsel challenges the method. <strong>Mitigation:</strong> pair with optional on-chain anchoring (Q3 2026) for strongest evidentiary weight. Engage a legal advisor to produce a whitepaper on admissibility. Offer an &ldquo;enhanced&rdquo; enterprise tier that includes notarized attestation for highest-stakes use.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center shrink-0 text-rose-700 font-bold text-sm">4</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Existing platforms build this as a feature.</h3>
+            <p class="text-sm text-slate-700 leading-relaxed"><strong>Risk:</strong> DocuSign, Adobe, Vanta could add cryptographic timestamping as a bullet on their own roadmap and absorb the use case. <strong>Mitigation:</strong> speed. Launch Proof Q3 2026 while incumbents are still focused on their core. Build the brand. Become the default answer on authenticity so when DocuSign wants to launch it, they partner with us instead. Alternately: sell/license the engine.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center shrink-0 text-rose-700 font-bold text-sm">5</div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Cost of hashing + storage + AI at scale.</h3>
+            <p class="text-sm text-slate-700 leading-relaxed"><strong>Risk:</strong> $5/stamp pricing may not leave room for AI analysis cost (GPT vision is ~$0.10-0.50/call) + permanent storage. <strong>Mitigation:</strong> tier AI analysis so low-tier = hash only + basic metadata; pro tier = deep AI. Storage is near-free for small docs. At $49/mo creator tier with 50 stamps, gross margin modeled at 65-75%.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 ROADMAP -->
+  <section id="roadmap" class="mb-10">
+    <div class="text-xs uppercase tracking-wider text-blue-700 font-semibold mb-2">8 &middot; Roadmap &amp; asks</div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">What we do next.</h2>
+
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Next 30 days (pre-May 1)</div>
+        <ul class="space-y-1.5 text-sm text-slate-700 list-disc list-inside">
+          <li>Memo distributed to 3-5 trusted advisors (including Sheri) for directional feedback</li>
+          <li>Product page (71-brandrai-proof.html) launches at waitlist-only URL</li>
+          <li>Collect 100+ waitlist signups organically from BrandrAI customer base</li>
+          <li>Do NOT externally position Proof as main narrative until Ohio cannabis traction lands</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Q2 2026 (May-Jun)</div>
+        <ul class="space-y-1.5 text-sm text-slate-700 list-disc list-inside">
+          <li>Ohio cannabis launch, build ARR, collect first real Proof data</li>
+          <li>Sheri (strategic advisor) opens doors in creative + academic verticals for Proof design-partner conversations</li>
+          <li>Engineering: minimal fork from existing engine to support generic-document upload flow</li>
+          <li>Close pre-seed / seed round using the upgraded thesis</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Q3 2026 (Jul-Sep)</div>
+        <ul class="space-y-1.5 text-sm text-slate-700 list-disc list-inside">
+          <li>Proof soft-launch to waitlist, $5 single-stamp + $49/mo creator tier</li>
+          <li>On-chain anchoring goes live (shared primitive with verify pages)</li>
+          <li>First 3 design partners in academic + creative verticals</li>
+          <li>Patent provisional filed on the combined timestamp-plus-AI-verification pipeline</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Q4 2026 + beyond</div>
+        <ul class="space-y-1.5 text-sm text-slate-700 list-disc list-inside">
+          <li>Enterprise tier launches (legal, compliance)</li>
+          <li>Integration partnerships: DocuSign, Vanta, Adobe, Copyright Office</li>
+          <li>International expansion (Madrid Protocol IP, EU GDPR audit trails)</li>
+          <li>Series A positioning: &ldquo;the authenticity primitive for the AI era&rdquo;</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-br from-emerald-50 to-cyan-50 border border-emerald-200 rounded-xl p-5">
+      <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">The ask (for advisors)</div>
+      <ul class="space-y-2 text-sm text-slate-700 list-disc list-inside">
+        <li><strong>Sheri + strategic advisors:</strong> directional sanity check. Is this real? What am I missing? Who should I talk to in creative + academic + legal?</li>
+        <li><strong>Investor-side advisors:</strong> help position this in the Series A narrative without diluting the cannabis-wedge story pre-traction</li>
+        <li><strong>Legal advisor (once engaged):</strong> draft an admissibility whitepaper on Proof timestamps in US courts &mdash; removes objection #3</li>
+        <li><strong>Everyone:</strong> warm intros to 3 design partners each in the priority verticals (creative, academic, legal)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="mt-12 pt-8 border-t border-slate-200 text-center">
+    <p class="text-slate-500 italic text-sm max-w-2xl mx-auto">This memo is a snapshot. Directionally correct, not exhaustively accurate. Feedback welcome. Distribute only under NDA. Contact <a href="mailto:max@brandrai.com" class="text-emerald-700 underline">max@brandrai.com</a>.</p>
+    <p class="text-slate-400 text-xs mt-6">&copy; 2026 BrandrAI, Inc. &middot; Confidential and proprietary</p>
+  </div>
+
+</main>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

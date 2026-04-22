@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrations — BrandrAI</title>
+<meta name="description" content="What BrandrAI integrates with today — and what's shipping next. Honest status for every platform.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; }
+  .gradient-text { background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .pill-live { background: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+  .pill-dev { background: #fed7aa; color: #9a3412; border: 1px solid #f97316; }
+  .pill-road { background: #e0e7ff; color: #3730a3; border: 1px solid #6366f1; }
+  .pill-request { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+  .platform-card { transition: all 0.2s; }
+  .platform-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+</style>
+</head>
+<body class="bg-slate-50">
+
+<!-- Demo banner -->
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-amber-400">CORRECTED VERSION</span>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  Replacement for app.brandrai.com/platforms &middot; Honest-status tagging &middot; For Mike review
+</div>
+
+<!-- NAV -->
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="62a-homepage-neutral.html" class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+      <span class="font-bold text-slate-900">BrandrAI</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+      <a href="62a-homepage-neutral.html" class="hover:text-slate-900">Product</a>
+      <a href="12-pricing-page.html" class="hover:text-slate-900">Pricing</a>
+      <a href="#" class="text-slate-900 font-semibold">Integrations</a>
+      <a href="65-feature-tour.html" class="hover:text-slate-900">Feature tour</a>
+    </div>
+    <a href="17-merchant-dashboard.html" class="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800">Get started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="py-14 px-6 bg-gradient-to-br from-slate-50 to-white border-b border-slate-100">
+  <div class="max-w-5xl mx-auto">
+    <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">Integrations &amp; Roadmap</div>
+    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">What we <span class="gradient-text">actually</span> integrate with &mdash; and what ships next.</h1>
+    <p class="text-lg text-slate-600 max-w-3xl mb-6">We only claim what we&apos;ve shipped. One platform is live today. Several are in active development. Everything else is a roadmap signal &mdash; cast your vote below if it&apos;s one you need.</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full pill-live">Live today</span>
+      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full pill-dev">In active dev</span>
+      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full pill-road">On roadmap</span>
+      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full pill-request">Requested &middot; vote</span>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE -->
+<section class="py-14 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-6">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider rounded-full pill-live">Live today</span>
+        <span class="text-xs text-slate-500">1 platform in production</span>
+      </div>
+      <h2 class="text-2xl font-bold text-slate-900">Shipping verified data to real stores.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="platform-card md:col-span-3 lg:col-span-2 p-6 bg-gradient-to-br from-emerald-50 to-white rounded-2xl border-2 border-emerald-500 shadow-lg">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center font-bold text-indigo-700 text-xl shrink-0">Wo</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <h3 class="text-xl font-bold text-slate-900">WordPress + WooCommerce</h3>
+              <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full pill-live">Live</span>
+            </div>
+            <p class="text-sm text-slate-600 mb-3">One-way and two-way product sync via the BrandrAI plugin. Image URL resolution, metadata mapping, batch imports, COA binding, and branded verify-page embedding. Shipping to real brand customers today.</p>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 bg-slate-100 rounded text-slate-700">Plugin install</span>
+              <span class="px-2 py-1 bg-slate-100 rounded text-slate-700">Product sync</span>
+              <span class="px-2 py-1 bg-slate-100 rounded text-slate-700">Image + metadata</span>
+              <span class="px-2 py-1 bg-slate-100 rounded text-slate-700">Verify-page embed</span>
+              <span class="px-2 py-1 bg-slate-100 rounded text-slate-700">Batch import</span>
+            </div>
+          </div>
+        </div>
+        <a href="17-merchant-dashboard.html" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800">Install the plugin <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IN DEV -->
+<section class="py-14 px-6 bg-slate-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-6">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider rounded-full pill-dev">In active dev</span>
+        <span class="text-xs text-slate-500">Scaffolded in staging &middot; shipping Q2&ndash;Q4 2026</span>
+      </div>
+      <h2 class="text-2xl font-bold text-slate-900">The next wave.</h2>
+      <p class="text-sm text-slate-600 mt-1">These are in code, not just in a plan. No commitment on exact ship dates &mdash; we update this page when they hit production.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div class="platform-card p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center font-bold text-emerald-600 shrink-0">Sh</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1"><h3 class="font-bold text-slate-900">Shopify</h3><span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full pill-dev">In dev</span></div>
+            <p class="text-xs text-slate-600">Adapter in staging. Dedicated Shopify app via contract developer, target Q3&ndash;Q4 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-card p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center font-bold text-sky-600 shrink-0">Sq</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1"><h3 class="font-bold text-slate-900">Square POS</h3><span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full pill-dev">In dev</span></div>
+            <p class="text-xs text-slate-600">In-store + online catalog parity. Priority for dispensary + wellness verticals. Shipping Q2&ndash;Q3 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-card p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center font-bold text-amber-700 shrink-0"><i data-lucide="plug-zap" class="w-6 h-6"></i></div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1"><h3 class="font-bold text-slate-900">Metrc (Ohio)</h3><span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full pill-dev">In dev &middot; May 1 target</span></div>
+            <p class="text-xs text-slate-600">Vendor application approved; awaiting production keys. Integration scaffolded; target live for Ohio launch event May 1, 2026.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="py-14 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-6">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider rounded-full pill-road">On roadmap</span>
+        <span class="text-xs text-slate-500">Committed direction &middot; not yet in code</span>
+      </div>
+      <h2 class="text-2xl font-bold text-slate-900">What we&apos;re building toward.</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div class="platform-card p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center font-bold text-slate-700 shrink-0">Mg</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1"><h3 class="font-bold text-slate-900">Magento / Adobe Commerce</h3><span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full pill-road">Roadmap</span></div>
+            <p class="text-xs text-slate-600">Enterprise catalog sync for larger CPG operators. Targeted for late 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-card p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center font-bold text-emerald-700 shrink-0">Bi</div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1"><h3 class="font-bold text-slate-900">BioTrack</h3><span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full pill-road">Roadmap</span></div>
+            <p class="text-xs text-slate-600">NM + WA + other BioTrack states. Same unified verify layer, multi-state support. Scoped for Q3&ndash;Q4 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-card p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center font-bold text-indigo-600 shrink-0"><i data-lucide="smartphone" class="w-6 h-6"></i></div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1"><h3 class="font-bold text-slate-900">Mobile apps (buildxone)</h3><span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full pill-road">Roadmap</span></div>
+            <p class="text-xs text-slate-600">Branded iOS/Android apps generated from your BrandrAI catalog. Via buildxone partnership. Q3 2026 target.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="platform-card p-5 bg-white rounded-2xl border border-slate-200">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center font-bold text-slate-700 shrink-0"><i data-lucide="terminal" class="w-6 h-6"></i></div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1"><h3 class="font-bold text-slate-900">MCP server</h3><span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full pill-road">Roadmap</span></div>
+            <p class="text-xs text-slate-600">Agent-native API over Model Context Protocol. Let AI agents query your catalog and verify status.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REQUESTED / VOTE -->
+<section class="py-14 px-6 bg-slate-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-6">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider rounded-full pill-request">Requested</span>
+        <span class="text-xs text-slate-500">Vote for what you need next</span>
+      </div>
+      <h2 class="text-2xl font-bold text-slate-900">Customer-requested &mdash; help us prioritize.</h2>
+      <p class="text-sm text-slate-600 mt-1">These aren&apos;t built yet. They&apos;re in the queue based on customer demand. Vote for yours &mdash; we pick by weekly tally.</p>
+    </div>
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-3" id="voteGrid">
+      <!-- Cards generated by JS -->
+    </div>
+
+    <!-- Request form -->
+    <div class="mt-8 bg-white rounded-2xl border border-slate-200 p-6">
+      <h3 class="font-bold text-slate-900 mb-1">Don&apos;t see your platform?</h3>
+      <p class="text-sm text-slate-600 mb-4">Tell us which one and we&apos;ll add it to the voting board. If enough customers want the same thing, it moves to roadmap.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input id="reqPlatform" type="text" placeholder="Platform name (e.g. Lightspeed, Weedmaps)" class="flex-1 px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none">
+        <input id="reqEmail" type="email" placeholder="Your email" class="flex-1 px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none">
+        <button id="reqBtn" class="px-5 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold">Submit request</button>
+      </div>
+      <p id="reqMsg" class="text-xs text-emerald-700 mt-2 hidden">Request received &mdash; we&apos;ll add it to the voting board if it isn&apos;t already.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section class="py-12 px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-start gap-4">
+      <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center shrink-0"><i data-lucide="shield-check" class="w-6 h-6 text-emerald-400"></i></div>
+      <div>
+        <h3 class="text-xl font-bold mb-2">Why this page reads differently than most SaaS integration pages.</h3>
+        <p class="text-slate-300 mb-3">Most integration pages list every logo a company <em>could theoretically</em> integrate with. We don&apos;t do that. Listed integrations reflect real production status: "Live" means shipping to paying customers today. "In active dev" means in staging, code written, not yet live. "Roadmap" means committed direction, not yet in code. "Requested" means customer-demand signal, nothing more.</p>
+        <p class="text-sm text-slate-400 italic">If a platform shows up here, that status is accurate as of the last deploy. If you want to verify a specific integration&apos;s status, email <a href="mailto:support@brandrai.com" class="text-emerald-400 underline">support@brandrai.com</a> &mdash; we&apos;ll tell you exactly where it is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<footer class="bg-slate-900 text-slate-400 py-10 px-6 text-center text-sm">
+  <p class="mb-3">&copy; 2026 BrandrAI, Inc. &middot; Integration status accurate as of last deploy.</p>
+  <p class="text-xs text-slate-500 max-w-3xl mx-auto">Platform names and trademarks are property of their respective owners. Listing a platform does not imply partnership, endorsement, or affiliation unless explicitly stated. Integration availability varies by plan. &ldquo;In active dev&rdquo; and &ldquo;roadmap&rdquo; do not constitute commitment to delivery dates &mdash; we update this page when status changes.</p>
+</footer>
+
+<script>
+lucide.createIcons();
+
+const REQUESTED = [
+  { name: 'BigCommerce', icon: 'BC', votes: 34 },
+  { name: 'Lightspeed Retail', icon: 'Li', votes: 28 },
+  { name: 'Weedmaps', icon: 'Wm', votes: 61 },
+  { name: 'Leafly menu', icon: 'Le', votes: 47 },
+  { name: 'Dutchie POS', icon: 'Du', votes: 55 },
+  { name: 'Treez', icon: 'Tr', votes: 22 },
+  { name: 'Flowhub', icon: 'Fl', votes: 18 },
+  { name: 'Greenline POS', icon: 'Gl', votes: 15 },
+  { name: 'Jane Technologies', icon: 'Ja', votes: 31 },
+  { name: 'Klaviyo', icon: 'Kl', votes: 24 },
+  { name: 'Mailchimp', icon: 'Mc', votes: 12 },
+  { name: 'HubSpot', icon: 'Hs', votes: 19 },
+  { name: 'Salesforce', icon: 'Sf', votes: 9 },
+  { name: 'Webflow', icon: 'Wf', votes: 16 },
+  { name: 'Wix', icon: 'Wx', votes: 7 },
+  { name: 'Squarespace', icon: 'Sq', votes: 13 }
+];
+
+const grid = document.getElementById('voteGrid');
+REQUESTED.sort((a,b) => b.votes - a.votes).forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'platform-card p-4 bg-white rounded-xl border border-slate-200';
+  card.innerHTML = `
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-slate-600 text-xs shrink-0">${p.icon}</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-slate-900 text-sm truncate">${p.name}</div>
+        <div class="text-xs text-slate-500"><span class="vote-count">${p.votes}</span> votes</div>
+      </div>
+    </div>
+    <button class="vote-btn w-full py-2 text-xs font-semibold border border-slate-300 text-slate-700 rounded-lg hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors">
+      <i data-lucide="arrow-up" class="w-3 h-3 inline"></i> Vote
+    </button>
+  `;
+  const btn = card.querySelector('.vote-btn');
+  const count = card.querySelector('.vote-count');
+  btn.addEventListener('click', () => {
+    if (btn.dataset.voted) return;
+    btn.dataset.voted = '1';
+    count.textContent = (parseInt(count.textContent) + 1);
+    btn.innerHTML = '<i data-lucide="check" class="w-3 h-3 inline"></i> Voted';
+    btn.classList.add('bg-emerald-500', 'text-white', 'border-emerald-500');
+    lucide.createIcons();
+  });
+  grid.appendChild(card);
+});
+lucide.createIcons();
+
+document.getElementById('reqBtn').addEventListener('click', () => {
+  const p = document.getElementById('reqPlatform').value.trim();
+  const e = document.getElementById('reqEmail').value.trim();
+  if (!p || !e.includes('@')) { alert('Please enter a platform name and email.'); return; }
+  document.getElementById('reqMsg').classList.remove('hidden');
+  document.getElementById('reqPlatform').value = '';
+  document.getElementById('reqEmail').value = '';
+});
+</script>
+
+</body>
+</html>

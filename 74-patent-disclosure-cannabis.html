@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Disclosure — Cannabis COA Verification (CIP)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; font-size: 10.5pt; line-height: 1.5; }
+  h2 { scroll-margin-top: 80px; }
+  pre { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 9pt; line-height: 1.4; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; }
+  @media print {
+    nav, .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    body { font-size: 9.5pt; }
+  }
+</style>
+</head>
+<body class="bg-slate-50">
+
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-amber-400">CONFIDENTIAL &middot; ATTORNEY WORK PRODUCT</span>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  Engineering disclosure for patent continuation / CIP &middot; Do not distribute without NDA
+</div>
+
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50 no-print">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+      <div>
+        <div class="font-bold text-slate-900 text-sm">Engineering Disclosure</div>
+        <div class="text-xs text-slate-500">Cannabis COA Verification — for patent attorney review</div>
+      </div>
+    </div>
+    <button onclick="window.print()" class="px-3 py-2 border border-slate-300 rounded-lg text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-1.5"><i data-lucide="printer" class="w-4 h-4"></i>Print / PDF</button>
+  </div>
+</nav>
+
+<main class="max-w-4xl mx-auto px-8 py-10 bg-white shadow-sm my-6 rounded-2xl">
+
+<!-- Header -->
+<div class="mb-8 pb-6 border-b-2 border-slate-200">
+  <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">Engineering disclosure for attorney intake</div>
+  <h1 class="text-3xl font-bold text-slate-900 mb-3">Cannabis COA Verification Pipeline — Continuation-in-Part</h1>
+  <p class="text-slate-700">Technical description of the cannabis-specific COA verification system and its post-provisional evolution. Intended for use by outside patent counsel to prepare either a continuation-in-part (CIP) or supplemental provisional filing prior to the non-provisional conversion deadline.</p>
+
+  <div class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+    <div><span class="text-slate-500">Applicant:</span> <span class="font-semibold text-slate-900">BrandrAI, Inc.</span></div>
+    <div><span class="text-slate-500">Prepared:</span> <span class="font-semibold text-slate-900">2026-04-22</span></div>
+    <div><span class="text-slate-500">Inventors:</span> <span class="font-semibold text-slate-900">Maximillian Juhasz, Dang Tien Ngoc</span></div>
+    <div><span class="text-slate-500">Prior filing:</span> <span class="font-semibold text-slate-900">Existing provisional (on file)</span></div>
+  </div>
+</div>
+
+<!-- 1 TITLE AND FIELD -->
+<section class="mb-8">
+  <h2 class="text-xl font-bold text-slate-900 mb-3">1. Proposed title</h2>
+  <p class="text-slate-700 mb-3">&ldquo;<strong>System and Method for Cryptographically Verified Cannabis Certificate-of-Analysis Authentication with AI-Extracted Metadata and Public Consumer-Facing Verify Pages</strong>&rdquo;</p>
+  <p class="text-slate-600 text-sm italic">Counsel: feel free to shorten. Principal is to signal cannabis + COA + crypto + AI + consumer-facing.</p>
+
+  <h2 class="text-xl font-bold text-slate-900 mb-3 mt-6">2. Field of the invention</h2>
+  <p class="text-slate-700">This invention relates to regulated-commerce authenticity verification, specifically to the authentication of Certificates of Analysis (COAs) for cannabis, hemp, CBD, and related regulated products. More specifically, the invention pertains to combining cryptographic document hashing, AI-driven metadata extraction, state-regulatory-system integration, and consumer-accessible verification pages into a single auditable pipeline.</p>
+</section>
+
+<!-- 2 BACKGROUND -->
+<section class="mb-8">
+  <h2 class="text-xl font-bold text-slate-900 mb-3">3. Background — the problem</h2>
+  <p class="text-slate-700 mb-3">Legal cannabis operators produce thousands of lab COAs per month per state. These documents are required by state regulators (captured in Metrc, BioTrack, or equivalent seed-to-sale systems) but are not directly visible to consumers. At retail, consumers scan packaging QR codes that typically link to static PDFs hosted by brand owners — PDFs which can be edited, forged, substituted, or deleted without audit trail.</p>
+  <p class="text-slate-700 mb-3">Existing approaches fall into three classes:</p>
+  <ul class="text-slate-700 space-y-1.5 list-disc list-inside mb-3 ml-4">
+    <li><strong>Static PDF hosting by brand</strong> — no tamper evidence, no extraction of lab data, no public re-verification mechanism.</li>
+    <li><strong>State portals</strong> — Metrc and BioTrack are regulator-facing only; consumers have no UI to query them, and the data model is not consumer-consumable.</li>
+    <li><strong>Generic document timestamping</strong> — OpenTimestamps and similar services stamp a hash but do not extract structured COA data, do not render a branded consumer verify page, and do not cross-reference against known-lab databases.</li>
+  </ul>
+  <p class="text-slate-700">No existing system combines state-regulatory anchoring, AI-driven forensic authenticity scoring, cryptographic tamper evidence, and public branded consumer verify pages into a single workflow.</p>
+</section>
+
+<!-- 3 SUMMARY -->
+<section class="mb-8">
+  <h2 class="text-xl font-bold text-slate-900 mb-3">4. Brief summary of the invention</h2>
+  <p class="text-slate-700 mb-3">The present invention provides a computer-implemented system and method whereby a cannabis-industry operator (or similar regulated-product brand) uploads a COA file, which is then:</p>
+  <ol class="text-slate-700 space-y-1.5 list-decimal list-inside mb-3 ml-4">
+    <li>Cryptographically hashed using SHA-256, producing a tamper-evident fingerprint bound to the file&apos;s byte-for-byte content;</li>
+    <li>Persisted to tenant-scoped storage with a universally unique identifier (UUID) assigned as the public-facing verify identifier;</li>
+    <li>Submitted to a large-language-model vision API for structured data extraction, with the extraction prompt dynamically selected based on declared product type (THC / CBD / hemp / peptide / supplement / other);</li>
+    <li>Scored across three orthogonal axes — document structure, data integrity, and red-flag indicators — using a deterministic weighted-score algorithm operating on the extracted JSON;</li>
+    <li>Assigned a categorical verdict (legitimate / suspicious / fraudulent / inconclusive) and a risk level (low / medium / high / critical) via a fixed decision tree over the three axis scores;</li>
+    <li>Made accessible via a public, no-authentication-required consumer verify page at a UUID-addressed URL that re-renders the SHA-256 hash for client-side or server-side re-verification;</li>
+    <li>Optionally cross-anchored to state regulatory data via Metrc or BioTrack APIs using state-specific endpoint routing;</li>
+    <li>Broadcast in real time to authorized merchant dashboards via publish-subscribe messaging as the verification transitions through pending → processing → completed states.</li>
+  </ol>
+  <p class="text-slate-700">This combination produces a verifiable, consumer-facing, tamper-evident authenticity record tied to state regulatory systems where available, falling back to AI forensic analysis where state data is unavailable.</p>
+</section>
+
+<!-- 4 DETAILED DESCRIPTION -->
+<section class="mb-8 page-break">
+  <h2 class="text-xl font-bold text-slate-900 mb-4">5. Detailed description</h2>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-4">5.1 System architecture</h3>
+  <p class="text-slate-700 mb-3">The system comprises (figure 1):</p>
+  <ul class="text-slate-700 space-y-1 list-disc list-inside mb-3 ml-4">
+    <li>A web-based merchant interface for upload (Inertia.js + React)</li>
+    <li>An application server (Laravel 12 PHP framework) exposing REST + Inertia endpoints</li>
+    <li>A relational database (MySQL) storing tenant-scoped verification records in a <span class="mono">package_verifications</span> table</li>
+    <li>A file-storage backend (DigitalOcean Spaces in production, local disk in development)</li>
+    <li>An async queue worker pool (Redis-backed) processing AI-analysis jobs</li>
+    <li>An AI service abstraction layer (<span class="mono">AiService</span>) supporting OpenAI (primary) and Anthropic (roadmap) models via a unified chat-completion interface</li>
+    <li>A state-regulatory integration service (<span class="mono">MetrcService</span>) with per-state API URL routing</li>
+    <li>A publish-subscribe broadcasting layer (Pusher channels with <span class="mono">@laravel/echo-react</span> client)</li>
+    <li>A public, no-authentication verify page at <span class="mono">/verify/{uuid}</span></li>
+  </ul>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">5.2 Upload and hashing</h3>
+  <p class="text-slate-700 mb-3">A merchant uploads a COA file — PDF, JPG, PNG, HEIC, or multi-page PDF — via the upload interface. The file is processed by <span class="mono">VerificationService::createFromUpload()</span> which:</p>
+  <ol class="text-slate-700 space-y-1 list-decimal list-inside mb-3 ml-4">
+    <li>Stores the file via a <span class="mono">FileService</span> abstraction (handles deduplication, hashing, and File-model creation)</li>
+    <li>Computes a SHA-256 hash via PHP&apos;s <span class="mono">hash_file()</span> — streaming so large files do not load into memory</li>
+    <li>Creates a <span class="mono">PackageVerification</span> row with <span class="mono">status = PENDING</span>, source = <span class="mono">'upload'</span>, and a UUID generated via Laravel&apos;s <span class="mono">Str::uuid()</span></li>
+    <li>Persists the file path, the file hash, MIME type, uploaded_at timestamp, and merchant-declared product_type</li>
+    <li>Dispatches an async <span class="mono">ProcessCoaVerificationJob</span> to the Redis queue</li>
+  </ol>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">5.3 Four-step verification pipeline</h3>
+
+  <p class="text-slate-700 mb-2"><strong>Step 1 — Read the document.</strong> The file is loaded from storage and converted to a format acceptable to the LLM vision API. PDFs are submitted natively as inline base64 (using GPT-5.4-mini&apos;s native PDF support) with a fallback path using Imagick or Ghostscript to render the first page at 200 DPI as JPEG if native PDF submission fails. Images pass through unchanged.</p>
+
+  <p class="text-slate-700 mb-2"><strong>Step 2 — Extract structured data via LLM.</strong> A product-type-specific extraction prompt is selected via a <span class="mono">match</span> statement in <span class="mono">CoaVerificationService::buildExtractionPrompt()</span>. Each prompt includes:</p>
+  <ul class="text-slate-700 space-y-0.5 list-disc list-inside mb-2 ml-6 text-sm">
+    <li>A universal base asking for lab information, sample metadata, testing methods, test results, and visual observations (QR/barcode/signature/logo/watermark/stamp)</li>
+    <li>Type-specific addenda for THC (cannabinoid profile + Total THC formula + concentrate/flower/edible/vape formats + Vitamin E acetate check), CBD/hemp (Delta-9 THC compliance), peptides (HPLC purity + mass spec), and supplements (USP actives)</li>
+  </ul>
+  <p class="text-slate-700 mb-3">Model: <span class="mono">gpt-5.4-mini</span> (upgradeable via AiService abstraction). Temperature 0.1. Max tokens 4000. Output: strictly-typed JSON conforming to the extraction schema.</p>
+
+  <p class="text-slate-700 mb-2"><strong>Step 3 — Forensic analysis via LLM.</strong> The extracted JSON is submitted to a second LLM call with a product-type-specific analysis system prompt. The analyzer scores three axes:</p>
+
+  <div class="overflow-hidden border border-slate-200 rounded-lg mb-3 text-sm">
+    <table class="w-full">
+      <thead class="bg-slate-50 border-b border-slate-200">
+        <tr><th class="text-left py-2 px-3 font-semibold">Axis</th><th class="text-left py-2 px-3 font-semibold">Range</th><th class="text-left py-2 px-3 font-semibold">Interpretation</th></tr>
+      </thead>
+      <tbody class="text-slate-700">
+        <tr class="border-t border-slate-100"><td class="py-2 px-3">Document structure score</td><td class="py-2 px-3 mono">0-100</td><td class="py-2 px-3">Completeness of lab info, license, methods, dates, signatures</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2 px-3">Data integrity score</td><td class="py-2 px-3 mono">0-100</td><td class="py-2 px-3">Plausibility of values, natural variance, unit consistency, product-type alignment</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2 px-3">Red-flag score</td><td class="py-2 px-3 mono">0-100</td><td class="py-2 px-3">Anomalies: missing accreditation, illogical dates, round numbers, impossible values, unknown lab</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-slate-700 mb-3">Product-type-specific rules layer on top. For THC: Total THC = THC + (THCA × 0.877); flower 15-35%, concentrates 60-95%, Vitamin E acetate must be absent. For CBD/hemp: Delta-9 &lt; 0.3%. For peptides: HPLC purity 95-99%+ for research, &gt;98% for pharma.</p>
+
+  <p class="text-slate-700 mb-2"><strong>Step 4 — Deterministic verdict calculation.</strong> Pure-arithmetic step, no AI:</p>
+  <pre class="bg-slate-900 text-slate-100 p-3 rounded mono mb-3">legitimacyScore = (structureScore * 0.30)
+                + (dataIntegrityScore * 0.40)
+                + ((100 - redFlagScore) * 0.30)
+
+if redFlagScore >= 60 OR dataIntegrityScore <= 30:
+    verdict = FRAUDULENT
+elif structureScore >= 75 AND dataIntegrityScore >= 75 AND redFlagScore <= 25:
+    verdict = LEGITIMATE
+elif structureScore < 40 AND dataIntegrityScore < 40:
+    verdict = INCONCLUSIVE
+else:
+    verdict = SUSPICIOUS</pre>
+
+  <p class="text-slate-700 mb-3">Confidence and risk level follow analogously. The deterministic step is itself an inventive element — combining LLM-extracted features with explicit non-ML decision logic produces an auditable, deterministic final verdict even though intermediate steps use stochastic models.</p>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">5.4 Metrc state-specific integration</h3>
+  <p class="text-slate-700 mb-3">An alternative to uploaded COAs: merchants with Metrc API access provide package ID + state + license. <span class="mono">MetrcService</span> routes requests to the correct state-specific endpoint (e.g. <span class="mono">api-oh.metrc.com</span> for Ohio, <span class="mono">api-co.metrc.com</span> for Colorado, similarly for OR, MI, etc.) using a state-to-endpoint mapping. The service calls <span class="mono">GET /packages/v2/{id}</span> and <span class="mono">GET /labtests/v2/results?packageId={id}</span>, normalizes the response, and creates a <span class="mono">PackageVerification</span> with source = <span class="mono">'metrc'</span>. No AI analysis is performed for Metrc-sourced records — the state has already validated.</p>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">5.5 Unified data model</h3>
+  <p class="text-slate-700 mb-2">Both paths write to the same <span class="mono">package_verifications</span> table. Fields:</p>
+  <pre class="bg-slate-900 text-slate-100 p-3 rounded mono mb-3">verify_id        UUID  // public-facing, encodes into QR
+workspace_id     FK    // tenant scope
+source           enum  // 'metrc' | 'upload'
+product_type     enum  // 'thc' | 'cbd' | 'hemp' | 'peptide' | 'supplement' | 'other'
+status           enum  // pending → processing → completed | failed
+package_id       str   // Metrc path only
+metrc_state      str   // Metrc path only
+metrc_license    str   // Metrc path only
+data             json  // normalized product data
+coa_file_path    str   // upload path only
+coa_file_hash    str   // SHA-256, tamper detection
+coa_mime_type    str   // upload path only
+extracted_data   json  // LLM step-2 output
+analysis_results json  // LLM step-3 output
+overall_verdict  enum  // LEGITIMATE | SUSPICIOUS | FRAUDULENT | INCONCLUSIVE
+confidence_score decimal
+risk_level       enum  // LOW | MEDIUM | HIGH | CRITICAL
+document_hash    str   // SHA-256 of document bytes
+ai_model_used    str   // audit trail</pre>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">5.6 Public consumer verify page</h3>
+  <p class="text-slate-700 mb-3">At <span class="mono">/verify/{uuid}</span>, any consumer — without authentication — can access a branded page showing the verification payload. The page is rendered by a <span class="mono">VerificationService::buildPublicPayload()</span> method that masks sensitive fields (workspace ID, merchant email, internal analysis scores) while exposing the verdict, confidence, lab info, potency data, and the SHA-256 hash. For upload-source verifications, a signed temporary URL to the underlying PDF is generated. For Metrc-source, live data freshness is indicated via <span class="mono">last_fetched_at</span>.</p>
+  <p class="text-slate-700 mb-3">The verify page implements the inventive element of <em>consumer re-verification</em>: the public page can re-render the stored hash, which the consumer can compare against a hash computed from the PDF they (or a retailer) possess. If the file has been altered, the hash doesn&apos;t match, and the consumer sees the proof directly.</p>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">5.7 Real-time status broadcasting</h3>
+  <p class="text-slate-700 mb-3">When the async job updates <span class="mono">status</span> from pending to processing to completed or failed, a <span class="mono">VerificationStatusChanged</span> event is broadcast on a private channel scoped to the merchant&apos;s workspace. The frontend subscribes via <span class="mono">useEcho()</span> from <span class="mono">@laravel/echo-react</span>. This enables a no-polling UX where the UI updates automatically as the AI pipeline completes.</p>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">5.8 QR code generation and scan flow</h3>
+  <p class="text-slate-700 mb-3">On verification completion, a QR code is generated (client-side via the <span class="mono">qrcode</span> npm package) encoding the public verify URL. Merchants download this as a PNG for on-pack printing. A consumer scanning the printed QR is routed to <span class="mono">/verify/{uuid}</span> with no auth, sees the verdict badge, the extracted lab data, the signed hash, and (for Metrc path) a "state-anchored live pull" indicator showing that the data originated from the state compliance system.</p>
+</section>
+
+<!-- 5 ALTERNATIVES -->
+<section class="mb-8">
+  <h2 class="text-xl font-bold text-slate-900 mb-3">6. Alternative embodiments</h2>
+  <p class="text-slate-700 mb-3">The invention is not limited to cannabis or to the specific technical choices above. Alternative embodiments within the scope of the claims include:</p>
+  <ul class="text-slate-700 space-y-1.5 list-disc list-inside ml-4">
+    <li><strong>Hash algorithms:</strong> SHA-256 as primary; SHA-3, BLAKE3, or future post-quantum-resistant hashes as alternatives. System is crypto-agnostic.</li>
+    <li><strong>LLM providers:</strong> OpenAI GPT-5.4-mini as primary; Anthropic Claude, Google Gemini, open-source models (Llama, Qwen) as alternatives.</li>
+    <li><strong>Storage backends:</strong> DigitalOcean Spaces, S3, Azure Blob, Google Cloud Storage, on-premise disk.</li>
+    <li><strong>State regulatory integrations:</strong> Metrc (CO, OR, MI, OH, et al.); BioTrack (WA, NM, et al.); METRC-adjacent systems. Same routing abstraction supports any state API.</li>
+    <li><strong>Broadcasting:</strong> Pusher as implemented; alternatively Ably, AWS IoT Core, or self-hosted WebSocket via Laravel Reverb.</li>
+    <li><strong>Scoring algorithm:</strong> 30/40/30 weighting for legitimacy; other weightings possible. Three-axis structure is the invention; exact weights are a tuning parameter.</li>
+    <li><strong>Optional on-chain anchoring:</strong> SHA-256 hash optionally batch-anchored to a public blockchain (Bitcoin timestamping, Ethereum attestation, or permissioned chains) for third-party immutability.</li>
+    <li><strong>Optional lab-API cross-reference:</strong> For Tier 2 verification, the system queries known-lab REST APIs (Confident Cannabis, ProVerde Labs) to confirm the COA exists in the lab&apos;s own database.</li>
+    <li><strong>Optional duplicate detection:</strong> Hash-similarity search against prior verifications to flag re-use of identical or near-identical COAs across different product claims.</li>
+  </ul>
+</section>
+
+<!-- 6 NOVELTY -->
+<section class="mb-8">
+  <h2 class="text-xl font-bold text-slate-900 mb-3">7. What is novel and non-obvious</h2>
+  <p class="text-slate-700 mb-3">Existing prior art does not combine these elements:</p>
+  <ol class="text-slate-700 space-y-1.5 list-decimal list-inside mb-3 ml-4">
+    <li><strong>Product-type-conditional AI prompt selection</strong> — prior art either uses generic extraction (no product conditioning) or rule-based non-AI extraction. Using LLM-based extraction with product-type-selected prompts tuned for cannabis-specific regulatory elements (Total THC, Vitamin E acetate, Metrc tags) is novel.</li>
+    <li><strong>Bound cryptographic hash + AI-extracted metadata in a single public verify record</strong> — timestamp services do not extract metadata; copyright offices do not publish verify pages; state regulators do not expose consumer UIs. The combination is the inventive step.</li>
+    <li><strong>Consumer-facing public QR verify page tied to state regulatory data</strong> — prior QR-on-cannabis-packaging links to static PDFs or brand-owned pages; ours re-queries state compliance and re-verifies the hash.</li>
+    <li><strong>Deterministic three-axis verdict from LLM outputs</strong> — hybrid deterministic-plus-stochastic scoring producing an auditable final verdict is novel in document-authentication contexts.</li>
+    <li><strong>Dual-path architecture (Metrc-anchored OR AI-upload fallback) with unified data model</strong> — prior art treats these as separate systems; the unified model with source-conditional behavior is novel.</li>
+  </ol>
+</section>
+
+<!-- 7 FIGURES -->
+<section class="mb-6 page-break">
+  <h2 class="text-xl font-bold text-slate-900 mb-3">8. Figures to prepare</h2>
+  <p class="text-slate-700 mb-3">Counsel should have the following drawings prepared for the filing:</p>
+  <ul class="text-slate-700 space-y-1 list-disc list-inside ml-4">
+    <li><strong>Figure 1:</strong> high-level system architecture (merchant browser → app server → queue worker → AI provider → database → public verify page)</li>
+    <li><strong>Figure 2:</strong> upload-path data flow (file → hash → AI extract → AI analyze → deterministic verdict → verify page render)</li>
+    <li><strong>Figure 3:</strong> Metrc-path data flow (package ID + license → state-specific URL router → state API → normalize → verify page render)</li>
+    <li><strong>Figure 4:</strong> <span class="mono">package_verifications</span> entity-relationship diagram with source-conditional fields</li>
+    <li><strong>Figure 5:</strong> verification status state machine (pending → processing → completed / failed) with broadcast trigger points</li>
+    <li><strong>Figure 6:</strong> consumer verify page wireframe showing hash display + re-verification flow</li>
+    <li><strong>Figure 7:</strong> three-axis scoring and verdict decision tree</li>
+  </ul>
+</section>
+
+<!-- Closing -->
+<div class="mt-8 pt-6 border-t-2 border-slate-200 text-sm">
+  <p class="text-slate-700 mb-2"><strong>Prior disclosure calendar:</strong> public disclosure of system components has occurred via product demo videos, investor pitch conversations, and internal changelogs. A detailed disclosure calendar for counsel to review is maintained at <span class="mono">docs/DISCLOSURE_TIMELINE.md</span> (to be prepared alongside this filing).</p>
+  <p class="text-slate-700 mb-2"><strong>International filing:</strong> intent is to pursue PCT application within 12 months of provisional, with EP, UK, CA, AU, MX, BR as target national phases. Cannabis legality in each jurisdiction will influence which patents are prosecuted.</p>
+  <p class="text-slate-500 italic mt-4">This disclosure is attorney work product and not legal advice. Counsel should review for claim scope, prior art, and enablement before filing.</p>
+</div>
+
+</main>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

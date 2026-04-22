@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandrAI Proof — Cryptographic timestamping + authenticity for anything real</title>
+<meta name="description" content="The trust layer for anything that has to be provably real. Cryptographic timestamps, AI authenticity analysis, tamper-evident verification — for academia, patents, creative work, contracts, and more.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; }
+  .gradient-text { background: linear-gradient(135deg,#10b981 0%,#06b6d4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .gradient-text-indigo { background: linear-gradient(135deg,#6366f1 0%,#a855f7 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .pill-soon { background: #fef3c7; color: #92400e; }
+  .pill-waitlist { background: #dbeafe; color: #1e40af; }
+  .vertical-card { transition: all 0.3s; }
+  .vertical-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+</style>
+</head>
+<body class="bg-white">
+
+<!-- Demo banner -->
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-amber-400">PRODUCT MOCK &middot; Q3 2026 LAUNCH</span>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  BrandrAI Proof &middot; The underlying authenticity engine &middot; For internal + investor review
+</div>
+
+<!-- NAV -->
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="62a-homepage-neutral.html" class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+      <span class="font-bold text-slate-900">BrandrAI</span>
+      <span class="text-sm text-slate-400 font-medium">Proof</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+      <a href="#use-cases" class="hover:text-slate-900">Use cases</a>
+      <a href="#how" class="hover:text-slate-900">How it works</a>
+      <a href="#pricing" class="hover:text-slate-900">Pricing</a>
+      <a href="#vs" class="hover:text-slate-900">Comparison</a>
+    </div>
+    <a href="#waitlist" class="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800">Join waitlist</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="py-20 px-6 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 border-b border-slate-100">
+  <div class="max-w-5xl mx-auto">
+    <div class="inline-flex items-center gap-2 mb-5">
+      <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold uppercase tracking-wider rounded-full">New product</span>
+      <span class="px-3 py-1 pill-soon text-xs font-semibold uppercase tracking-wider rounded-full">Launching Q3 2026</span>
+    </div>
+    <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-5 max-w-4xl leading-tight">
+      Cryptographic proof <span class="gradient-text-indigo">of everything real.</span>
+    </h1>
+    <p class="text-xl text-slate-600 max-w-3xl mb-8 leading-relaxed">
+      The trust layer behind every BrandrAI product &mdash; now available on its own. Timestamp any document, dataset, image, or creative work. Prove it existed before a given date. Tamper-evident, legally defensible, and 100&times; cheaper than the legacy alternatives.
+    </p>
+    <div class="flex flex-wrap items-center gap-3">
+      <a href="#waitlist" class="px-6 py-3 bg-slate-900 text-white rounded-lg font-semibold text-sm hover:bg-slate-800 flex items-center gap-2">
+        <i data-lucide="clock" class="w-4 h-4"></i>
+        Join the early-access waitlist
+      </a>
+      <a href="#how" class="px-6 py-3 border border-slate-300 text-slate-700 rounded-lg font-semibold text-sm hover:bg-slate-50">See how it works</a>
+    </div>
+    <p class="text-sm text-slate-500 mt-5">Built on the same cryptographic engine that powers BrandrAI&apos;s COA verification &mdash; now used across academia, patent filings, creative authorship, and enterprise compliance.</p>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="py-16 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <div class="text-xs uppercase tracking-wider text-rose-600 font-semibold mb-2">The problem</div>
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">&ldquo;Mail a letter to yourself&rdquo; doesn&apos;t work.</h2>
+        <p class="text-slate-700 mb-4">Poor man&apos;s copyright &mdash; mailing yourself an envelope to prove authorship &mdash; has been legally discredited for decades. Postmarks are forgeable. Envelopes can be opened and resealed. Courts stopped accepting it in the 1990s.</p>
+        <p class="text-slate-700 mb-4">But the need remains real. Writers, inventors, researchers, photographers, lawyers, and engineers all need <span class="font-semibold text-slate-900">some way to prove a document existed on a given date.</span> The actual solutions today are either absurdly expensive (notary + attorney, $200+) or niche (WGA registration, Bitcoin timestamping services with no UX).</p>
+        <p class="text-slate-700">The infrastructure exists. The user experience doesn&apos;t. That&apos;s the opportunity.</p>
+      </div>
+      <div class="bg-gradient-to-br from-slate-50 to-rose-50/30 border border-slate-200 rounded-2xl p-6">
+        <h3 class="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">What people are paying today</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+            <div>
+              <div class="font-semibold text-slate-900">WGA script registration</div>
+              <div class="text-xs text-slate-500">Writers Guild, one-time per script</div>
+            </div>
+            <div class="text-slate-900 font-bold">$20</div>
+          </div>
+          <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+            <div>
+              <div class="font-semibold text-slate-900">Notary + attorney stamp</div>
+              <div class="text-xs text-slate-500">For legal document provenance</div>
+            </div>
+            <div class="text-slate-900 font-bold">$100-300</div>
+          </div>
+          <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+            <div>
+              <div class="font-semibold text-slate-900">US Copyright Office registration</div>
+              <div class="text-xs text-slate-500">Per work</div>
+            </div>
+            <div class="text-slate-900 font-bold">$45-65</div>
+          </div>
+          <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+            <div>
+              <div class="font-semibold text-slate-900">Legal timestamping services</div>
+              <div class="text-xs text-slate-500">Enterprise only, bulk</div>
+            </div>
+            <div class="text-slate-900 font-bold">$500-2,000/mo</div>
+          </div>
+          <div class="flex justify-between items-center pt-2">
+            <div>
+              <div class="font-bold text-emerald-700">BrandrAI Proof</div>
+              <div class="text-xs text-emerald-600">Any document, any time</div>
+            </div>
+            <div class="text-emerald-700 font-bold">From $5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section id="use-cases" class="py-20 px-6 bg-slate-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">Who uses BrandrAI Proof</div>
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">One engine. <span class="gradient-text-indigo">Every &ldquo;is this real?&rdquo; problem.</span></h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">The same hash-and-verify infrastructure that BrandrAI uses for cannabis COA authenticity works for any document or creative work that needs a provable, tamper-evident timestamp.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Academia -->
+      <div class="vertical-card bg-white rounded-2xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4"><i data-lucide="graduation-cap" class="w-6 h-6 text-blue-700"></i></div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Academia &amp; Research</h3>
+        <p class="text-sm text-slate-600 mb-4">Dissertations, thesis drafts, research datasets, peer-review submissions. Prove authorship and priority before publication or public disclosure.</p>
+        <ul class="space-y-1.5 text-xs text-slate-600">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Plagiarism defense</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Prior-art claims</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Dataset integrity for reproducibility</li>
+        </ul>
+      </div>
+
+      <!-- Patent / IP -->
+      <div class="vertical-card bg-white rounded-2xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-4"><i data-lucide="lightbulb" class="w-6 h-6 text-purple-700"></i></div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Patent &amp; IP pre-filing</h3>
+        <p class="text-sm text-slate-600 mb-4">Engineering notebooks, invention disclosures, provisional drafts, trade-secret documentation. Timestamped before the provisional hits USPTO.</p>
+        <ul class="space-y-1.5 text-xs text-slate-600">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Swear-behind evidence</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Trade-secret disclosure trails</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Invention-date proof</li>
+        </ul>
+      </div>
+
+      <!-- Creative -->
+      <div class="vertical-card bg-white rounded-2xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center mb-4"><i data-lucide="palette" class="w-6 h-6 text-rose-700"></i></div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Creative &amp; Writing</h3>
+        <p class="text-sm text-slate-600 mb-4">Screenplays, novels, songs, photography, digital art. The WGA charges $20 per script &mdash; we charge less, add AI metadata, and handle every medium.</p>
+        <ul class="space-y-1.5 text-xs text-slate-600">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Authorship timestamps</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Work-in-progress version chain</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Provenance without NFT baggage</li>
+        </ul>
+      </div>
+
+      <!-- Industrial -->
+      <div class="vertical-card bg-white rounded-2xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-4"><i data-lucide="factory" class="w-6 h-6 text-amber-700"></i></div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Industrial &amp; Enterprise</h3>
+        <p class="text-sm text-slate-600 mb-4">Contracts, compliance policies, engineering specs, safety records. Prove exact version + date, defend audit questions, survive litigation discovery.</p>
+        <ul class="space-y-1.5 text-xs text-slate-600">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Policy-in-effect proof</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Tamper-evident contract versions</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Product-safety knowledge records</li>
+        </ul>
+      </div>
+
+      <!-- Legal / Evidence -->
+      <div class="vertical-card bg-white rounded-2xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-xl bg-slate-200 flex items-center justify-center mb-4"><i data-lucide="gavel" class="w-6 h-6 text-slate-700"></i></div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Legal &amp; Evidence</h3>
+        <p class="text-sm text-slate-600 mb-4">Chain-of-custody for digital evidence. Witness statements, affidavits, settlement drafts. Court-ready PDF certificate of timestamp exported on demand.</p>
+        <ul class="space-y-1.5 text-xs text-slate-600">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Forensic chain of custody</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Deposition exhibits</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Court-ready exports</li>
+        </ul>
+      </div>
+
+      <!-- Commerce -->
+      <div class="vertical-card bg-white rounded-2xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-4"><i data-lucide="shield-check" class="w-6 h-6 text-emerald-700"></i></div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Regulated Commerce</h3>
+        <p class="text-sm text-slate-600 mb-4">The original use case. Cannabis, supplements, peptides, CBD. COA authenticity, batch verification, cryptographic on-pack proof.</p>
+        <ul class="space-y-1.5 text-xs text-slate-600">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Lab-result tamper detection</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Batch provenance</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Consumer-facing verify pages</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-10">
+      <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">How it works</div>
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">Four steps. Legally defensible.</h2>
+      <p class="text-lg text-slate-600 max-w-3xl">Every BrandrAI Proof timestamp produces a court-ready PDF certificate, a public verify page with a QR code, and a cryptographic hash you can anchor anywhere.</p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-5">
+      <div class="bg-slate-50 rounded-2xl p-6">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-bold flex items-center justify-center mb-4">1</div>
+        <h3 class="font-bold text-slate-900 mb-2">Upload</h3>
+        <p class="text-sm text-slate-600">PDF, Word, image, video, dataset, code archive. Anything up to 100 MB. Drag and drop or API.</p>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-bold flex items-center justify-center mb-4">2</div>
+        <h3 class="font-bold text-slate-900 mb-2">Hash + timestamp</h3>
+        <p class="text-sm text-slate-600">SHA-256 hash computed at upload. Bound to a UTC timestamp from a trusted time source. Optional on-chain anchoring via public blockchain.</p>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-bold flex items-center justify-center mb-4">3</div>
+        <h3 class="font-bold text-slate-900 mb-2">AI analysis</h3>
+        <p class="text-sm text-slate-600">Structured data extracted (authors, dates, titles, key entities). Basic integrity check &mdash; does the document appear tampered?</p>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-bold flex items-center justify-center mb-4">4</div>
+        <h3 class="font-bold text-slate-900 mb-2">Certificate + QR</h3>
+        <p class="text-sm text-slate-600">Download a signed PDF certificate. Get a public verify URL. Print the QR on your manuscript, contract, canvas, or packaging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="vs" class="py-20 px-6 bg-slate-50">
+  <div class="max-w-5xl mx-auto">
+    <div class="mb-10">
+      <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">Comparison</div>
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">The authenticity market &mdash; honestly compared.</h2>
+    </div>
+
+    <div class="overflow-x-auto bg-white rounded-2xl border border-slate-200">
+      <table class="w-full text-sm">
+        <thead class="border-b border-slate-200">
+          <tr>
+            <th class="text-left py-4 px-5 text-xs uppercase tracking-wider text-slate-500 font-semibold">&nbsp;</th>
+            <th class="text-center py-4 px-5 text-xs uppercase tracking-wider text-slate-500 font-semibold">Poor man&apos;s copyright</th>
+            <th class="text-center py-4 px-5 text-xs uppercase tracking-wider text-slate-500 font-semibold">WGA / Copyright Office</th>
+            <th class="text-center py-4 px-5 text-xs uppercase tracking-wider text-slate-500 font-semibold">OpenTimestamps / Blockchain</th>
+            <th class="text-center py-4 px-5 text-xs uppercase tracking-wider text-emerald-700 font-bold bg-emerald-50">BrandrAI Proof</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-700">
+          <tr class="border-b border-slate-100">
+            <td class="py-3 px-5 font-medium">Cost per document</td>
+            <td class="text-center">$1 postage</td>
+            <td class="text-center">$20-65</td>
+            <td class="text-center">Free</td>
+            <td class="text-center bg-emerald-50 font-semibold">$5-25</td>
+          </tr>
+          <tr class="border-b border-slate-100">
+            <td class="py-3 px-5 font-medium">Legally defensible</td>
+            <td class="text-center text-rose-600">&#x2717; Discredited</td>
+            <td class="text-center">&#x2713;</td>
+            <td class="text-center">Technically yes</td>
+            <td class="text-center bg-emerald-50 font-semibold text-emerald-700">&#x2713;</td>
+          </tr>
+          <tr class="border-b border-slate-100">
+            <td class="py-3 px-5 font-medium">Tamper-evident</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center">Partial</td>
+            <td class="text-center">&#x2713;</td>
+            <td class="text-center bg-emerald-50 font-semibold text-emerald-700">&#x2713;</td>
+          </tr>
+          <tr class="border-b border-slate-100">
+            <td class="py-3 px-5 font-medium">AI metadata extraction</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center bg-emerald-50 font-semibold text-emerald-700">&#x2713;</td>
+          </tr>
+          <tr class="border-b border-slate-100">
+            <td class="py-3 px-5 font-medium">Court-ready PDF export</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center">&#x2713;</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center bg-emerald-50 font-semibold text-emerald-700">&#x2713;</td>
+          </tr>
+          <tr class="border-b border-slate-100">
+            <td class="py-3 px-5 font-medium">Public QR verify page</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center text-rose-600">&#x2717;</td>
+            <td class="text-center bg-emerald-50 font-semibold text-emerald-700">&#x2713;</td>
+          </tr>
+          <tr class="border-b border-slate-100">
+            <td class="py-3 px-5 font-medium">Multi-format (doc, image, video, dataset)</td>
+            <td class="text-center">Docs only</td>
+            <td class="text-center">Limited</td>
+            <td class="text-center">Docs only</td>
+            <td class="text-center bg-emerald-50 font-semibold text-emerald-700">All</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-5 font-medium">Time from upload to certificate</td>
+            <td class="text-center">~1 week</td>
+            <td class="text-center">~3 months</td>
+            <td class="text-center">~10 min</td>
+            <td class="text-center bg-emerald-50 font-semibold text-emerald-700">&lt; 30 sec</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">Pricing</div>
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">From $5 a stamp.</h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Indie creators and enterprise compliance teams both. Start free while in beta.</p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-5">
+      <div class="bg-white rounded-3xl border-2 border-slate-200 p-6 flex flex-col">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Single</div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">One stamp</h3>
+        <div class="mb-4"><span class="text-3xl font-bold text-slate-900">$5</span><span class="text-slate-500 text-sm"> / document</span></div>
+        <a href="#waitlist" class="block w-full py-2.5 text-center border-2 border-slate-900 text-slate-900 rounded-lg font-semibold text-sm mb-5 hover:bg-slate-900 hover:text-white">Join waitlist</a>
+        <ul class="space-y-2 text-xs text-slate-700 flex-1">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>1 timestamp</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Cryptographic hash + certificate</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Public verify page + QR</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Up to 100 MB per file</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl border-2 border-emerald-500 p-6 flex flex-col relative shadow-2xl scale-105">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full uppercase tracking-wider">Most Popular</div>
+        <div class="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-1">Creator</div>
+        <h3 class="text-lg font-bold mb-3">Indie pro</h3>
+        <div class="mb-4"><span class="text-3xl font-bold">$49</span><span class="text-slate-400 text-sm"> / month</span></div>
+        <a href="#waitlist" class="block w-full py-2.5 text-center bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-semibold text-sm mb-5">Join waitlist</a>
+        <ul class="space-y-2 text-xs flex-1">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>50 timestamps / month</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>AI metadata extraction</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>Batch upload</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>API access</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>Custom verify-page branding</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-3xl border-2 border-slate-200 p-6 flex flex-col">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Pro</div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">Academic / creative</h3>
+        <div class="mb-4"><span class="text-3xl font-bold text-slate-900">$199</span><span class="text-slate-500 text-sm"> / month</span></div>
+        <a href="#waitlist" class="block w-full py-2.5 text-center border-2 border-slate-900 text-slate-900 rounded-lg font-semibold text-sm mb-5 hover:bg-slate-900 hover:text-white">Join waitlist</a>
+        <ul class="space-y-2 text-xs text-slate-700 flex-1">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Unlimited timestamps</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>On-chain anchoring</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Citation export (APA, MLA, Chicago)</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Version chain + diffing</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Priority support</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-3xl border-2 border-slate-200 p-6 flex flex-col">
+        <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Enterprise</div>
+        <h3 class="text-lg font-bold text-slate-900 mb-3">Legal &amp; compliance</h3>
+        <div class="mb-4"><span class="text-3xl font-bold text-slate-900">Custom</span></div>
+        <a href="#waitlist" class="block w-full py-2.5 text-center border-2 border-slate-900 text-slate-900 rounded-lg font-semibold text-sm mb-5 hover:bg-slate-900 hover:text-white">Contact sales</a>
+        <ul class="space-y-2 text-xs text-slate-700 flex-1">
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Unlimited + SLA</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>SSO / SAML</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Court-ready audit exports</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Chain-of-custody workflows</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>Dedicated account team</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-xs text-slate-500 mt-6 text-center italic">Pricing subject to change. Early-access waitlist members lock in launch pricing for 24 months.</p>
+  </div>
+</section>
+
+<!-- BRANDRAI CONNECTION -->
+<section class="py-20 px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="inline-flex items-center gap-2 mb-5">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+      <span class="font-bold">BrandrAI ecosystem</span>
+    </div>
+    <h2 class="text-4xl font-bold mb-5 max-w-3xl">Already a BrandrAI customer? You&apos;re already using Proof.</h2>
+    <p class="text-lg text-slate-300 max-w-3xl mb-8">Every COA verification. Every trademark filing. Every branded verify page. They all run on the BrandrAI Proof cryptographic engine under the hood. You&apos;ve been seeing the output for months &mdash; now you can use the engine directly, across any document you need to protect.</p>
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-1">COA Verification</div>
+        <div class="text-sm text-slate-300">Hash + AI + verify page = Proof for regulated commerce</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-1">Trademark Services</div>
+        <div class="text-sm text-slate-300">Hash + filing + monitoring = Proof for brand identity</div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+        <div class="text-xs uppercase tracking-wider text-emerald-400 font-semibold mb-1">Proof (this product)</div>
+        <div class="text-sm text-slate-300">Hash + AI + verify page = Proof for everything else</div>
+      </div>
+    </div>
+    <p class="text-sm text-slate-400 italic">BrandrAI is the operating system for anything that has to be provably real. Proof is the engine.</p>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section id="waitlist" class="py-20 px-6 bg-gradient-to-br from-indigo-50 to-cyan-50">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="inline-block px-3 py-1 pill-waitlist text-xs font-semibold uppercase tracking-wider rounded-full mb-4">Early access</div>
+    <h2 class="text-4xl font-bold text-slate-900 mb-4">Get in before launch.</h2>
+    <p class="text-lg text-slate-600 mb-8">We&apos;re rolling out BrandrAI Proof to early-access users in Q3 2026. Waitlist members get 60% off for the first 12 months and can help shape the product roadmap.</p>
+    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input type="email" placeholder="your@email.com" class="flex-1 px-5 py-3 border-2 border-slate-200 rounded-lg focus:border-emerald-500 focus:outline-none">
+      <button type="button" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold text-sm">Join waitlist</button>
+    </form>
+    <p class="text-xs text-slate-500 mt-4">Or email <a href="mailto:proof@brandrai.com" class="text-emerald-700 underline">proof@brandrai.com</a> with your use case.</p>
+  </div>
+</section>
+
+<footer class="bg-slate-950 text-slate-500 py-8 px-6 text-center text-sm">
+  <p>&copy; 2026 BrandrAI, Inc. &middot; BrandrAI Proof is a preview product. Launch Q3 2026. Pricing, features, and availability subject to change.</p>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
