@@ -429,12 +429,77 @@ GET  /p/{verify_id}            → PUBLIC verify page (no auth, short URL)</pre>
         <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Week 13</td><td class="py-2.5 px-3">Closed beta with waitlist members. Collect feedback, iterate.</td><td class="py-2.5 px-3 text-xs">Max + team</td></tr>
         <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Week 14</td><td class="py-2.5 px-3">Public launch announcement. Press, investor update, product-hunt, waitlist conversion.</td><td class="py-2.5 px-3 text-xs">Max</td></tr>
         <tr class="border-t-2 border-slate-300 bg-emerald-50"><td class="py-3 px-3 font-bold">Q4 2026</td><td class="py-3 px-3 font-bold">On-chain anchoring (step 5 above). Madrid international trademark for &ldquo;BrandrAI Proof&rdquo; mark.</td><td class="py-3 px-3 text-xs"></td></tr>
-        <tr class="border-t border-slate-100 bg-cyan-50"><td class="py-3 px-3 font-bold">Parallel track</td><td class="py-3 px-3"><strong>BrandrAI Sites v1 MVP</strong> &mdash; 2-3 weeks post-May-1. Apply brand guide to a WordPress page-builder&apos;s global settings export; download updated config. Breakdance + Headspin first (schema already validated via the brandrai.com self-application in April 2026); Elementor, Oxygen, Kadence, Gutenberg adapters to follow. Bundled into Starter+ or $49/mo standalone add-on.</td><td class="py-3 px-3 text-xs">Dang</td></tr>
+        <tr class="border-t border-slate-100 bg-cyan-50"><td class="py-3 px-3 font-bold">Parallel track (updated 2026-04-22)</td><td class="py-3 px-3"><strong>BrandrAI Sites</strong> &mdash; full product line, not just a feature. Core generation loop validated end-to-end on Breakdance + Headspin in April 2026 (produced 17 importable page wireframes + applied the BrandrAI brand system from a guide). Productization is now adapter + UI + sync work. See dedicated &ldquo;Sites&rdquo; roadmap section below for real scoping.</td><td class="py-3 px-3 text-xs">Dang + contract</td></tr>
       </tbody>
     </table>
   </div>
 
   <p class="text-slate-700 text-sm"><strong>Realistic start date:</strong> after May 1 cannabis launch stabilizes, probably mid-to-late May 2026. That puts beta launch around late August / early September — perfectly aligned with the Q3 2026 waitlist promise.</p>
+</section>
+
+<!-- 7B. BRANDRAI SITES ROADMAP — NEW SECTION -->
+<section id="sites-roadmap" class="mb-10 page-break">
+  <div class="text-xs uppercase tracking-wider text-cyan-700 font-semibold mb-2">7B &middot; BrandrAI Sites roadmap (added 2026-04-22)</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">From manual prototype to real product line.</h2>
+  <p class="text-slate-700 mb-4">On April 22 we validated the full generation loop by self-applying it to brandrai.com: Headspin brand system &rarr; Breakdance element factories &rarr; 17 importable page wireframes. The core technical bet is proven. This section replaces the earlier &ldquo;2-3 weeks MVP&rdquo; estimate with a real, honest multi-quarter plan.</p>
+
+  <div class="bg-gradient-to-br from-cyan-50 to-emerald-50 border border-cyan-200 rounded-xl p-5 mb-5">
+    <div class="text-xs uppercase tracking-wider text-cyan-700 font-semibold mb-2">What is validated today</div>
+    <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+      <li>Breakdance JSON schema: element tree, nested children, property paths</li>
+      <li>Headspin token mapping: fluid typography, Radix color schemas, spacing/radius scales</li>
+      <li>Programmatic wireframe generation with parameterized page templates (17 pages, 9 verticals)</li>
+      <li>Brand-guide-aware styling: every generated element references Headspin CSS variables, so brand changes cascade automatically</li>
+      <li>Manual export/import loop (user-in-the-loop round trip)</li>
+    </ul>
+  </div>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-5">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 border-b border-slate-200">
+        <tr>
+          <th class="text-left py-3 px-3 text-xs uppercase tracking-wider text-slate-500 font-semibold">Phase</th>
+          <th class="text-left py-3 px-3 text-xs uppercase tracking-wider text-slate-500 font-semibold">Scope</th>
+          <th class="text-left py-3 px-3 text-xs uppercase tracking-wider text-slate-500 font-semibold">Effort</th>
+          <th class="text-left py-3 px-3 text-xs uppercase tracking-wider text-slate-500 font-semibold">Target</th>
+        </tr>
+      </thead>
+      <tbody class="text-slate-700">
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 0 &middot; Proven</td><td class="py-2.5 px-3">Manual Breakdance + Headspin generation, 17-page library, self-applied to brandrai.com</td><td class="py-2.5 px-3 text-xs">Done</td><td class="py-2.5 px-3 text-xs">2026-04-22</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 1 &middot; Oxygen adapter</td><td class="py-2.5 px-3">Port element factories to Oxygen (Breakdance predecessor, ~80% schema shared)</td><td class="py-2.5 px-3 text-xs">~3-4 days</td><td class="py-2.5 px-3 text-xs">May 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 2 &middot; Bricks adapter</td><td class="py-2.5 px-3">New element factories + flat-array page flattener + theme-styles generator. Bricks&apos; data model is REST-native &mdash; cleanest sync path of any WP builder.</td><td class="py-2.5 px-3 text-xs">~1 week</td><td class="py-2.5 px-3 text-xs">May-June 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 3 &middot; BrandrAI WordPress plugin v1</td><td class="py-2.5 px-3">&ldquo;BrandrAI Sync&rdquo; plugin. OAuth to BrandrAI account, detects active builder (Breakdance/Bricks first), pulls brand guide into theme-styles, exposes Generate/Sync/Push buttons, manual trigger.</td><td class="py-2.5 px-3 text-xs">~2 weeks</td><td class="py-2.5 px-3 text-xs">June-July 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 4 &middot; BrandrAI Sites dashboard UI</td><td class="py-2.5 px-3">&ldquo;Sites&rdquo; tab inside app.brandrai.com. Connect site, select pages to generate, preview diff, one-click push. Uses plugin endpoint.</td><td class="py-2.5 px-3 text-xs">~2-3 weeks</td><td class="py-2.5 px-3 text-xs">July 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 5 &middot; Elementor adapter</td><td class="py-2.5 px-3">Most popular WP builder. Different widget-based schema. Worth doing after Bricks + plugin v1 proves the product motion.</td><td class="py-2.5 px-3 text-xs">~1-2 weeks</td><td class="py-2.5 px-3 text-xs">July-August 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 6 &middot; Webhook auto-sync</td><td class="py-2.5 px-3">Brand-guide changes in BrandrAI dashboard auto-push to linked sites. Staging preview. Versioning. Rollback.</td><td class="py-2.5 px-3 text-xs">~2-3 weeks</td><td class="py-2.5 px-3 text-xs">August 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 7 &middot; Gutenberg + Kadence adapter</td><td class="py-2.5 px-3">Block-based ecosystem. More variance across block libraries. Required to cover the &ldquo;default WP stack.&rdquo;</td><td class="py-2.5 px-3 text-xs">~2-3 weeks</td><td class="py-2.5 px-3 text-xs">August 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 8 &middot; Shopify Signature theme</td><td class="py-2.5 px-3">Build a BrandrAI-native Shopify theme with Headspin-equivalent design tokens as theme settings. Deploy via GitHub integration (cleanest path).</td><td class="py-2.5 px-3 text-xs">~4 weeks</td><td class="py-2.5 px-3 text-xs">August-September 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 9 &middot; Shopify App (Admin API)</td><td class="py-2.5 px-3">OAuth app for customers who have their own Shopify theme. Pushes brand + section content via Admin API.</td><td class="py-2.5 px-3 text-xs">~6-8 weeks</td><td class="py-2.5 px-3 text-xs">Q4 2026</td></tr>
+        <tr class="border-t border-slate-100"><td class="py-2.5 px-3 font-semibold">Phase 10 &middot; Multi-site agency tier</td><td class="py-2.5 px-3">Single BrandrAI account manages N brand sites. Used by agencies + MSOs with multiple regional brands. Bulk operations.</td><td class="py-2.5 px-3 text-xs">~6-8 weeks</td><td class="py-2.5 px-3 text-xs">Q4 2026 / Q1 2027</td></tr>
+        <tr class="border-t-2 border-slate-300 bg-cyan-50"><td class="py-3 px-3 font-bold">Cumulative</td><td class="py-3 px-3 font-bold">Full product line: 4+ WP builders, Shopify theme + app, auto-sync, multi-site agency tier</td><td class="py-3 px-3 font-bold">~5-6 months focused eng</td><td class="py-3 px-3 font-bold">Q3 2026 &rarr; Q1 2027</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">Why Bricks before Elementor</h3>
+  <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside mb-4">
+    <li><strong>Cleaner data model.</strong> Flat element arrays with id-referenced parent/children &mdash; directly editable via REST API, trivial to partial-update.</li>
+    <li><strong>Native CSS-variable architecture.</strong> Bricks theme styles already work the way we want (tokens-first). No architectural mismatch.</li>
+    <li><strong>WP-CLI integration.</strong> <span class="mono">wp bricks regenerate_assets</span> lets our plugin trigger CSS rebuilds programmatically. Elementor has nothing equivalent that&apos;s this clean.</li>
+    <li><strong>Less bloat.</strong> Bricks customers self-select for performance-conscious, developer-friendly sites &mdash; exactly our regulated-commerce customer profile.</li>
+    <li><strong>Faster demo.</strong> ~1 week to a working Bricks adapter vs. 1-2 weeks for Elementor.</li>
+    <li><strong>Smaller market, better customer.</strong> Fewer Bricks sites than Elementor overall, but Bricks users are a tighter fit for premium/enterprise tiers.</li>
+  </ul>
+
+  <h3 class="font-bold text-slate-900 mb-2 mt-5">Commercial framing</h3>
+  <p class="text-slate-700 text-sm mb-3">BrandrAI Sites is now positioned as a <strong>product line</strong>, not a bundled feature. Separate pricing, separate TAM, separate go-to-market.</p>
+  <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside mb-3">
+    <li><strong>Starter Sites:</strong> 1 site, 1 builder, manual sync &mdash; $49/mo standalone or included in Growth+ BrandrAI plans</li>
+    <li><strong>Pro Sites:</strong> up to 5 sites, any builder, auto-sync, staging preview &mdash; $199/mo</li>
+    <li><strong>Agency Sites:</strong> unlimited sites, white-label, multi-client dashboard &mdash; $499-$1,499/mo</li>
+    <li><strong>TAM expansion:</strong> extends addressable market beyond regulated commerce to any brand that needs multi-site brand-consistency + easy regeneration. Shopify path opens DTC ecommerce broadly.</li>
+  </ul>
+  <p class="text-slate-700 text-sm"><strong>Investor narrative:</strong> &ldquo;We started by building BrandrAI Sites for our own site. It worked end-to-end on the first attempt. That&apos;s not a coincidence &mdash; the underlying primitive (token-aware generation) is simpler than we expected. We&apos;re now productizing it for the 40% of WordPress that uses modern builders + Shopify&apos;s 4M+ stores.&rdquo;</p>
 </section>
 
 <!-- 8 METRC -->
