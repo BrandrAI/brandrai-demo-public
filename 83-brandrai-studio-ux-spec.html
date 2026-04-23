@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandrAI Studio — UX Spec + Credit Economics</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; }
+  .gradient-text { background: linear-gradient(135deg,#10b981 0%,#06b6d4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .gradient-text-purple { background: linear-gradient(135deg,#a855f7 0%,#ec4899 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  h2 { scroll-margin-top: 80px; }
+  pre { font-family: 'JetBrains Mono', monospace; font-size: 10pt; line-height: 1.4; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 10pt; }
+  .mockup-box { border: 2px dashed #cbd5e1; border-radius: 0.75rem; padding: 1rem; background: #f8fafc; }
+  .credit-pill { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; background: #fae8ff; color: #86198f; font-size: 11px; font-weight: 600; }
+  @media print {
+    nav, .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+  }
+</style>
+</head>
+<body class="bg-slate-50">
+
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-fuchsia-400">PRODUCT SPEC</span>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  BrandrAI Studio — UX/UI inside the app + credit economics
+</div>
+
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50 no-print">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-fuchsia-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">S</div>
+      <div>
+        <div class="font-bold text-slate-900">BrandrAI Studio — Product Spec</div>
+        <div class="text-xs text-slate-500">UX inside app.brandrai.com + credit meter + pack upsell flows</div>
+      </div>
+    </div>
+    <button onclick="window.print()" class="px-3 py-2 border border-slate-300 rounded-lg text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-1.5"><i data-lucide="printer" class="w-4 h-4"></i>Print / PDF</button>
+  </div>
+</nav>
+
+<main class="max-w-5xl mx-auto px-6 py-10 bg-white shadow-sm my-6 rounded-2xl">
+
+<div class="mb-8 pb-6 border-b border-slate-200">
+  <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">Product spec &middot; internal engineering + product</div>
+  <h1 class="text-4xl font-bold text-slate-900 mb-3">BrandrAI Studio inside the app — <span class="gradient-text-purple">UX + credit meter spec</span></h1>
+  <p class="text-slate-600 max-w-3xl">How AI Brand Studio lives inside <span class="mono">app.brandrai.com</span>, what users see when they generate / edit / export, how Studio credits are metered across every action, and how the two-meter pricing (COA verifications + Studio credits) surfaces in-app without confusing users.</p>
+  <div class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+    <div><span class="text-slate-500">Target launch:</span> <span class="font-semibold text-slate-900">May 1 2026 (v1)</span></div>
+    <div><span class="text-slate-500">Primary engineer:</span> <span class="font-semibold text-slate-900">Dang + Max (design)</span></div>
+    <div><span class="text-slate-500">Estimated effort:</span> <span class="font-semibold text-slate-900">6-8 weeks to v1</span></div>
+    <div><span class="text-slate-500">Dependency on Proof / Sites:</span> <span class="font-semibold text-slate-900">None; independent</span></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="mb-10 p-5 bg-slate-50 rounded-xl border border-slate-200">
+  <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Contents</div>
+  <ol class="space-y-1.5 text-sm text-slate-700 list-decimal list-inside grid md:grid-cols-2 gap-x-4">
+    <li><a href="#integration" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">How Studio lives inside BrandrAI</a></li>
+    <li><a href="#nav" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">Navigation + sidebar placement</a></li>
+    <li><a href="#meters" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">The two-meter header — COA + Studio</a></li>
+    <li><a href="#costs" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">Credit cost table — every action</a></li>
+    <li><a href="#generate" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">Generate flow (image / video / copy)</a></li>
+    <li><a href="#edit" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">Edit &amp; bg-swap flows</a></li>
+    <li><a href="#brandguide" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">Brand guide generator (15cr)</a></li>
+    <li><a href="#upsell" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">Upsell moments + pack purchase</a></li>
+    <li><a href="#billing" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">Billing / usage / admin</a></li>
+    <li><a href="#timeline" class="hover:text-fuchsia-700 underline-offset-4 hover:underline">Engineering timeline</a></li>
+  </ol>
+</div>
+
+<!-- 1 INTEGRATION -->
+<section id="integration" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">1 &middot; How Studio lives inside BrandrAI</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">One app, two meters, three product lines.</h2>
+  <p class="text-slate-700 mb-4">Studio is not a separate product or login. It is a top-level workspace section inside <span class="mono">app.brandrai.com</span> that sits alongside COA Verify and (later) Proof and Sites. The user has one account, one subscription, one billing relationship — but <strong>two independent meters</strong> that refill on the 1st of every month:</p>
+
+  <div class="grid md:grid-cols-2 gap-4 mb-5">
+    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+      <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-5 h-5 text-emerald-700"></i><span class="font-bold text-emerald-900">COA verifications</span></div>
+      <p class="text-sm text-emerald-900">Authentication product. One verification = one COA run through the pipeline (OCR → rules → hash). Overage: $2/verify.</p>
+    </div>
+    <div class="bg-fuchsia-50 border border-fuchsia-200 rounded-xl p-4">
+      <div class="flex items-center gap-2 mb-2"><i data-lucide="sparkles" class="w-5 h-5 text-fuchsia-700"></i><span class="font-bold text-fuchsia-900">Studio credits</span></div>
+      <p class="text-sm text-fuchsia-900">Generation product. Variable cost per action (1-20cr). Overage: buy packs (Taste $35 / Creator $129 / Studio $449 / Agency $1899).</p>
+    </div>
+  </div>
+
+  <p class="text-slate-700">The two meters never bleed into each other. You can never &quot;spend&quot; a COA verification on a Studio generation, and Studio credits cannot be used for COA verification. This is intentional: COA is an authentication product with regulatory weight (each verify is a signed assertion); Studio is a creative tool where cost varies by action.</p>
+</section>
+
+<!-- 2 NAV -->
+<section id="nav" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">2 &middot; Navigation + sidebar placement</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Where Studio lives in the sidebar.</h2>
+
+  <div class="mockup-box mb-4">
+    <div class="text-xs text-slate-500 mb-2">app.brandrai.com left sidebar — logged-in state</div>
+    <pre class="bg-white p-3 rounded border border-slate-200">┌─ BrandrAI ─────────────┐
+│ [≡ logo] Acme Co.  ▾   │
+├────────────────────────┤
+│ 🏠  Dashboard          │
+│ 📦  Products           │
+│ ✅  COA Verify         │  ← authentication product
+│ ✨  Studio         [NEW]│  ← generation product (THIS SPEC)
+│ 🔐  Proof          [Q3]│  ← primitive (coming)
+│ 🌐  Sites          [Q4]│  ← cross-builder (coming)
+│ 📊  Analytics          │
+├────────────────────────┤
+│ Meters                 │
+│ ✅ 247 / 1,500         │
+│ ✨ 1,842 / 2,000       │
+├────────────────────────┤
+│ ⚙  Settings            │
+│ 💳 Billing             │
+└────────────────────────┘</pre>
+  </div>
+
+  <ul class="text-sm text-slate-700 space-y-1.5 list-disc list-inside">
+    <li><strong>Studio sits directly under COA Verify</strong> — signals they&apos;re peers, not parent/child.</li>
+    <li>Both meters are always visible in the left sidebar bottom panel. Click either to open a usage detail drawer.</li>
+    <li>Studio subnav (when expanded): <span class="mono">Generate · Edit · Brand Guide · SEO Copy · Library</span>.</li>
+  </ul>
+</section>
+
+<!-- 3 METERS -->
+<section id="meters" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">3 &middot; The two-meter header</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Meter display rules — never let users wonder &quot;which bucket paid for that?&quot;</h2>
+
+  <div class="mockup-box mb-4">
+    <div class="text-xs text-slate-500 mb-2">Top bar of every Studio screen</div>
+    <pre class="bg-white p-3 rounded border border-slate-200">╭─────────────────────────────────────────────────────────────╮
+│  ✨ Studio                                                  │
+│                                                             │
+│  Studio credits this month                                  │
+│  ██████████████████░░  1,842 / 2,000                        │
+│  Resets May 1 · Buy more credits →                          │
+╰─────────────────────────────────────────────────────────────╯</pre>
+  </div>
+
+  <p class="text-slate-700 mb-3"><strong>Rules the UI must follow:</strong></p>
+  <ul class="text-sm text-slate-700 space-y-1.5 list-disc list-inside mb-4">
+    <li>Studio screens show the <em>Studio credit</em> meter only. COA Verify screens show the <em>COA verification</em> meter only. Never both side-by-side in content area (it causes &quot;which one got charged?&quot; confusion).</li>
+    <li>Both meters are always available in the sidebar bottom panel (section 2).</li>
+    <li>Before any generation action: show <span class="credit-pill">✨ 4 credits</span> on the CTA button — e.g. <span class="mono">[Generate image &middot; 4cr]</span>.</li>
+    <li>After action: toast confirmation — <span class="mono">&quot;Image generated. 4 credits used. 1,838 remaining.&quot;</span></li>
+    <li>When &lt; 10% remaining: meter turns amber, sidebar shows &quot;Buy more&quot; CTA.</li>
+    <li>When 0 remaining: generation CTAs change to <span class="mono">[Buy credits to generate]</span> (not greyed out — actively sells).</li>
+  </ul>
+</section>
+
+<!-- 4 COSTS -->
+<section id="costs" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">4 &middot; Credit cost table — every Studio action</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">What each action costs, and why.</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-4">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-4 py-2 text-left">Action</th><th class="px-4 py-2 text-left">Cost</th><th class="px-4 py-2 text-left">Rationale</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200">
+        <tr><td class="px-4 py-2">Image generation (standard)</td><td class="px-4 py-2"><span class="credit-pill">✨ 4cr</span></td><td class="px-4 py-2 text-slate-600">~$0.04 upstream cost, ~$0.14 retail (at Creator pack rate) &rarr; healthy margin.</td></tr>
+        <tr><td class="px-4 py-2">Image generation (HD / 4K)</td><td class="px-4 py-2"><span class="credit-pill">✨ 8cr</span></td><td class="px-4 py-2 text-slate-600">Double resolution, double cost.</td></tr>
+        <tr><td class="px-4 py-2">Edit existing image (inpaint)</td><td class="px-4 py-2"><span class="credit-pill">✨ 2cr</span></td><td class="px-4 py-2 text-slate-600">Mask + diffusion pass, lighter than fresh gen.</td></tr>
+        <tr><td class="px-4 py-2">Background swap / removal</td><td class="px-4 py-2"><span class="credit-pill">✨ 1cr</span></td><td class="px-4 py-2 text-slate-600">Segmentation model, near-free &mdash; loss-leader to hook usage.</td></tr>
+        <tr><td class="px-4 py-2">Brand guide (full PDF + token set)</td><td class="px-4 py-2"><span class="credit-pill">✨ 15cr</span></td><td class="px-4 py-2 text-slate-600">Multi-step: palette + type + voice + logo refinement + PDF render.</td></tr>
+        <tr><td class="px-4 py-2">SEO copy block (product / page)</td><td class="px-4 py-2"><span class="credit-pill">✨ 1cr</span></td><td class="px-4 py-2 text-slate-600">Single LLM call, priced to encourage volume.</td></tr>
+        <tr><td class="px-4 py-2">Video generation (5-10s)</td><td class="px-4 py-2"><span class="credit-pill">✨ 20cr</span></td><td class="px-4 py-2 text-slate-600">Expensive upstream (Runway/Veo-class). Explicit upsell pattern.</td></tr>
+        <tr><td class="px-4 py-2">Voice / narration (30s)</td><td class="px-4 py-2"><span class="credit-pill">✨ 3cr</span></td><td class="px-4 py-2 text-slate-600">TTS with brand voice profile.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-sm text-slate-600"><strong>Per-tier bundled allowances recap:</strong> Free 20cr &middot; Starter 100cr (~$35 value) &middot; Growth 500cr (~$129 value) &middot; Business 2,000cr (~$449 value). Pack prices: Taste $35/100 &middot; Creator $129/500 &middot; Studio $449/2000 &middot; Agency $1,899/10000.</p>
+</section>
+
+<!-- 5 GENERATE -->
+<section id="generate" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">5 &middot; Generate flow</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Image / video / copy — one universal generate surface.</h2>
+
+  <div class="mockup-box mb-4">
+    <pre class="bg-white p-3 rounded border border-slate-200">╭─ ✨ Studio › Generate ──────────────────────────────────╮
+│                                                         │
+│  What are we making?                                    │
+│  ( ) Image    ( ) Video    ( ) Copy    ( ) Voice        │
+│                                                         │
+│  Brand context (auto)                                   │
+│  [Acme Co. — emerald / slate · Inter · playful voice ▾] │
+│                                                         │
+│  Prompt                                                 │
+│  ┌─────────────────────────────────────────────────────┐│
+│  │ Hero shot of our new sour gummy, lifestyle outdoor, ││
+│  │ golden hour, aspirational but approachable          ││
+│  └─────────────────────────────────────────────────────┘│
+│                                                         │
+│  Quality:  ( ) Standard 4cr   (•) HD 8cr                │
+│  Variants: 1  [2]  3  4                                 │
+│                                                         │
+│                               Total: ✨ 16cr (2 × 8cr)  │
+│               [ Cancel ]  [ Generate · 16cr →  ]        │
+╰─────────────────────────────────────────────────────────╯</pre>
+  </div>
+
+  <ul class="text-sm text-slate-700 space-y-1.5 list-disc list-inside">
+    <li><strong>Brand context is auto-injected</strong> from the user&apos;s brand token set. They don&apos;t prompt &quot;emerald&quot; — the system appends it.</li>
+    <li><strong>Credit cost updates live</strong> as user changes quality/variants — total shown right above CTA.</li>
+    <li>CTA always shows cost: <span class="mono">[Generate · 16cr →]</span>. Never a bare &quot;Generate&quot; button.</li>
+    <li>Results screen: 4 variants grid, each with <span class="mono">[Edit 2cr]</span> <span class="mono">[BG swap 1cr]</span> <span class="mono">[Save]</span> <span class="mono">[Export]</span> row.</li>
+  </ul>
+</section>
+
+<!-- 6 EDIT -->
+<section id="edit" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">6 &middot; Edit &amp; bg-swap flows</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">The cheap, sticky actions that drive retention.</h2>
+
+  <p class="text-slate-700 mb-3">Edit (2cr) and background swap (1cr) are deliberately cheap. Users come in to generate one hero shot (8cr), then stay to iterate — swap backgrounds across seasonal campaigns, inpaint small corrections. A typical user session touches 1 generation + 3-5 edits/swaps.</p>
+
+  <div class="mockup-box mb-4">
+    <pre class="bg-white p-3 rounded border border-slate-200">╭─ ✨ Studio › Edit ──────────────────────────────────────╮
+│                                                         │
+│  [ current image with brush/mask overlay ]              │
+│                                                         │
+│  Tools: [ 🖌 Mask ] [ ⚙ Inpaint ] [ 🌄 BG swap ]         │
+│                                                         │
+│  Prompt (what goes in the masked area)                  │
+│  [ replace label text with &quot;SOUR APPLE&quot; in brand font ] │
+│                                                         │
+│           [ Apply edit · 2cr ]   [ Swap BG · 1cr ]      │
+╰─────────────────────────────────────────────────────────╯</pre>
+  </div>
+
+  <ul class="text-sm text-slate-700 space-y-1.5 list-disc list-inside">
+    <li>BG swap presets: <span class="mono">studio white · lifestyle outdoor · retail shelf · dispensary counter · transparent PNG</span>.</li>
+    <li>Every edit creates a new version in Library; original is never mutated.</li>
+    <li>Undo is free (no credit charged for reverting — revert reads from Library).</li>
+  </ul>
+</section>
+
+<!-- 7 BRAND GUIDE -->
+<section id="brandguide" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">7 &middot; Brand guide generator (15cr)</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">One 15-credit action that pays for the whole month.</h2>
+
+  <p class="text-slate-700 mb-3">The brand guide generator is the single most valuable Studio action. Users pay 15cr once and get a full token set + PDF brand guide that then auto-applies to every subsequent generation. This is also the entry point into <strong>BrandrAI Sites</strong> (section 7B of spec 77) — the token set feeds the Sites generator.</p>
+
+  <div class="mockup-box mb-4">
+    <pre class="bg-white p-3 rounded border border-slate-200">╭─ ✨ Studio › Brand Guide ───────────────────────────────╮
+│  Step 1 of 4 · Discovery                                │
+│                                                         │
+│  What is your brand called?    [ Acme Cannabis Co. ]    │
+│  Industry                       [ Cannabis / THC ▾ ]    │
+│  Audience                       [ 25-45 craft-focused ] │
+│  Voice                          ( ) Playful  (•) Calm   │
+│                                 ( ) Bold     ( ) Clinical│
+│  Upload existing assets (optional)                      │
+│  [ + logo.svg ]  [ + old-brand.pdf ]                    │
+│                                                         │
+│                          [ Next — costs 15cr total →  ] │
+╰─────────────────────────────────────────────────────────╯</pre>
+  </div>
+
+  <p class="text-sm text-slate-600"><strong>Output:</strong> Radix-style palette (Jade + Slate by default, overridable), fluid type scale, logo refinements (3 variants), voice/tone sheet, 24-page PDF. Token set exports as JSON and is ready to feed Sites or Headspin Copilot directly.</p>
+</section>
+
+<!-- 8 UPSELL -->
+<section id="upsell" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">8 &middot; Upsell moments + pack purchase</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Four moments to sell a credit pack. Don&apos;t miss them.</h2>
+
+  <div class="space-y-3 mb-4">
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+      <div class="text-xs font-semibold uppercase text-amber-800 mb-1">Moment 1 &middot; &lt; 10% remaining</div>
+      <p class="text-sm text-slate-700">Sidebar meter turns amber. Soft banner on Studio home: &quot;You&apos;re almost out for the month. Grab a pack to keep going — Creator pack is $129 for 500 credits (same rate as your plan).&quot;</p>
+    </div>
+    <div class="bg-rose-50 border border-rose-200 rounded-lg p-3">
+      <div class="text-xs font-semibold uppercase text-rose-800 mb-1">Moment 2 &middot; Zero remaining</div>
+      <p class="text-sm text-slate-700">Generate CTAs swap to <span class="mono">[Buy credits to generate]</span>. Clicking opens pack picker modal. No dead-end &mdash; the button sells.</p>
+    </div>
+    <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
+      <div class="text-xs font-semibold uppercase text-purple-800 mb-1">Moment 3 &middot; Expensive action &gt; remaining</div>
+      <p class="text-sm text-slate-700">User clicks <span class="mono">Generate video · 20cr</span> but only has 8cr left. Inline modal: &quot;Not enough credits for this action. Add 100 credits for $35 to continue?&quot; — one-click Taste pack purchase.</p>
+    </div>
+    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+      <div class="text-xs font-semibold uppercase text-emerald-800 mb-1">Moment 4 &middot; Month-end high usage</div>
+      <p class="text-sm text-slate-700">If user finished the month &gt; 80% used for 2 consecutive months &mdash; suggest tier upgrade in billing panel, not pack (sticky ARR beats one-time pack).</p>
+    </div>
+  </div>
+
+  <div class="mockup-box">
+    <div class="text-xs text-slate-500 mb-2">Pack picker modal</div>
+    <pre class="bg-white p-3 rounded border border-slate-200">╭─ Buy Studio credits ────────────────────────────────────╮
+│  One-time packs &middot; never expire &middot; add to current balance │
+│                                                         │
+│  ┌─Taste──────┐ ┌─Creator─────┐ ┌─Studio──────┐         │
+│  │   100 cr   │ │   500 cr    │ │  2,000 cr   │         │
+│  │    $35     │ │    $129     │ │    $449     │  [More ▾]│
+│  │ [ Buy ]    │ │[ Most value]│ │  [ Buy ]    │         │
+│  └────────────┘ └─────────────┘ └─────────────┘         │
+│                                                         │
+│  Paid with card ending 4242 &middot; [ Change ]               │
+╰─────────────────────────────────────────────────────────╯</pre>
+  </div>
+</section>
+
+<!-- 9 BILLING -->
+<section id="billing" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">9 &middot; Billing / usage / admin</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">The usage page — transparency beats surprise.</h2>
+
+  <div class="mockup-box mb-4">
+    <pre class="bg-white p-3 rounded border border-slate-200">╭─ Settings › Usage ──────────────────────────────────────╮
+│  April 2026  ▾                                          │
+│                                                         │
+│  ✅ COA Verifications                                   │
+│  ████████░░░░░░░░░░  247 / 1,500         ( $0 overage ) │
+│                                                         │
+│  ✨ Studio Credits                                      │
+│  ██████████████████░░  1,842 / 2,000     ( 158 left )   │
+│  + Creator pack bought 04/14 · 500cr     (remaining: 342)│
+│                                                         │
+│  ─── Top actions this month ───                         │
+│  147 × Image gen (std) ................ 588cr           │
+│   89 × BG swap ........................  89cr           │
+│   34 × Edit ........................... 68cr            │
+│    1 × Brand guide .................... 15cr            │
+│                                                         │
+│  [ Download CSV ]  [ Invoice history ]                  │
+╰─────────────────────────────────────────────────────────╯</pre>
+  </div>
+
+  <ul class="text-sm text-slate-700 space-y-1.5 list-disc list-inside">
+    <li>Both meters on one page (this is the ONLY place both live together — usage context makes the dual-meter model legible).</li>
+    <li>Pack purchases show inline in the Studio meter history.</li>
+    <li>CSV export is table-stakes for agencies/multi-brand users.</li>
+  </ul>
+</section>
+
+<!-- 10 TIMELINE -->
+<section id="timeline" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold mb-2">10 &middot; Engineering timeline (6-8 weeks to v1)</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">What ships May 1, what ships in follow-ups.</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-4 py-2 text-left">Phase</th><th class="px-4 py-2 text-left">Scope</th><th class="px-4 py-2 text-left">Ship</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200">
+        <tr><td class="px-4 py-2 font-semibold">v0.5 &middot; Credit meter infra</td><td class="px-4 py-2 text-slate-600">Meters table, charge-per-action middleware, pack purchase via Stripe, sidebar meter widget</td><td class="px-4 py-2">Pre-May 1</td></tr>
+        <tr><td class="px-4 py-2 font-semibold">v1 &middot; Core generate + edit</td><td class="px-4 py-2 text-slate-600">Image gen (std/HD), edit/inpaint, bg swap, SEO copy, brand context auto-inject, Library</td><td class="px-4 py-2">May 1 launch</td></tr>
+        <tr><td class="px-4 py-2 font-semibold">v1.1 &middot; Brand guide</td><td class="px-4 py-2 text-slate-600">4-step wizard, token set export, PDF render (15cr action)</td><td class="px-4 py-2">May 15</td></tr>
+        <tr><td class="px-4 py-2 font-semibold">v1.2 &middot; Video + voice</td><td class="px-4 py-2 text-slate-600">Runway / Veo integration (20cr video, 3cr voice)</td><td class="px-4 py-2">June</td></tr>
+        <tr><td class="px-4 py-2 font-semibold">v2 &middot; Sites handoff</td><td class="px-4 py-2 text-slate-600">Brand guide output becomes Sites generator input (spec 77 §7B)</td><td class="px-4 py-2">Q3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-sm text-slate-600 mt-4"><strong>May 1 launch scope:</strong> credit infra + core gen/edit/bg/SEO. Brand guide slips 2 weeks (ok — 15cr action is low-volume and users won&apos;t miss it in week 1). Video always was June+.</p>
+</section>
+
+<div class="mt-10 pt-6 border-t border-slate-200 text-sm text-slate-500">
+  <p><strong>Related specs:</strong> <a href="77-brandrai-proof-ux-spec.html" class="text-fuchsia-700 hover:underline">77 — Proof UX</a> &middot; <a href="12-pricing-page.html" class="text-fuchsia-700 hover:underline">12 — Pricing page</a> &middot; <a href="63-AI_BRAND_ASSISTANT_FEATURE_SPEC.docx" class="text-fuchsia-700 hover:underline">63 — AI Brand Assistant feature spec</a> &middot; <a href="63a-AI_BRAND_ASSISTANT_CREATIVE_CAPABILITIES.docx" class="text-fuchsia-700 hover:underline">63a — Creative capabilities</a></p>
+  <p class="mt-2">Owner: Max Juhasz · Engineering lead: Dang Tran · Version 1.0 · 2026-04-23</p>
+</div>
+
+</main>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
