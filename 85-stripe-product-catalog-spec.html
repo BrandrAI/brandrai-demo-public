@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandrAI Stripe Product Catalog Spec</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; font-size: 10.5pt; line-height: 1.5; }
+  h2 { scroll-margin-top: 80px; }
+  pre { font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; line-height: 1.4; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; }
+  @media print {
+    nav, .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+  }
+</style>
+</head>
+<body class="bg-slate-50">
+
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-purple-400">ENGINEERING SPEC</span>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  Stripe product catalog configuration &mdash; what Dang needs to build before May 1
+</div>
+
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50 no-print">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">$</div>
+      <div>
+        <div class="font-bold text-slate-900 text-sm">Stripe product catalog</div>
+        <div class="text-xs text-slate-500">Two-meter pricing + credit packs + early-adopter coupon</div>
+      </div>
+    </div>
+    <button onclick="window.print()" class="px-3 py-2 border border-slate-300 rounded-lg text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-1.5"><i data-lucide="printer" class="w-4 h-4"></i>Print / PDF</button>
+  </div>
+</nav>
+
+<main class="max-w-5xl mx-auto px-6 py-8 bg-white shadow-sm my-6 rounded-2xl">
+
+<div class="mb-8 pb-6 border-b border-slate-200">
+  <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">Engineering spec &middot; for Dang</div>
+  <h1 class="text-3xl font-bold text-slate-900 mb-3">Stripe product catalog &mdash; exact config needed.</h1>
+  <p class="text-slate-700">What to create in the Stripe Dashboard and how it maps to <span class="mono">app.brandrai.com</span>. Everything here needs to exist by Tuesday April 28 for the May 1 launch. MVP scope is the four subscription tiers + early-adopter coupon; pack purchases and metered overage can ship v1.1 post-launch.</p>
+  <div class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+    <div><span class="text-slate-500">Owner:</span> <span class="font-semibold text-slate-900">Dang</span></div>
+    <div><span class="text-slate-500">MVP deadline:</span> <span class="font-semibold text-slate-900">Apr 28, 2026</span></div>
+    <div><span class="text-slate-500">v1.1 deadline:</span> <span class="font-semibold text-slate-900">May 15, 2026</span></div>
+    <div><span class="text-slate-500">Stripe account:</span> <span class="font-semibold text-slate-900">BrandrAI live (test first)</span></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="mb-10 p-5 bg-slate-50 rounded-xl border border-slate-200">
+  <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Contents</div>
+  <ol class="space-y-1.5 text-sm text-slate-700 list-decimal list-inside grid md:grid-cols-2 gap-x-4">
+    <li><a href="#subs" class="hover:text-purple-700 underline-offset-4 hover:underline">Subscription products (4 tiers)</a></li>
+    <li><a href="#meters" class="hover:text-purple-700 underline-offset-4 hover:underline">Usage meters (COA + Studio)</a></li>
+    <li><a href="#packs" class="hover:text-purple-700 underline-offset-4 hover:underline">Studio credit packs (4 one-time products)</a></li>
+    <li><a href="#coupons" class="hover:text-purple-700 underline-offset-4 hover:underline">Early-adopter coupon</a></li>
+    <li><a href="#webhooks" class="hover:text-purple-700 underline-offset-4 hover:underline">Webhook events to handle</a></li>
+    <li><a href="#mapping" class="hover:text-purple-700 underline-offset-4 hover:underline">Price ID &rarr; plan entitlement mapping</a></li>
+    <li><a href="#scope" class="hover:text-purple-700 underline-offset-4 hover:underline">MVP vs v1.1 scope</a></li>
+    <li><a href="#qa" class="hover:text-purple-700 underline-offset-4 hover:underline">QA checklist before go-live</a></li>
+  </ol>
+</div>
+
+<!-- 1 SUBSCRIPTIONS -->
+<section id="subs" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">1 &middot; Subscription products</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">4 products, each with 2 prices (monthly + annual).</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-5">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-3 py-2 text-left">Product name</th><th class="px-3 py-2 text-left">Product ID (suggested)</th><th class="px-3 py-2 text-left">Monthly price</th><th class="px-3 py-2 text-left">Annual price (20% off)</th><th class="px-3 py-2 text-left">Bundled meters</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 text-slate-700">
+        <tr><td class="px-3 py-2 font-semibold">Free</td><td class="px-3 py-2 mono">prod_brandrai_free</td><td class="px-3 py-2">$0/mo</td><td class="px-3 py-2">&mdash;</td><td class="px-3 py-2 text-xs">5 COA / 20 Studio cr</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">Starter</td><td class="px-3 py-2 mono">prod_brandrai_starter</td><td class="px-3 py-2">$99/mo</td><td class="px-3 py-2">$950/yr ($79/mo)</td><td class="px-3 py-2 text-xs">50 COA / 100 Studio cr</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">Growth</td><td class="px-3 py-2 mono">prod_brandrai_growth</td><td class="px-3 py-2">$299/mo</td><td class="px-3 py-2">$2,870/yr ($239/mo)</td><td class="px-3 py-2 text-xs">250 COA / 500 Studio cr</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">Business</td><td class="px-3 py-2 mono">prod_brandrai_business</td><td class="px-3 py-2">$799/mo</td><td class="px-3 py-2">$7,670/yr ($639/mo)</td><td class="px-3 py-2 text-xs">1,500 COA / 2,000 Studio cr</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-slate-700 mb-3"><strong>Metadata to set on each price</strong> (Stripe &rarr; Products &rarr; Price &rarr; Metadata):</p>
+  <pre class="bg-slate-900 text-slate-100 p-3 rounded mono mb-4">plan_tier: "free" | "starter" | "growth" | "business"
+billing_interval: "month" | "year"
+included_coa_verifications: "5" | "50" | "250" | "1500"
+included_studio_credits: "20" | "100" | "500" | "2000"
+coa_overage_price_id: "price_xxx"        # points to metered COA overage
+studio_overage_pack_ids: "[pack_ids_comma_separated]"
+early_adopter_eligible: "true"</pre>
+
+  <p class="text-sm text-slate-600">Enterprise tier ($2,499+/mo) stays as a <strong>contact-sales</strong> flow &mdash; don&apos;t create a Stripe product yet. Create as a custom invoice when first Enterprise closes.</p>
+</section>
+
+<!-- 2 METERS -->
+<section id="meters" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">2 &middot; Usage meters (Stripe Billing)</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Two independent meters, two overage pricing models.</h2>
+
+  <div class="grid md:grid-cols-2 gap-4 mb-5">
+    <div class="p-5 bg-emerald-50 border border-emerald-200 rounded-xl">
+      <div class="font-bold text-emerald-900 mb-2 flex items-center gap-2"><i data-lucide="shield-check" class="w-5 h-5"></i>COA verifications meter</div>
+      <ul class="text-sm text-emerald-900 space-y-1 list-disc list-inside">
+        <li>Event name: <span class="mono">coa_verification</span></li>
+        <li>Aggregation: <strong>sum</strong> (each verify = 1 unit)</li>
+        <li>Billing: <strong>metered</strong>, aggregated over the billing period</li>
+        <li>Included allowance enforced in-app (not Stripe); overages reported to meter</li>
+        <li>Overage price: <strong>$2.00 per unit</strong>, post-threshold</li>
+        <li>Price type: <span class="mono">graduated</span> &mdash; tier 1 (0 to included) = $0, tier 2 (included+) = $2.00</li>
+      </ul>
+    </div>
+    <div class="p-5 bg-fuchsia-50 border border-fuchsia-200 rounded-xl">
+      <div class="font-bold text-fuchsia-900 mb-2 flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5"></i>Studio credits meter</div>
+      <ul class="text-sm text-fuchsia-900 space-y-1 list-disc list-inside">
+        <li>Event name: <span class="mono">studio_credit</span></li>
+        <li>Aggregation: <strong>sum</strong> (variable cost per action: 1-20cr)</li>
+        <li>Billing: <strong>not metered on subscription</strong> &mdash; overage handled via pack purchases</li>
+        <li>When balance hits 0, UI blocks generation and shows pack picker</li>
+        <li>Pack purchases add to a separate <span class="mono">studio_credit_balance</span> field that persists across months (packs never expire)</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="text-sm text-slate-700 p-3 bg-amber-50 border-l-4 border-amber-400 rounded"><strong>Design decision:</strong> COA overage bills at $2/unit because authentication is a recurring per-unit need (compliance-driven). Studio overage uses packs because generation is bursty (campaign cycles) and packs give users control &mdash; they hate surprise bills for creative work. This hybrid is intentional.</p>
+</section>
+
+<!-- 3 PACKS -->
+<section id="packs" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">3 &middot; Studio credit packs (4 one-time products)</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">One-time purchase products, never expire.</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-4">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-3 py-2 text-left">Pack</th><th class="px-3 py-2 text-left">Product ID</th><th class="px-3 py-2 text-left">Credits</th><th class="px-3 py-2 text-left">Price</th><th class="px-3 py-2 text-left">$/credit</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 text-slate-700">
+        <tr><td class="px-3 py-2 font-semibold">Taste</td><td class="px-3 py-2 mono">prod_pack_taste</td><td class="px-3 py-2">100</td><td class="px-3 py-2">$35 one-time</td><td class="px-3 py-2">$0.35</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">Creator</td><td class="px-3 py-2 mono">prod_pack_creator</td><td class="px-3 py-2">500</td><td class="px-3 py-2">$129 one-time</td><td class="px-3 py-2">$0.258</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">Studio</td><td class="px-3 py-2 mono">prod_pack_studio</td><td class="px-3 py-2">2,000</td><td class="px-3 py-2">$449 one-time</td><td class="px-3 py-2">$0.224</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">Agency</td><td class="px-3 py-2 mono">prod_pack_agency</td><td class="px-3 py-2">10,000</td><td class="px-3 py-2">$1,899 one-time</td><td class="px-3 py-2">$0.19</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-slate-700 mb-2"><strong>Metadata on each pack price:</strong></p>
+  <pre class="bg-slate-900 text-slate-100 p-3 rounded mono mb-3">credit_amount: "100" | "500" | "2000" | "10000"
+pack_name: "taste" | "creator" | "studio" | "agency"
+pack_type: "studio_credits"
+expires: "false"</pre>
+
+  <p class="text-sm text-slate-600">Packs are purchased as one-time <span class="mono">payment_intent</span> or via <span class="mono">checkout.session</span> with <span class="mono">mode: "payment"</span>. On <span class="mono">checkout.session.completed</span> webhook, app increments the user&apos;s <span class="mono">studio_credit_balance</span> by the pack&apos;s <span class="mono">credit_amount</span>.</p>
+</section>
+
+<!-- 4 COUPONS -->
+<section id="coupons" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">4 &middot; Early-adopter coupon</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">One coupon locks discounted rates through 2026.</h2>
+
+  <div class="mb-4 p-4 bg-slate-900 text-slate-200 rounded-xl">
+    <div class="font-semibold text-purple-400 mb-2">Coupon config</div>
+    <pre class="mono">id: EARLY_ADOPTER_2026
+name: "Early adopter &mdash; locked through 2026"
+duration: repeating
+duration_in_months: [ months remaining in 2026 at time of signup ]
+percent_off: ~50.25% (Starter), 33.44% (Growth), 31.29% (Business)
+applies_to: all 3 paid subscription products
+max_redemptions: 500 (tune as needed)
+redeem_by: 2026-12-31T23:59:59Z</pre>
+  </div>
+
+  <p class="text-slate-700 mb-3"><strong>Implementation note:</strong> the cleanest approach is 3 separate coupons (one per tier) each with a specific fixed <span class="mono">amount_off</span> that brings the price to the early-adopter rate:</p>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-3 text-sm">
+    <table class="w-full">
+      <thead class="bg-slate-50"><tr><th class="px-3 py-2 text-left">Tier</th><th class="px-3 py-2 text-left">Full price</th><th class="px-3 py-2 text-left">Discounted price</th><th class="px-3 py-2 text-left">Coupon amount_off</th></tr></thead>
+      <tbody class="divide-y divide-slate-200">
+        <tr><td class="px-3 py-2">Starter</td><td class="px-3 py-2 mono">$99/mo</td><td class="px-3 py-2 mono">$49/mo</td><td class="px-3 py-2 mono">$50.00 (monthly, repeating)</td></tr>
+        <tr><td class="px-3 py-2">Growth</td><td class="px-3 py-2 mono">$299/mo</td><td class="px-3 py-2 mono">$199/mo</td><td class="px-3 py-2 mono">$100.00 (monthly, repeating)</td></tr>
+        <tr><td class="px-3 py-2">Business</td><td class="px-3 py-2 mono">$799/mo</td><td class="px-3 py-2 mono">$549/mo</td><td class="px-3 py-2 mono">$250.00 (monthly, repeating)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-sm text-slate-600"><strong>Duration semantics:</strong> set <span class="mono">duration: repeating</span> + <span class="mono">duration_in_months</span> = calendar months remaining until Dec 31 2026 at signup. Simplest path: hardcode to 12 months and accept that a Sept 2026 signup locks through Aug 2027 &mdash; close enough for marketing purposes. Don&apos;t over-engineer.</p>
+</section>
+
+<!-- 5 WEBHOOKS -->
+<section id="webhooks" class="mb-10 page-break">
+  <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">5 &middot; Webhook events to handle</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Minimum set for launch.</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-4">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-3 py-2 text-left">Event</th><th class="px-3 py-2 text-left">When it fires</th><th class="px-3 py-2 text-left">What to do</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 text-slate-700">
+        <tr><td class="px-3 py-2 mono">checkout.session.completed</td><td class="px-3 py-2">User finishes checkout (sub or pack)</td><td class="px-3 py-2 text-xs">Create subscription record OR increment studio_credit_balance based on <span class="mono">mode</span></td></tr>
+        <tr><td class="px-3 py-2 mono">customer.subscription.created</td><td class="px-3 py-2">New sub starts</td><td class="px-3 py-2 text-xs">Set plan_tier on user, apply included_coa_verifications + included_studio_credits to balance, reset monthly counters</td></tr>
+        <tr><td class="px-3 py-2 mono">customer.subscription.updated</td><td class="px-3 py-2">Tier change, pause, resume</td><td class="px-3 py-2 text-xs">Update plan_tier, prorate allowances if upgrading</td></tr>
+        <tr><td class="px-3 py-2 mono">customer.subscription.deleted</td><td class="px-3 py-2">Cancelled at period end</td><td class="px-3 py-2 text-xs">Downgrade to free tier at period end; do NOT clear studio_credit_balance (packs persist)</td></tr>
+        <tr><td class="px-3 py-2 mono">invoice.payment_succeeded</td><td class="px-3 py-2">Monthly billing cycle successful</td><td class="px-3 py-2 text-xs">Reset monthly meters (included COA verifications, included Studio credits)</td></tr>
+        <tr><td class="px-3 py-2 mono">invoice.payment_failed</td><td class="px-3 py-2">Card declined</td><td class="px-3 py-2 text-xs">Email user; put account in grace period; do not reset meters</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-sm text-slate-600"><strong>Signature verification:</strong> every webhook MUST verify the Stripe signature (<span class="mono">stripe-signature</span> header + webhook secret). Use Laravel&apos;s <span class="mono">StripeWebhookController</span> or equivalent. No unsigned webhooks in prod.</p>
+</section>
+
+<!-- 6 MAPPING -->
+<section id="mapping" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">6 &middot; Price ID &rarr; plan entitlement mapping</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">The backend source of truth.</h2>
+
+  <p class="text-slate-700 mb-3">Keep this in <span class="mono">config/brandrai_plans.php</span> (or equivalent) as a canonical mapping. The frontend pricing page reads the same source; Stripe is the payment layer but the app&apos;s plan logic reads from this config.</p>
+
+  <pre class="bg-slate-900 text-slate-100 p-3 rounded mono mb-4">// config/brandrai_plans.php
+return [
+    'free' =&gt; [
+        'stripe_price_id_monthly' =&gt; null, // no Stripe sub for free
+        'coa_included' =&gt; 5,
+        'studio_credits_included' =&gt; 20,
+        'coa_overage_allowed' =&gt; false,
+        'studio_pack_purchase_allowed' =&gt; true,
+        'features' =&gt; ['up_to_5_products', 'basic_verify'],
+    ],
+    'starter' =&gt; [
+        'stripe_price_id_monthly' =&gt; 'price_xxx_starter_monthly',
+        'stripe_price_id_annual'  =&gt; 'price_xxx_starter_annual',
+        'coa_included' =&gt; 50,
+        'studio_credits_included' =&gt; 100,
+        'coa_overage_price_per_unit_cents' =&gt; 200,
+        'coa_overage_allowed' =&gt; true,
+        'studio_pack_purchase_allowed' =&gt; true,
+        'features' =&gt; ['up_to_25_products', 'ai_brand_studio', 'metrc_lookup'],
+    ],
+    'growth' =&gt; [
+        'stripe_price_id_monthly' =&gt; 'price_xxx_growth_monthly',
+        'stripe_price_id_annual'  =&gt; 'price_xxx_growth_annual',
+        'coa_included' =&gt; 250,
+        'studio_credits_included' =&gt; 500,
+        'coa_overage_price_per_unit_cents' =&gt; 200,
+        'coa_overage_allowed' =&gt; true,
+        'studio_pack_purchase_allowed' =&gt; true,
+        'features' =&gt; ['up_to_100_products', 'metrc_live', 'dam_50gb', 'custom_domain', 'image_seo'],
+    ],
+    'business' =&gt; [
+        'stripe_price_id_monthly' =&gt; 'price_xxx_business_monthly',
+        'stripe_price_id_annual'  =&gt; 'price_xxx_business_annual',
+        'coa_included' =&gt; 1500,
+        'studio_credits_included' =&gt; 2000,
+        'coa_overage_price_per_unit_cents' =&gt; 200,
+        'coa_overage_allowed' =&gt; true,
+        'studio_pack_purchase_allowed' =&gt; true,
+        'features' =&gt; ['up_to_500_products', 'multi_state_metrc', 'dam_500gb', 'api_access', 'advanced_analytics'],
+    ],
+];</pre>
+</section>
+
+<!-- 7 SCOPE -->
+<section id="scope" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">7 &middot; MVP vs v1.1 scope</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Ship the minimum; iterate post-launch.</h2>
+
+  <div class="grid md:grid-cols-2 gap-4 mb-4">
+    <div class="p-5 bg-rose-50 border border-rose-300 rounded-xl">
+      <div class="font-bold text-rose-900 mb-2">MVP (by Apr 28)</div>
+      <ul class="text-sm text-rose-900 space-y-1 list-disc list-inside">
+        <li>4 subscription products (Free, Starter, Growth, Business)</li>
+        <li>Monthly + annual prices</li>
+        <li>3 early-adopter coupons</li>
+        <li><span class="mono">checkout.session.completed</span> + <span class="mono">customer.subscription.*</span> webhooks</li>
+        <li>Plan entitlement config in app</li>
+        <li>Test mode end-to-end tested before live switch</li>
+      </ul>
+    </div>
+    <div class="p-5 bg-emerald-50 border border-emerald-300 rounded-xl">
+      <div class="font-bold text-emerald-900 mb-2">v1.1 (post-May 1)</div>
+      <ul class="text-sm text-emerald-900 space-y-1 list-disc list-inside">
+        <li>4 Studio credit packs + checkout flow</li>
+        <li>COA overage metering ($2/unit) via Stripe Billing meters</li>
+        <li>Credit pack UI in-app (pack picker modal from Studio UX spec &sect;8)</li>
+        <li>Usage dashboard (Studio credit + COA meter history)</li>
+        <li>Plan change / upgrade flow</li>
+        <li>Customer portal for self-serve billing</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="text-sm text-slate-600"><strong>Why this split:</strong> at May 1 the first 10-50 operators are mostly Free + Starter signups testing the product. Overage metering and pack purchases won&apos;t matter for 2-4 weeks. Ship subscription + checkout first; everything else is post-launch optimization.</p>
+</section>
+
+<!-- 8 QA -->
+<section id="qa" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-purple-700 font-semibold mb-2">8 &middot; QA checklist before go-live</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Run these before flipping the switch.</h2>
+
+  <ol class="space-y-2 text-sm text-slate-700 list-decimal list-inside ml-2">
+    <li>All 4 products exist in Stripe with correct names and descriptions</li>
+    <li>All 4 products have both monthly + annual prices (where applicable)</li>
+    <li>Price IDs copied into <span class="mono">config/brandrai_plans.php</span></li>
+    <li>3 early-adopter coupons created + tested on signup flow</li>
+    <li>Webhook endpoint configured in Stripe (<span class="mono">/webhooks/stripe</span>) with signing secret</li>
+    <li>Webhook secret added to <span class="mono">.env</span> as <span class="mono">STRIPE_WEBHOOK_SECRET</span></li>
+    <li>Test signup to Starter tier completes, user record shows correct plan_tier</li>
+    <li>Test signup to Growth tier with early-adopter coupon shows $199/mo (not $299)</li>
+    <li>Test card (4242 4242 4242 4242) successful payment flow</li>
+    <li>Test card failure flow (4000 0000 0000 9995 &mdash; always declines)</li>
+    <li>Upgrade from Starter to Growth prorates correctly</li>
+    <li>Cancellation flow completes; user downgrades to free at period end</li>
+    <li>Invoice emails going out from Stripe with correct branding</li>
+    <li>Tax (if needed) configured via Stripe Tax or marked exempt</li>
+    <li>Live mode keys swapped in at cutover; test mode keys left in staging</li>
+  </ol>
+</section>
+
+<div class="mt-10 pt-6 border-t border-slate-200 text-sm text-slate-500">
+  <p><strong>Related specs:</strong> <a href="12-pricing-page.html" class="text-purple-700 hover:underline">12 &mdash; Pricing page</a> &middot; <a href="80-breakdance-pricing-page-rebuild-guide.html" class="text-purple-700 hover:underline">80 &mdash; Breakdance pricing guide</a> &middot; <a href="83-brandrai-studio-ux-spec.html" class="text-purple-700 hover:underline">83 &mdash; Studio UX spec</a></p>
+  <p class="mt-2">Spec v1 &middot; 2026-04-23 &middot; Max &rarr; Dang</p>
+</div>
+
+</main>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

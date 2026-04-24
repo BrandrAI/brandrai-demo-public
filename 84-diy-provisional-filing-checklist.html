@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIY Provisional Filing Checklist + Gap Analysis</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, sans-serif; font-size: 10.5pt; line-height: 1.5; }
+  h2 { scroll-margin-top: 80px; }
+  pre { font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; line-height: 1.4; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; }
+  .check-pass { background: #d1fae5; color: #065f46; border-color: #10b981; }
+  .check-gap { background: #fef3c7; color: #78350f; border-color: #f59e0b; }
+  .check-miss { background: #fee2e2; color: #7f1d1d; border-color: #ef4444; }
+  @media print {
+    nav, .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+  }
+</style>
+</head>
+<body class="bg-slate-50">
+
+<div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
+  <span class="font-semibold text-emerald-400">INTERNAL PLAYBOOK</span>
+  <span class="mx-2 text-slate-500">&middot;</span>
+  DIY provisional filing checklist + gap analysis of existing disclosures
+</div>
+
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50 no-print">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white font-bold text-sm">P</div>
+      <div>
+        <div class="font-bold text-slate-900 text-sm">DIY provisional filing checklist</div>
+        <div class="text-xs text-slate-500">Requirements + gap analysis of disclosures 74, 75, 75b</div>
+      </div>
+    </div>
+    <button onclick="window.print()" class="px-3 py-2 border border-slate-300 rounded-lg text-sm text-slate-700 hover:bg-slate-50 flex items-center gap-1.5"><i data-lucide="printer" class="w-4 h-4"></i>Print / PDF</button>
+  </div>
+</nav>
+
+<main class="max-w-5xl mx-auto px-6 py-8 bg-white shadow-sm my-6 rounded-2xl">
+
+<!-- Header -->
+<div class="mb-8 pb-6 border-b border-slate-200">
+  <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">Playbook &middot; Max + Dang &middot; fallback if attorney path stalls</div>
+  <h1 class="text-3xl font-bold text-slate-900 mb-3">File the 3 provisionals yourself, correctly, before May 1.</h1>
+  <p class="text-slate-700">Edison Law Group is the primary path ($5,391 + $900 search). This doc is the backup: a concrete checklist of USPTO provisional requirements, a gap analysis of disclosures 74 / 75 / 75b against those requirements, and a step-by-step DIY filing procedure via USPTO Patent Center. If the attorney path works, this doc becomes your QA review of their draft.</p>
+  <div class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+    <div><span class="text-slate-500">Hard deadline:</span> <span class="font-semibold text-slate-900">Apr 30, 2026 (pre-May 1 disclosure)</span></div>
+    <div><span class="text-slate-500">USPTO fee:</span> <span class="font-semibold text-slate-900">$325 small / $130 micro per filing</span></div>
+    <div><span class="text-slate-500">3 patents total:</span> <span class="font-semibold text-slate-900">~$975 small / ~$390 micro</span></div>
+    <div><span class="text-slate-500">DIY time estimate:</span> <span class="font-semibold text-slate-900">4-6 hours total</span></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="mb-10 p-5 bg-slate-50 rounded-xl border border-slate-200">
+  <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-3">Contents</div>
+  <ol class="space-y-1.5 text-sm text-slate-700 list-decimal list-inside grid md:grid-cols-2 gap-x-4">
+    <li><a href="#what-is" class="hover:text-emerald-700 underline-offset-4 hover:underline">What a provisional actually is (and isn&apos;t)</a></li>
+    <li><a href="#reqs" class="hover:text-emerald-700 underline-offset-4 hover:underline">USPTO legal requirements (what MUST be in)</a></li>
+    <li><a href="#best" class="hover:text-emerald-700 underline-offset-4 hover:underline">Best-practice additions (strongly recommended)</a></li>
+    <li><a href="#entity" class="hover:text-emerald-700 underline-offset-4 hover:underline">Small vs. micro entity &mdash; saving fees</a></li>
+    <li><a href="#gap-74" class="hover:text-emerald-700 underline-offset-4 hover:underline">Gap analysis &mdash; 74 Cannabis</a></li>
+    <li><a href="#gap-75" class="hover:text-emerald-700 underline-offset-4 hover:underline">Gap analysis &mdash; 75 Proof</a></li>
+    <li><a href="#gap-75b" class="hover:text-emerald-700 underline-offset-4 hover:underline">Gap analysis &mdash; 75b Sites</a></li>
+    <li><a href="#fix-list" class="hover:text-emerald-700 underline-offset-4 hover:underline">Combined fix list before filing</a></li>
+    <li><a href="#steps" class="hover:text-emerald-700 underline-offset-4 hover:underline">DIY filing steps &mdash; Patent Center</a></li>
+    <li><a href="#post" class="hover:text-emerald-700 underline-offset-4 hover:underline">After filing &mdash; tracking + 12-month clock</a></li>
+  </ol>
+</div>
+
+<!-- 1 WHAT IS -->
+<section id="what-is" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">1 &middot; What a provisional actually is</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">A priority-date placeholder. Nothing more, nothing less.</h2>
+
+  <div class="grid md:grid-cols-2 gap-4 mb-4">
+    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+      <div class="font-bold text-emerald-900 mb-2 flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5"></i>What it DOES do</div>
+      <ul class="text-sm text-emerald-900 space-y-1 list-disc list-inside">
+        <li>Establishes a priority date &mdash; anything published after this date cannot be cited against you as prior art for the inventions disclosed</li>
+        <li>Gives you 12 months to convert to a non-provisional (or PCT international)</li>
+        <li>Lets you write &quot;patent pending&quot; on marketing</li>
+        <li>Preserves international filing rights under the Paris Convention</li>
+      </ul>
+    </div>
+    <div class="bg-rose-50 border border-rose-200 rounded-xl p-4">
+      <div class="font-bold text-rose-900 mb-2 flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5"></i>What it DOES NOT do</div>
+      <ul class="text-sm text-rose-900 space-y-1 list-disc list-inside">
+        <li>Does NOT get examined &mdash; no examiner reads it</li>
+        <li>Does NOT require formal claims (though claims are strongly recommended)</li>
+        <li>Does NOT grant you a patent &mdash; only the non-provisional can</li>
+        <li>Does NOT require prior art search</li>
+        <li>Does NOT require an inventor oath/declaration</li>
+        <li>Does NOT cover anything not disclosed in it &mdash; what&apos;s in is protected, what&apos;s out is unprotected</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="text-slate-700 p-4 bg-amber-50 border-l-4 border-amber-400 rounded"><strong>The single most important rule:</strong> whatever you disclose in the provisional is what you can claim priority to when you convert. Anything material you add at conversion time will NOT get the provisional&apos;s priority date. So the disclosure must be <em>complete enough</em> to cover all likely claim scope. Over-discloseâ€”never underâ€”at this stage.</p>
+</section>
+
+<!-- 2 REQS -->
+<section id="reqs" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">2 &middot; Legal requirements (35 USC 111(b) + 112)</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">What MUST be in every provisional filing.</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-4">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-3 py-2 text-left">#</th><th class="px-3 py-2 text-left">Required element</th><th class="px-3 py-2 text-left">Statute / rule</th><th class="px-3 py-2 text-left">Notes</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200">
+        <tr><td class="px-3 py-2 font-semibold">1</td><td class="px-3 py-2">Specification (written description)</td><td class="px-3 py-2 mono">35 USC 112(a)</td><td class="px-3 py-2 text-slate-600">Narrative describing the invention</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">2</td><td class="px-3 py-2">Enabling disclosure</td><td class="px-3 py-2 mono">35 USC 112(a)</td><td class="px-3 py-2 text-slate-600">Detailed enough for a person of ordinary skill to make + use the invention</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">3</td><td class="px-3 py-2">Drawings (if necessary to understand)</td><td class="px-3 py-2 mono">37 CFR 1.81</td><td class="px-3 py-2 text-slate-600">Required if they&apos;re needed for understanding; for software, block diagrams + flowcharts cover it</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">4</td><td class="px-3 py-2">Cover sheet (form SB/16 or via Patent Center)</td><td class="px-3 py-2 mono">37 CFR 1.51</td><td class="px-3 py-2 text-slate-600">Names inventors + title + applicant; filed electronically via Patent Center</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">5</td><td class="px-3 py-2">Filing fee</td><td class="px-3 py-2 mono">37 CFR 1.16(d)</td><td class="px-3 py-2 text-slate-600">$325 large / $130 small / $65 micro as of 2026 (verify on uspto.gov before filing)</td></tr>
+        <tr><td class="px-3 py-2 font-semibold">6</td><td class="px-3 py-2">Inventor identification</td><td class="px-3 py-2 mono">35 USC 115</td><td class="px-3 py-2 text-slate-600">Full legal names + residences of every inventor (no oath/declaration needed for provisional)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-slate-700 p-3 bg-blue-50 border-l-4 border-blue-500 rounded"><strong>What&apos;s explicitly NOT required:</strong> claims, abstract, oath/declaration, prior art statement, assignment. You CAN include claims (and you should for anything important &mdash; see next section) but they are not legally mandatory.</p>
+</section>
+
+<!-- 3 BEST -->
+<section id="best" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">3 &middot; Best-practice additions</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Strongly recommended even though not legally required.</h2>
+
+  <div class="space-y-3">
+    <div class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">A &middot; Claims (2-10 broad claims per application)</div>
+      <p class="text-sm text-slate-700">Even though not required, claims anchor the invention and discipline the disclosure. Write 1-3 broad independent claims + 5-10 dependent claims per filing. You can amend at conversion, but claims filed today create a clear priority-date record.</p>
+    </div>
+    <div class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">B &middot; Abstract (150 words max)</div>
+      <p class="text-sm text-slate-700">Plain-English single-paragraph summary. Not required but examiners use it at conversion and it helps counsel later.</p>
+    </div>
+    <div class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">C &middot; Cross-reference to related applications</div>
+      <p class="text-sm text-slate-700">If any of these 3 filings relate to prior filings (e.g. the existing cannabis provisional), reference the application number. Matters for priority chaining.</p>
+    </div>
+    <div class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">D &middot; Statement re: federal R&amp;D funding</div>
+      <p class="text-sm text-slate-700">Boilerplate: &quot;No federal government funding was used in developing this invention.&quot; Only needed if there IS federal funding; omit otherwise.</p>
+    </div>
+    <div class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">E &middot; Drawings with numbered reference labels</div>
+      <p class="text-sm text-slate-700">Each figure needs numbered elements (e.g. &quot;100 = application server, 102 = database&quot;) and the specification must reference those numbers. Informal drawings (hand-sketched, screenshots) are acceptable at provisional; only non-provisional requires formal USPTO-compliant drafting.</p>
+    </div>
+    <div class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">F &middot; &quot;Best mode&quot; disclosure</div>
+      <p class="text-sm text-slate-700">Post-AIA this is no longer a validity defense, but disclosing your actual preferred implementation (model names, library versions, exact parameters) is good practice and strengthens enablement.</p>
+    </div>
+    <div class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">G &middot; Alternative embodiments explicitly enumerated</div>
+      <p class="text-sm text-slate-700">For each technology choice (hash function, LLM provider, storage backend), list alternatives. Prevents accusations of overclaiming and preserves broader claim scope at conversion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 ENTITY -->
+<section id="entity" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">4 &middot; Small vs. micro entity</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Check if you qualify for micro-entity &mdash; 75% fee reduction.</h2>
+
+  <div class="grid md:grid-cols-3 gap-3 mb-4 text-sm">
+    <div class="p-4 bg-slate-900 text-white rounded-xl">
+      <div class="text-xs uppercase tracking-wider text-slate-400 mb-1">Large entity</div>
+      <div class="text-2xl font-bold mb-1">$325 / filing</div>
+      <div class="text-xs text-slate-400">Default &mdash; most companies</div>
+    </div>
+    <div class="p-4 bg-blue-50 border border-blue-200 rounded-xl">
+      <div class="text-xs uppercase tracking-wider text-blue-700 mb-1">Small entity</div>
+      <div class="text-2xl font-bold text-blue-900 mb-1">$130 / filing</div>
+      <div class="text-xs text-blue-800">Companies &lt; 500 employees, individual inventors, non-profits</div>
+    </div>
+    <div class="p-4 bg-emerald-50 border-2 border-emerald-400 rounded-xl">
+      <div class="text-xs uppercase tracking-wider text-emerald-700 mb-1">Micro entity (GOAL)</div>
+      <div class="text-2xl font-bold text-emerald-900 mb-1">$65 / filing</div>
+      <div class="text-xs text-emerald-800">Small entity + additional income/filing tests</div>
+    </div>
+  </div>
+
+  <p class="text-slate-700 mb-2"><strong>Micro-entity qualification</strong> (37 CFR 1.29), all four must be true:</p>
+  <ol class="text-sm text-slate-700 space-y-1 list-decimal list-inside ml-4 mb-4">
+    <li>Qualifies as a small entity</li>
+    <li>Has NOT been named as an inventor on more than four previously-filed patent applications (excluding foreign, provisional, or applications assigned to previous employer as condition of employment)</li>
+    <li>Gross income in the previous calendar year &le; 3&times; the US median household income (~$206K for 2024; check current threshold)</li>
+    <li>Has NOT assigned, granted, or conveyed (and is not under obligation to do so) a license or ownership interest to an entity that doesn&apos;t also qualify as a micro entity</li>
+  </ol>
+
+  <p class="text-slate-700 p-3 bg-amber-50 border-l-4 border-amber-400 rounded"><strong>Max + Dang likely BOTH qualify as micro-entity today</strong> as individual inventors pre-incorporation. Total 3 filings at micro rate = ~$195. If you miss micro and just qualify as small = ~$390. Either way it&apos;s &lt; $1K. Do not overthink this &mdash; claim small entity and file. Claim micro only if you can firmly check all four boxes.</p>
+</section>
+
+<!-- 5 GAP 74 -->
+<section id="gap-74" class="mb-10 page-break">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">5 &middot; Gap analysis &mdash; 74 Cannabis COA</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Disclosure 74 vs. the checklist.</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-4">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-3 py-2 text-left">Requirement</th><th class="px-3 py-2 text-left">Status</th><th class="px-3 py-2 text-left">Notes / what to add</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 text-slate-700">
+        <tr><td class="px-3 py-2">Title</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;1 provides title. Shorten to &lt; 500 chars for Patent Center.</td></tr>
+        <tr><td class="px-3 py-2">Field of invention</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;2 covers this.</td></tr>
+        <tr><td class="px-3 py-2">Background / prior art context</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;3 is thorough.</td></tr>
+        <tr><td class="px-3 py-2">Summary of invention</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;4 has 8-step summary.</td></tr>
+        <tr><td class="px-3 py-2">Detailed description &mdash; system architecture</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;5.1-5.8 covers every major component with specific tech choices.</td></tr>
+        <tr><td class="px-3 py-2">Enablement (can POSA build it?)</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">Includes actual class/method names, file paths, model names, scoring formulas.</td></tr>
+        <tr><td class="px-3 py-2">Alternative embodiments</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;6 lists 9 alternative categories explicitly.</td></tr>
+        <tr><td class="px-3 py-2">Novelty / non-obviousness statement</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;7 identifies 5 distinct inventive elements.</td></tr>
+        <tr><td class="px-3 py-2">Drawings &mdash; list</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;8 lists 7 figures to prepare.</td></tr>
+        <tr><td class="px-3 py-2">Drawings &mdash; actual images</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-miss">MISSING</span></td><td class="px-3 py-2 text-xs"><strong>FIX BEFORE FILING:</strong> must produce the 7 figures. Hand-drawn or Mermaid diagrams ok for provisional. Each figure needs numbered reference labels.</td></tr>
+        <tr><td class="px-3 py-2">Claims (recommended not required)</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">ADD</span></td><td class="px-3 py-2 text-xs">Write 3 independent + 10 dependent claims covering: method, system, non-transitory storage medium.</td></tr>
+        <tr><td class="px-3 py-2">Abstract (recommended)</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">ADD</span></td><td class="px-3 py-2 text-xs">150-word plain-English summary.</td></tr>
+        <tr><td class="px-3 py-2">Inventor names + residences</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">CONFIRM</span></td><td class="px-3 py-2 text-xs">&sect;header names Max + Dang. Need Dang&apos;s full legal name as on passport + current Vietnam address.</td></tr>
+        <tr><td class="px-3 py-2">Cross-reference to prior provisional</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">ADD</span></td><td class="px-3 py-2 text-xs">&sect;header mentions &quot;existing provisional on file&quot; &mdash; need the application number to reference. If this is a CIP of that one, state so explicitly.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-slate-700 p-3 bg-emerald-50 border-l-4 border-emerald-500 rounded"><strong>Verdict on 74:</strong> excellent technical foundation. 5 gaps to close before filing: (a) produce the 7 figures, (b) draft claims, (c) add abstract, (d) confirm inventor details, (e) clarify relationship to prior provisional. Estimate 2-3 hours to close all 5.</p>
+</section>
+
+<!-- 6 GAP 75 -->
+<section id="gap-75" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">6 &middot; Gap analysis &mdash; 75 Proof</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Disclosure 75 vs. the checklist.</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-4">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-3 py-2 text-left">Requirement</th><th class="px-3 py-2 text-left">Status</th><th class="px-3 py-2 text-left">Notes / what to add</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 text-slate-700">
+        <tr><td class="px-3 py-2">Title</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;1 provides title.</td></tr>
+        <tr><td class="px-3 py-2">Field of invention</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;2 vertical-agnostic, well scoped.</td></tr>
+        <tr><td class="px-3 py-2">Background</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;3 identifies 3-4 prior-art classes and the gap.</td></tr>
+        <tr><td class="px-3 py-2">Summary</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;4 summary.</td></tr>
+        <tr><td class="px-3 py-2">Detailed description (10-step pipeline)</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;5.1-5.12 maps every step with implementation detail.</td></tr>
+        <tr><td class="px-3 py-2">Enablement</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">Includes hash algorithm, timestamp sources, LLM providers.</td></tr>
+        <tr><td class="px-3 py-2">Representative embodiments across verticals</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;6 with 12 named verticals &mdash; very strong for broad claim scope.</td></tr>
+        <tr><td class="px-3 py-2">Expanded dependent-claim embodiments (&sect;8B)</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS+</span></td><td class="px-3 py-2 text-xs">12 subsections of explicit dependent-claim fodder. Unusual depth for a disclosure &mdash; this helps counsel enormously.</td></tr>
+        <tr><td class="px-3 py-2">Novelty</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;7 covers.</td></tr>
+        <tr><td class="px-3 py-2">Relationship to related filings</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;8 explicitly addresses cannabis-parent relationship.</td></tr>
+        <tr><td class="px-3 py-2">Drawings &mdash; actual images</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-miss">MISSING</span></td><td class="px-3 py-2 text-xs"><strong>FIX:</strong> &sect;9 lists figures but images aren&apos;t produced.</td></tr>
+        <tr><td class="px-3 py-2">Claims</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">ADD</span></td><td class="px-3 py-2 text-xs">Draft 3 independent (method, system, medium) + 15+ dependent claims (each &sect;8B can become a dependent claim).</td></tr>
+        <tr><td class="px-3 py-2">Abstract</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">ADD</span></td><td class="px-3 py-2 text-xs">150 words.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-slate-700 p-3 bg-emerald-50 border-l-4 border-emerald-500 rounded"><strong>Verdict on 75:</strong> strongest of the three disclosures. &sect;8B dependent-claim section is gold. Only 3 gaps: drawings, claims, abstract. Estimate 2 hours.</p>
+</section>
+
+<!-- 7 GAP 75b -->
+<section id="gap-75b" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">7 &middot; Gap analysis &mdash; 75b Sites</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Disclosure 75b vs. the checklist.</h2>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl mb-4">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-50 text-slate-700">
+        <tr><th class="px-3 py-2 text-left">Requirement</th><th class="px-3 py-2 text-left">Status</th><th class="px-3 py-2 text-left">Notes / what to add</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 text-slate-700">
+        <tr><td class="px-3 py-2">Title + field + background + summary</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;1-4 all present.</td></tr>
+        <tr><td class="px-3 py-2">Detailed description &mdash; 9 subsections</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;5.1-5.9 covers token input, builder config input, adapter architecture, cascade, round-trip, plugin, multi-site, AI content.</td></tr>
+        <tr><td class="px-3 py-2">Enablement &mdash; specific builders named</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">Breakdance + Bricks + Elementor + Shopify + static/SSG explicit.</td></tr>
+        <tr><td class="px-3 py-2">Representative embodiments</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;6.1-6.7 very thorough.</td></tr>
+        <tr><td class="px-3 py-2">Integration-with-Proof section</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS+</span></td><td class="px-3 py-2 text-xs">&sect;6.7 ties to authenticity pipeline &mdash; good for cross-patent priority.</td></tr>
+        <tr><td class="px-3 py-2">Novelty + relation to other filings</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-pass">PASS</span></td><td class="px-3 py-2 text-xs">&sect;7 + &sect;8.</td></tr>
+        <tr><td class="px-3 py-2">Builder JSON schema examples</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">ADD</span></td><td class="px-3 py-2 text-xs">Strongly recommend embedding at least 1 full Breakdance + 1 Bricks JSON example from your generated pages (redact brand names if needed). Concrete examples dramatically strengthen enablement for software patents.</td></tr>
+        <tr><td class="px-3 py-2">Drawings &mdash; actual images</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-miss">MISSING</span></td><td class="px-3 py-2 text-xs"><strong>FIX:</strong> adapter architecture diagram + token-cascade flow diagram + round-trip flow.</td></tr>
+        <tr><td class="px-3 py-2">Claims</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">ADD</span></td><td class="px-3 py-2 text-xs">This is the trickiest of the three to claim. Consider method-claim structure: &quot;receiving a token set, receiving a target-builder config, selecting an adapter, generating output in the target builder&apos;s native format...&quot; Builder-agnostic language is the art.</td></tr>
+        <tr><td class="px-3 py-2">Abstract</td><td class="px-3 py-2"><span class="inline-block px-2 py-0.5 rounded border check-gap">ADD</span></td><td class="px-3 py-2 text-xs">150 words.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-slate-700 p-3 bg-amber-50 border-l-4 border-amber-400 rounded"><strong>Verdict on 75b:</strong> strong textual disclosure but the claim drafting is harder &mdash; software patents for web tooling can collapse into abstract-idea rejections under Alice/Mayo. Recommend: (a) embed a concrete JSON example, (b) draft claims that emphasize the specific technical mechanism (CSS-variable binding, adapter architecture), not the general concept. This is where an attorney&apos;s help is most valuable.</p>
+</section>
+
+<!-- 8 FIX LIST -->
+<section id="fix-list" class="mb-10 page-break">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">8 &middot; Combined fix list before filing</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Everything to do across all 3 disclosures.</h2>
+
+  <div class="space-y-3">
+    <div class="p-4 bg-rose-50 border border-rose-300 rounded-xl">
+      <div class="font-bold text-rose-900 mb-1">Must-do before filing (all 3 apps)</div>
+      <ol class="text-sm text-rose-900 space-y-1 list-decimal list-inside">
+        <li><strong>Produce drawings</strong> &mdash; 5-10 figures per patent. Acceptable formats: hand-drawn scans, Mermaid diagrams exported to SVG, Excalidraw, draw.io. Numbered reference labels on every element.</li>
+        <li><strong>Draft claims</strong> &mdash; minimum 3 independent + 10 dependent per patent. Method / system / non-transitory computer-readable medium format.</li>
+        <li><strong>Draft abstract</strong> &mdash; 150 words per patent, plain-English.</li>
+        <li><strong>Confirm inventor full legal names + residences</strong> &mdash; Max&apos;s and Dang&apos;s legal names as on passport/DL + current residence addresses.</li>
+        <li><strong>Determine entity status</strong> &mdash; small or micro. Likely micro today as individual inventors.</li>
+        <li><strong>Reference existing provisional</strong> (cannabis only) &mdash; look up the application number; include in new cannabis CIP.</li>
+      </ol>
+    </div>
+
+    <div class="p-4 bg-amber-50 border border-amber-300 rounded-xl">
+      <div class="font-bold text-amber-900 mb-1">Strongly recommended (worth the extra hour)</div>
+      <ol class="text-sm text-amber-900 space-y-1 list-decimal list-inside">
+        <li><strong>Embed code snippets / JSON examples</strong> in spec &mdash; pseudocode for scoring algorithms (74), sample builder-adapter JSON (75b). Concrete examples = stronger enablement.</li>
+        <li><strong>Explicit &quot;alternative embodiment&quot; listing</strong> at end of each spec, separate from the main text.</li>
+        <li><strong>Disclosure timeline appendix</strong> &mdash; list every public mention of the invention (pitches, demos, changelog, website copy). Critical for prior-art-by-self analysis.</li>
+      </ol>
+    </div>
+
+    <div class="p-4 bg-slate-50 border border-slate-300 rounded-xl">
+      <div class="font-bold text-slate-900 mb-1">Optional / nice-to-have</div>
+      <ol class="text-sm text-slate-700 space-y-1 list-decimal list-inside">
+        <li>Glossary of terms at top of spec</li>
+        <li>&quot;Person of ordinary skill&quot; statement defining target audience</li>
+        <li>Statement re: federal funding (if none, can omit)</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="mt-4 p-4 bg-emerald-50 border-2 border-emerald-400 rounded-xl">
+    <div class="font-bold text-emerald-900 mb-1">Total time to close all gaps across 3 disclosures</div>
+    <p class="text-sm text-emerald-900">Drawings: 3-4 hours (all 3 combined, hand-drawn or Mermaid). Claims: 3-4 hours (if you draft from 75&apos;s &sect;8B structure, which already lists the dependent claims you want). Abstracts: 30 minutes. Admin: 30 minutes. <strong>~7-9 focused hours total</strong> to convert all three disclosures to filing-ready shape.</p>
+  </div>
+</section>
+
+<!-- 9 STEPS -->
+<section id="steps" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">9 &middot; DIY filing steps &mdash; USPTO Patent Center</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">The actual clicks to file each provisional.</h2>
+
+  <ol class="space-y-3">
+    <li class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">1 &middot; Create USPTO.gov account</div>
+      <p class="text-sm text-slate-700">Go to <span class="mono">patentcenter.uspto.gov</span>. Register for a MyUSPTO account with 2FA. Link a USPTO.gov account as &quot;Sponsored User&quot; or &quot;Unsponsored Public.&quot; For individual inventor filings, unsponsored is fine.</p>
+    </li>
+    <li class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">2 &middot; Assemble filing documents (1 PDF per section is cleanest)</div>
+      <ul class="text-sm text-slate-700 list-disc list-inside ml-2">
+        <li><span class="mono">specification.pdf</span> &mdash; the full written description (title, field, background, summary, detailed description, claims, abstract)</li>
+        <li><span class="mono">drawings.pdf</span> &mdash; all figures, one per page, black & white preferred, numbered labels</li>
+        <li><span class="mono">sb-16.pdf</span> (optional) &mdash; Patent Center auto-generates this from the online form; you don&apos;t need to pre-fill</li>
+      </ul>
+    </li>
+    <li class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">3 &middot; Click &quot;New Submission&quot; &rarr; &quot;Provisional Application&quot;</div>
+      <p class="text-sm text-slate-700">Patent Center walks you through a wizard. Select &quot;Utility &mdash; Provisional&quot; as the application type.</p>
+    </li>
+    <li class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">4 &middot; Enter bibliographic data</div>
+      <ul class="text-sm text-slate-700 list-disc list-inside ml-2">
+        <li>Title of invention</li>
+        <li>Inventor(s): full legal name + residence city/state/country for each</li>
+        <li>Correspondence address (you, for now; update when counsel is retained)</li>
+        <li>Entity status: small or micro (check the appropriate box; you&apos;re attesting under penalty of 37 CFR 1.27/1.29)</li>
+        <li>Cross-reference to prior application (cannabis only &mdash; list the earlier provisional&apos;s app number)</li>
+      </ul>
+    </li>
+    <li class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">5 &middot; Upload documents</div>
+      <p class="text-sm text-slate-700">Specification goes under &quot;Specification (SPEC).&quot; Drawings under &quot;Drawings (DRW).&quot; Patent Center will flag PDF issues (font embedding, OCR, sizing) &mdash; fix locally and re-upload.</p>
+    </li>
+    <li class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">6 &middot; Review, pay, submit</div>
+      <p class="text-sm text-slate-700">Pay via credit card or USPTO deposit account. File accepts up to 11:59 PM Eastern on the filing day. You get an immediate e-filing receipt with an Application Number and a Filing Date &mdash; that Filing Date is your priority date. Screenshot it, print it, email yourself a copy.</p>
+    </li>
+    <li class="p-4 bg-white border border-slate-200 rounded-xl">
+      <div class="font-semibold text-slate-900 mb-1">7 &middot; Repeat for each of the 3 patents</div>
+      <p class="text-sm text-slate-700">Each is a separate submission with a separate fee. Do them back-to-back in the same session so entity-status answers stay consistent.</p>
+    </li>
+  </ol>
+
+  <div class="mt-4 p-4 bg-slate-900 text-slate-200 rounded-xl">
+    <div class="font-semibold text-emerald-400 mb-1">&#9889; Time estimate on filing day</div>
+    <p class="text-sm">~30 minutes per application via Patent Center. ~90 minutes total for 3 applications. Do it in one sitting with a checklist printed.</p>
+  </div>
+</section>
+
+<!-- 10 POST -->
+<section id="post" class="mb-10">
+  <div class="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">10 &middot; After filing</div>
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">The 12-month clock starts the day you file.</h2>
+
+  <ul class="text-sm text-slate-700 space-y-2 list-disc list-inside">
+    <li><strong>Save everything.</strong> Filing receipts, app numbers, filing dates, all documents. Create a <span class="mono">patents/</span> folder with subfolders per application.</li>
+    <li><strong>Calendar the 12-month deadline</strong> (e.g. Apr 28 2026 filing &rarr; Apr 28 2027 conversion deadline). Set reminders at 10, 9, 6, 3, and 1 months out.</li>
+    <li><strong>Do NOT publicly disclose anything NOT in the provisional</strong> without adding a supplemental provisional or accepting it as prior art against your eventual non-provisional.</li>
+    <li><strong>Retain patent counsel for non-provisional conversion</strong> &mdash; this is where Edison Law Group (or equivalent) is worth the money. Claim drafting for the non-provisional is where real patent prosecution skill matters.</li>
+    <li><strong>File PCT application at month 11</strong> if you want international rights &mdash; preserves priority to all Paris Convention countries for another 18 months.</li>
+    <li><strong>Post-incorporation:</strong> once BrandrAI, Inc. is formed (Clerky), execute nunc pro tunc assignment from Max + Dang (individually) to BrandrAI, Inc., and record the assignment with USPTO within 3 months of signature.</li>
+  </ul>
+
+  <div class="mt-4 p-4 bg-rose-50 border-2 border-rose-400 rounded-xl">
+    <div class="font-bold text-rose-900 mb-1">Critical reminder</div>
+    <p class="text-sm text-rose-900">A provisional that&apos;s never converted expires into the void at 12 months. No extensions, no appeals, no grace. If the 12-month conversion deadline passes without a non-provisional filing (or a PCT), everything in the provisional becomes public-domain prior art against your own later attempts. <strong>Calendar it. Twice.</strong></p>
+  </div>
+</section>
+
+<div class="mt-10 pt-6 border-t border-slate-200 text-sm text-slate-500">
+  <p><strong>Related documents:</strong> <a href="74-patent-disclosure-cannabis.html" class="text-emerald-700 hover:underline">74 Cannabis disclosure</a> &middot; <a href="75-patent-disclosure-proof.html" class="text-emerald-700 hover:underline">75 Proof disclosure</a> &middot; <a href="75b-patent-disclosure-sites.html" class="text-emerald-700 hover:underline">75b Sites disclosure</a> &middot; <a href="76-patent-filing-playbook.html" class="text-emerald-700 hover:underline">76 Filing playbook</a></p>
+  <p class="mt-2">Playbook v1 &middot; 2026-04-23 &middot; Max + Dang &middot; backup if attorney path stalls</p>
+</div>
+
+</main>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
