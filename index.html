@@ -2,16 +2,319 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>BrandrAI Demo</title>
-<meta http-equiv="refresh" content="0; url=02-landing-page-option-a.html">
-<script>window.location.replace("02-landing-page-option-a.html");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandrAI — Real brands win. We make it easy to prove you are one.</title>
+<meta name="description" content="Brand asset management with built-in verification. The operating system for real brands. Patent-pending Brand Receipts give every product, claim, and asset proof customers can scan in 2 seconds.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <style>
-body { font-family: -apple-system, sans-serif; text-align: center; padding: 80px 20px; background: #f8fafc; color: #0f172a; }
-a { color: #10b981; font-weight: 600; text-decoration: none; }
+  body { font-family: 'Inter', -apple-system, sans-serif; }
+  .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+  .gradient-text { background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .badge-live { background: #10b981; color: white; }
+  .badge-beta { background: #f59e0b; color: white; }
+  .badge-soon { background: #64748b; color: white; }
+  .badge { display: inline-flex; align-items: center; padding: 2px 10px; font-size: 10px; font-weight: 700; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; }
 </style>
 </head>
-<body>
-<p>Loading BrandrAI demo...</p>
-<p><a href="02-landing-page-option-a.html">Click here if not redirected automatically</a></p>
+<body class="bg-slate-50">
+
+<!-- NAV -->
+<nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+        <span class="font-bold text-slate-900">BrandrAI</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+        <a href="verify.html" class="hover:text-slate-900">Verify</a>
+        <a href="brand.html" class="hover:text-slate-900">Brand</a>
+        <a href="sign.html" class="hover:text-slate-900">Sign</a>
+        <a href="12-pricing-page.html" class="hover:text-slate-900">Pricing</a>
+        <a href="about.html" class="hover:text-slate-900">About</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="#" class="hidden md:inline text-sm text-slate-600 hover:text-slate-900">Sign in</a>
+      <a href="verify.html" class="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800">Try Verify free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="gradient-bg text-white py-24 px-6 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-medium mb-6">
+      <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+      BRAND ASSET MANAGEMENT &middot; WITH BUILT-IN VERIFICATION
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-5xl">
+      Real brands win.<br>
+      We make it easy to <span class="gradient-text">prove</span> you are one.
+    </h1>
+
+    <p class="text-xl text-slate-300 max-w-3xl mb-10 leading-relaxed">
+      BrandrAI is the operating system for real brands. Manage every brand asset in one place &mdash; then stamp each one with a tamper-proof Brand Receipt customers, regulators, and platforms can verify in 2 seconds.
+    </p>
+
+    <div class="flex flex-wrap gap-4 mb-12">
+      <a href="verify.html" class="px-6 py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 flex items-center gap-2">
+        Try Verify free
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <a href="#how" class="px-6 py-3 bg-slate-800 border border-slate-700 text-white rounded-lg font-semibold hover:bg-slate-700 flex items-center gap-2">
+        <i data-lucide="play" class="w-4 h-4"></i>
+        See a live receipt
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-700">
+      <div>
+        <div class="text-3xl font-bold gradient-text">2 sec</div>
+        <div class="text-xs text-slate-400 mt-1">to verify any asset</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold gradient-text">Patent-pending</div>
+        <div class="text-xs text-slate-400 mt-1">proof primitive</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold gradient-text">Every channel</div>
+        <div class="text-xs text-slate-400 mt-1">web, retail, social, sign</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold gradient-text">Built for 2026</div>
+        <div class="text-xs text-slate-400 mt-1">the verification era</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW: 4-ERA EVOLUTION -->
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-sm uppercase tracking-wider text-emerald-600 mb-3 font-semibold">Why now</p>
+    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 max-w-3xl">Brand asset management just entered its fourth era.</h2>
+    <p class="text-lg text-slate-600 mb-16 max-w-2xl">Each era solved a real problem. Each one became table stakes. The fourth one is starting now &mdash; and the brands that move first own the next decade.</p>
+
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="text-xs font-mono text-slate-500 mb-2">2005&ndash;2015</div>
+        <h3 class="font-bold text-slate-900 mb-2">Era 1 &middot; File storage</h3>
+        <p class="text-sm text-slate-600">DAMs like Bynder, Brandfolder, and Frontify solved file chaos. A commodity now.</p>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="text-xs font-mono text-slate-500 mb-2">2015&ndash;2022</div>
+        <h3 class="font-bold text-slate-900 mb-2">Era 2 &middot; Guidelines</h3>
+        <p class="text-sm text-slate-600">Brand books went digital. Helpful internally. Customers never saw them.</p>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+        <div class="text-xs font-mono text-slate-500 mb-2">2022&ndash;2025</div>
+        <h3 class="font-bold text-slate-900 mb-2">Era 3 &middot; AI broke trust</h3>
+        <p class="text-sm text-slate-600">Midjourney and ChatGPT made faking any brand trivial. Customers stopped trusting what they see.</p>
+      </div>
+      <div class="p-6 bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-2xl border-2 border-emerald-300">
+        <div class="text-xs font-mono text-emerald-700 mb-2">2026 &rarr;</div>
+        <h3 class="font-bold text-slate-900 mb-2">Era 4 &middot; Verification</h3>
+        <p class="text-sm text-slate-700"><strong>When fakes are free, proof is the moat.</strong> BrandrAI is the brand asset platform built for this era.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE-BUCKET PRODUCT SECTION -->
+<section id="how" class="py-24 px-6 bg-slate-50">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-sm uppercase tracking-wider text-emerald-600 mb-3 font-semibold">The platform</p>
+    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 max-w-3xl">Three ways to make your brand real.</h2>
+    <p class="text-lg text-slate-600 mb-16 max-w-2xl">Start with Verify today. Add Brand and Sign as you scale.</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <a href="verify.html" class="group p-8 bg-white rounded-3xl border border-slate-200 hover:border-emerald-400 hover:shadow-xl transition-all">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center"><i data-lucide="shield-check" class="w-6 h-6 text-emerald-700"></i></div>
+          <span class="badge badge-live">&check; Live</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-2">Verify</h3>
+        <p class="text-sm text-emerald-700 font-semibold uppercase tracking-wider mb-3">Brand Receipts</p>
+        <p class="text-slate-600 mb-5">Tamper-proof receipts for every product, claim, lab result, and certificate. Customers scan. Regulators see proof. Platforms accept your data.</p>
+        <span class="text-emerald-700 font-semibold text-sm group-hover:underline">Try free &rarr;</span>
+      </a>
+
+      <a href="brand.html" class="group p-8 bg-white rounded-3xl border border-slate-200 hover:border-amber-400 hover:shadow-xl transition-all">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center"><i data-lucide="layers" class="w-6 h-6 text-amber-700"></i></div>
+          <span class="badge badge-beta">Beta</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-2">Brand</h3>
+        <p class="text-sm text-amber-700 font-semibold uppercase tracking-wider mb-3">Studio &middot; Sites &middot; Rank &middot; Reputation &middot; Reach</p>
+        <p class="text-slate-600 mb-5">The full brand operating system. AI brand research, on-brand site builder, SEO, reputation monitoring, and content syndication &mdash; all in one platform.</p>
+        <span class="text-amber-700 font-semibold text-sm group-hover:underline">Request beta access &rarr;</span>
+      </a>
+
+      <a href="sign.html" class="group p-8 bg-white rounded-3xl border border-slate-200 hover:border-slate-400 hover:shadow-xl transition-all">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center"><i data-lucide="monitor" class="w-6 h-6 text-slate-700"></i></div>
+          <span class="badge badge-soon">Coming Q3</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-2">Sign</h3>
+        <p class="text-sm text-slate-600 font-semibold uppercase tracking-wider mb-3">Smart brand signage</p>
+        <p class="text-slate-600 mb-5">Connected displays for retail, showrooms, and brand activations. The right product, the right price, the right proof &mdash; updated in real time.</p>
+        <span class="text-slate-700 font-semibold text-sm group-hover:underline">Join the waitlist &rarr;</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE SNIPPETS -->
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 max-w-3xl">Built for brands that have to be right.</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 bg-slate-50 rounded-2xl">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center"><i data-lucide="rocket" class="w-5 h-5 text-emerald-700"></i></div>
+          <h3 class="font-bold text-slate-900">Founders launching new brands</h3>
+        </div>
+        <p class="text-slate-600">Ship a credible brand in weeks, not quarters. One platform handles brand research, site, proof, and signage.</p>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 bg-cyan-100 rounded-xl flex items-center justify-center"><i data-lucide="users" class="w-5 h-5 text-cyan-700"></i></div>
+          <h3 class="font-bold text-slate-900">Marketing teams scaling brands</h3>
+        </div>
+        <p class="text-slate-600">Replace your CMS, DAM, reputation tool, and verification workflow with one platform. Less stack, more speed.</p>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center"><i data-lucide="clipboard-check" class="w-5 h-5 text-amber-700"></i></div>
+          <h3 class="font-bold text-slate-900">Compliance teams in regulated industries</h3>
+        </div>
+        <p class="text-slate-600">Audit-ready in a click. Every claim, every lab verification, every regulatory document &mdash; verified, timestamped, shareable.</p>
+      </div>
+      <div class="p-6 bg-slate-50 rounded-2xl">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center"><i data-lucide="store" class="w-5 h-5 text-purple-700"></i></div>
+          <h3 class="font-bold text-slate-900">Retailers and shelf operators</h3>
+        </div>
+        <p class="text-slate-600">Smart signage that proves what's real. Live product info, real-time pricing, scannable proof at point of sale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="py-20 px-6 bg-slate-50">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="text-sm uppercase tracking-wider text-slate-500 mb-3 font-semibold">Social proof</p>
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">Used by emerging brands in regulated, high-trust industries.</h2>
+    <p class="text-lg text-slate-600 mb-10">Supplements, wellness, specialty CPG, regulated retail, luxury &mdash; categories where claims have to be backed by proof.</p>
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-6 items-center opacity-60">
+      <div class="h-12 bg-slate-200 rounded-lg"></div>
+      <div class="h-12 bg-slate-200 rounded-lg"></div>
+      <div class="h-12 bg-slate-200 rounded-lg"></div>
+      <div class="h-12 bg-slate-200 rounded-lg"></div>
+      <div class="h-12 bg-slate-200 rounded-lg"></div>
+      <div class="h-12 bg-slate-200 rounded-lg"></div>
+    </div>
+    <p class="text-xs text-slate-400 mt-4">Customer logos coming post-launch.</p>
+  </div>
+</section>
+
+<!-- PRICING TEASE -->
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-sm uppercase tracking-wider text-emerald-600 mb-3 font-semibold">Pricing</p>
+    <h2 class="text-4xl font-bold text-slate-900 mb-4">Pricing built for builders.</h2>
+    <p class="text-lg text-slate-600 mb-12">Start free. Pay for what you verify. Bundle Verify + Brand + Sign and save 25%.</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="p-6 border-2 border-emerald-300 rounded-2xl bg-emerald-50">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-xl font-bold text-slate-900">Verify</h3>
+          <span class="badge badge-live">&check; Live</span>
+        </div>
+        <div class="text-3xl font-bold text-slate-900 mb-1">from $49<span class="text-base font-normal text-slate-500">/mo</span></div>
+        <p class="text-sm text-slate-600">Per-product Brand Receipts and a public verification page customers scan in 2 seconds.</p>
+      </div>
+      <div class="p-6 border-2 border-amber-300 rounded-2xl bg-amber-50">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-xl font-bold text-slate-900">Brand</h3>
+          <span class="badge badge-beta">Beta</span>
+        </div>
+        <div class="text-3xl font-bold text-slate-900 mb-1">from $199<span class="text-base font-normal text-slate-500">/mo</span></div>
+        <p class="text-sm text-slate-600">The full brand operating system. Beta pricing locked through 2026.</p>
+      </div>
+      <div class="p-6 border-2 border-slate-300 rounded-2xl bg-slate-50">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-xl font-bold text-slate-900">Sign</h3>
+          <span class="badge badge-soon">Coming Q3</span>
+        </div>
+        <div class="text-3xl font-bold text-slate-900 mb-1">from $99<span class="text-base font-normal text-slate-500">/mo</span></div>
+        <p class="text-sm text-slate-600">Per location. Waitlist opens early access for Q3 2026 hardware partners.</p>
+      </div>
+    </div>
+
+    <a href="12-pricing-page.html" class="inline-flex items-center gap-2 text-emerald-700 font-semibold hover:underline">See full pricing <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-24 px-6 gradient-bg text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to make your brand real?</h2>
+    <p class="text-xl text-slate-300 mb-10">15-minute demo. No deck. We'll show you what verified looks like for your category.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="verify.html" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-semibold text-lg">Try Verify free</a>
+      <a href="about.html" class="px-8 py-4 bg-slate-800 border border-slate-700 hover:bg-slate-700 text-white rounded-lg font-semibold text-lg">Read our story</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-slate-400 py-12 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+          <span class="font-bold text-white">BrandrAI</span>
+        </div>
+        <p class="text-sm">Real brands win. We make it easy to prove you are one.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white text-sm mb-3">Product</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="verify.html" class="hover:text-white">Verify</a></li>
+          <li><a href="brand.html" class="hover:text-white">Brand</a></li>
+          <li><a href="sign.html" class="hover:text-white">Sign</a></li>
+          <li><a href="12-pricing-page.html" class="hover:text-white">Pricing</a></li>
+          <li><a href="35-changelog-page.html" class="hover:text-white">What's new</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white text-sm mb-3">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html" class="hover:text-white">About</a></li>
+          <li><a href="industry-regulated-retail.html" class="hover:text-white">Industries</a></li>
+          <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white text-sm mb-3">Resources</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="65-feature-tour.html" class="hover:text-white">Feature tour</a></li>
+          <li><a href="71-brandrai-proof.html" class="hover:text-white">Proof primitive</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 border-t border-slate-800 text-xs text-center">&copy; 2026 BrandrAI, Inc. &middot; The operating system for real brands &middot; Patent-pending verification</div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
 </body>
 </html>
